@@ -1,0 +1,15 @@
+testinfo:
+    - id: test002
+      title: 查看主力行情
+      info: 刷新页面
+testcase:
+    - element_info: com.thinkive.future.dev.standard:id/item_image
+      find_type: id
+      info:
+    - operate_type: swipe_down
+      info: 下拉刷新
+      is_time: 5
+check:
+    - element_info: com.zxjt.jjt:id/iv_mainpage_notice
+      find_type: id
+      info: 下拉按钮页面存在

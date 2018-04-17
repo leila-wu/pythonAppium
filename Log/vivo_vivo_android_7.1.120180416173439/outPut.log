@@ -1,0 +1,4 @@
+2018-04-16 17:34:43,927  - INFO - ----  test001_首页下拉刷新_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]_           ----
+2018-04-16 17:34:43,928  - INFO - ----  test001_首页下拉刷新_ _swipe_down          ----
+2018-04-16 17:34:51,143  - INFO - ----  test001_首页下拉刷新_com.zxjt.jjt:id/iv_mainpage_notice_           ----
+2018-04-16 17:34:51,278  - INFO - [CheckPoint_1]: testAHomeSwipeDown_ : OK

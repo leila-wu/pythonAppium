@@ -1,0 +1,7 @@
+2018-04-17 17:50:40,087  - INFO - ----  test001_首页下拉刷新_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]_           ----
+2018-04-17 17:50:40,087  - INFO - ----  test001_首页下拉刷新_ _swipe_down          ----
+2018-04-17 17:51:06,101  - INFO - ----  testAHomeSwipeDown_失败重连        ----
+2018-04-17 17:51:17,882  - INFO - ----  test001_首页下拉刷新_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]_           ----
+2018-04-17 17:51:17,882  - INFO - ----  test001_首页下拉刷新_ _swipe_down          ----
+2018-04-17 17:51:43,959  - INFO - [CheckPoint_1]: testAHomeSwipeDown_用例失败重连过一次，失败原因:请检查元素com.zxjt.jjt:id/iv_mainpage_notice是否存在，下拉按钮页面存在 操作是否成功
+请检查元素com.zxjt.jjt:id/iv_mainpage_notice是否存在，下拉按钮页面存在 操作是否成功: NG
