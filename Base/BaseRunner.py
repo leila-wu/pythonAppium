@@ -40,7 +40,7 @@ def appium_testcase(devices):
     desired_caps["resetKeyboard"] = "True"
     # desired_caps["systemPort"] = devices["systemPort"]
 
-    desired_caps['app'] = devices["app"]
+    # desired_caps['app'] = devices["app"]
     # remote = "http://127.0.0.1:" + str(devices["port"]) + "/wd/hub"
     remote = "http://127.0.0.1:" + "4723" + "/wd/hub"
     driver = webdriver.Remote(remote, desired_caps)

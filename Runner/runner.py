@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from TestCase import *
+from TestCase.FuturesQuotes.neipantest import NeiPanTest
 from TestCase.HomeTest import HomeTest
 import sys
 import platform
@@ -60,7 +60,7 @@ def runnerPool(getDevices):
         _initApp["appActivity"] = "com.thinkive.futureshl.activity.LauncherActivity"
         _initApp["automationName"] = "Appium"
         # _initApp["systemPort"] = getDevices[i]["systemPort"]
-        _initApp['app'] = PATH('..') + '\\app\\test.apk'
+        # _initApp['app'] = PATH('..') + '\\app\\test.apk'
         # _pool.append(_initApp)
         devices_Pool.append(_initApp)
 
@@ -74,6 +74,7 @@ def runnerCaseApp(devices):
     starttime = datetime.now()
     suite = unittest.TestSuite()
     suite.addTest(ParametrizedTestCase.parametrize(HomeTest, param=devices))
+    # suite.addTest(ParametrizedTestCase.parametrize(NeiPanTest, param=devices))
     unittest.TextTestRunner(verbosity=2).run(suite)
     endtime = datetime.now()
     countDate(datetime.now().strftime('%Y-%m-%d %H:%M:%S'), str((endtime - starttime).seconds) + "秒")

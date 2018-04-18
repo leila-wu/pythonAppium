@@ -10,13 +10,13 @@ PATH = lambda p: os.path.abspath(
 )
 
 
-class HomeTest(ParametrizedTestCase):
+class NeiPanTest(ParametrizedTestCase):
     # 首页下拉
     def testAHomeSwipeDown(self):
         app = {}
         app["logTest"] = self.logTest
         app["driver"] = self.driver
-        app["path"] = PATH("../yaml/home/HomeSwipeDown.yaml")
+        app["path"] = PATH("../yaml/futures_quotes/zhuliangqing.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
 
@@ -26,8 +26,8 @@ class HomeTest(ParametrizedTestCase):
 
     @classmethod
     def setUpClass(cls):
-        super(HomeTest, cls).setUpClass()
+        super(NeiPanTest, cls).setUpClass()
 
     @classmethod
     def tearDownClass(cls):
-        super(HomeTest, cls).tearDownClass()
+        super(NeiPanTest, cls).tearDownClass()

@@ -52,7 +52,7 @@ class OperateElement:
                     return {"result": True}
                 t = mOperate["check_time"] if mOperate.get("check_time",
                                                            "0") != "0" else be.WAIT_TIME  # 如果自定义检测时间为空，就用默认的检测等待时间
-                WebDriverWait(self.driver, t).until(lambda x: self.elements_by(mOperate))  # 操作元素是否存在
+                WebDriverWait(self.driver, t).until(lambda x: self.elements_by(mOperate))  # 操作元素是否存在 elements_by封装的查找元素方法
                 return {"result": True}
         except selenium.common.exceptions.TimeoutException:
             # print("查找元素" + mOperate["element_info"] + "超时")
