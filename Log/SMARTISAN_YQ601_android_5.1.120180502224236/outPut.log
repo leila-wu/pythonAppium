@@ -1,0 +1,7 @@
+2018-05-02 22:42:45,834  - INFO - ----  test001_查看主力行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-02 22:42:53,363  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='主力行情']_click          ----
+2018-05-02 22:43:00,202  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='主力行情']_get_attr          ----
+2018-05-02 22:43:01,708  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='大商所']_get_attr          ----
+2018-05-02 22:43:03,800  - INFO - ----  test001_查看主力行情_com.thinkive.future.dev.standard:id/rb_list_get_attr          ----
+2018-05-02 22:43:08,095  - INFO - ----  test001_查看主力行情_com.thinkive.future.dev.standard:id/rb_out_list_get_attr          ----
+2018-05-02 22:43:08,570  - INFO - [CheckPoint_1]: testAHomeSwipeDown_ : OK

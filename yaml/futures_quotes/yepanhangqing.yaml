@@ -1,0 +1,52 @@
+testinfo:
+    - id: test002
+      title: 查看夜盘行情
+      info: 刷新页面
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: //android.widget.TextView[@text='夜盘行情']
+      find_type: xpath
+      operate_type: click
+      info: 夜盘行情
+      is_time: 2
+    - element_info: com.thinkive.future.dev.standard:id/dialog_yepan_zz
+      find_type: id
+      operate_type: click
+      info: 查看郑商所夜盘品种及时间
+    - element_info: com.thinkive.future.dev.standard:id/dialog_yepan_dl
+      find_type: id
+      operate_type: click
+      info: 查看大商所夜盘品种及时间
+    - element_info: com.thinkive.future.dev.standard:id/dialog_yepan_ec
+      find_type: id
+      operate_type: click
+      info: 查看能源中心夜盘品种及时间
+check:
+    - element_info: android:id/content
+      find_type: id
+      info: 判断夜盘弹出框是否存在
+    - element_info: com.thinkive.future.dev.standard:id/dialog_yepan_sh
+      find_type: id
+      operate_type: get_attr
+      attr_key: checked
+      attr_value: 0
+      info: 判断夜盘提醒框中，上期所没有被选中
+    - element_info: com.thinkive.future.dev.standard:id/dialog_yepan_ec
+      find_type: id
+      operate_type: get_attr
+      attr_key: checked
+      attr_value: 1
+      info: 判断夜盘提醒框中，能源中心被选中
+    - element_info: com.thinkive.future.dev.standard:id/cb_no_prompt
+      find_type: id
+      operate_type: get_attr
+      attr_key: checked
+      attr_value: 0
+      info: 未选择不再提示
+    - element_info: com.thinkive.future.dev.standard:id/tv_cancel
+      find_type: id
+      operate_type: click
+      info: 点击我知道了，关闭夜盘提醒

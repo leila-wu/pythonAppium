@@ -1,0 +1,18 @@
+2018-05-03 15:40:10,472  - INFO - ----  test001_查看主力行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-03 15:40:11,285  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='主力行情']_click          ----
+2018-05-03 15:40:12,608  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='主力行情']_get_attr          ----
+2018-05-03 15:40:13,048  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='大商所']_get_attr          ----
+2018-05-03 15:40:13,275  - INFO - ----  test001_查看主力行情_com.thinkive.future.dev.standard:id/rb_list_get_attr          ----
+2018-05-03 15:40:14,017  - INFO - ----  test001_查看主力行情_com.thinkive.future.dev.standard:id/rb_out_list_get_attr          ----
+2018-05-03 15:40:14,248  - INFO - [CheckPoint_1]: testHangQingList_ : OK
+2018-05-03 15:40:14,455  - INFO - ----  test002_查看夜盘行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-03 15:40:15,309  - INFO - ----  test002_查看夜盘行情_//android.widget.TextView[@text='夜盘行情']_click          ----
+2018-05-03 15:40:18,175  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_zz_click          ----
+2018-05-03 15:40:18,295  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_dl_click          ----
+2018-05-03 15:40:18,955  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_ec_click          ----
+2018-05-03 15:40:19,610  - INFO - ----  test002_查看夜盘行情_android:id/content_           ----
+2018-05-03 15:40:20,187  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_sh_get_attr          ----
+2018-05-03 15:40:20,264  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_ec_get_attr          ----
+2018-05-03 15:40:20,340  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/cb_no_prompt_get_attr          ----
+2018-05-03 15:40:20,421  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/tv_cancel_click          ----
+2018-05-03 15:40:20,670  - INFO - [CheckPoint_2]: testYePan_ : OK

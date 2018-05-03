@@ -21,6 +21,7 @@ class AppiumServer:
         """start the appium server
         """
         for i in range(0, len(self.kwargs)):
+            print("prot"+self.kwargs[i]["port"]+",bport ")
             cmd = "appium --session-override  -p %s -bp %s -U %s" % (
             self.kwargs[i]["port"], self.kwargs[i]["bport"], self.kwargs[i]["devices"])
             print(cmd)
@@ -71,10 +72,9 @@ class AppiumServer:
             os.popen("taskkill /f /im node.exe")
         else:
             for device in devices:
-                # mac
                 cmd = "lsof -i :{0}".format(device["port"])
                 plist = os.popen(cmd).readlines()
-                plisttmp = plist[1].split("    ")
+                plisttmp = plist[1].split("")
                 plists = plisttmp[1].split(" ")
                 # print plists[0]
                 os.popen("kill -9 {0}".format(plists[0]))

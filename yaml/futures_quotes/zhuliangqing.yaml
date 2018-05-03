@@ -1,19 +1,64 @@
 testinfo:
-    - id: test002
-      title: 查看主力行情
-      info: 刷新页面
+    - id: test001
+      title: 进入行情轮流过
+      info: 查看页面展示
 testcase:
     - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
       find_type: xpath
       operate_type: click
       info: 切换到行情界面
-    - element_info: //*[@id='com.thinkive.future.dev.standard:id/quotation_futures_navigaterbar']/android.widget.LinearLayout/android.support.v7.app.ActionBar$Tab[1]
-      find_type: id
-      operate_tpye: click
+    - element_info: //android.widget.TextView[@text='主力行情']
+      find_type: xpath
+      operate_type: click
       info: 查看主力行情
+    - element_info: //android.widget.TextView[@text='大商所']
+      find_type: xpath
+      operate_type: click
+      info: 切换到大商所
+    - element_info: //android.widget.TextView[@text='中金所']
+      find_type: xpath
+      operate_type: click
+      info: 切换到中金所
+    - element_info: //android.widget.TextView[@text='能源中心']
+      find_type: xpath
+      operate_type: click
+      info: 切换到能源中心
+    - element_info: //android.widget.TextView[@text='郑商所']
+      find_type: xpath
+      operate_type: click
+      info: 切换到郑商所
+    - element_info: //android.widget.TextView[@text='上期所']
+      find_type: xpath
+      operate_type: click
+      info: 切换到上期所
 check:
     - element_info: //android.widget.TextView[@text='主力行情']
       find_type: xpath
-      index: 0
-      operate_type: get_selected
-      info: 判断助理行情是否被选中
+      operate_type: get_attr
+      attr_key: selected
+      attr_value: 0
+      info: 切换后主力行情未被选中
+    - element_info: //android.widget.TextView[@text='上期所']
+      find_type: xpath
+      operate_type: get_attr
+      attr_key: selected
+      attr_value: 1
+      info: 切换到上期所成功
+    - element_info: com.thinkive.future.dev.standard:id/rb_list
+      find_type: id
+      operate_type: get_attr
+      attr_key: checked
+      attr_value: 1
+      info: 默认选中内盘
+    - element_info: com.thinkive.future.dev.standard:id/rb_out_list
+      find_type: id
+      operate_type: get_attr
+      attr_key: checked
+      attr_value: 0
+      info: 默认未选中外盘
+    - element_info: com.thinkive.future.dev.standard:id/rb_optional
+      find_type: id
+      operate_type: get_attr
+      attr_key: checked
+      attr_value: 0
+      info: 默认未选中自选

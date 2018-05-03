@@ -1,0 +1,36 @@
+2018-05-03 20:54:55,496  - INFO - ----  test001_进入行情页面_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-03 20:54:57,736  - INFO - ----  test001_进入行情页面_//android.widget.TextView[@text='主力行情']_click          ----
+2018-05-03 20:55:02,253  - INFO - ----  test001_进入行情页面_//android.widget.TextView[@text='上期所']_click          ----
+2018-05-03 20:55:04,947  - INFO - ----  test001_进入行情页面_//android.widget.TextView[@text='大商所']_click          ----
+2018-05-03 20:55:28,838  - INFO - ----  testHangQingList_失败重连        ----
+2018-05-03 20:55:37,273  - INFO - ----  test001_进入行情页面_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-03 20:55:39,955  - INFO - ----  test001_进入行情页面_//android.widget.TextView[@text='主力行情']_click          ----
+2018-05-03 20:55:44,410  - INFO - ----  test001_进入行情页面_//android.widget.TextView[@text='上期所']_click          ----
+2018-05-03 20:55:46,892  - INFO - ----  test001_进入行情页面_//android.widget.TextView[@text='大商所']_click          ----
+2018-05-03 20:56:10,087  - INFO - [CheckPoint_1]: testHangQingList_用例失败重连过一次，失败原因:请检查元素//android.widget.TextView[@text='主力行情']是否存在，切换后主力行情未被选中 操作是否成功
+请检查元素//android.widget.TextView[@text='主力行情']是否存在，切换后主力行情未被选中 操作是否成功: NG
+2018-05-03 20:56:14,353  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-03 20:56:20,339  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='大商所']_click          ----
+2018-05-03 20:56:22,779  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='大商所']_swipe_left          ----
+2018-05-03 20:56:25,919  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='郑商所']_click          ----
+2018-05-03 20:56:28,565  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='中金所']_click          ----
+2018-05-03 20:56:31,236  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='能源中心']_click          ----
+2018-05-03 20:56:34,521  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='能源中心']_get_attr          ----
+2018-05-03 20:56:37,684  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='大商所']_get_attr          ----
+2018-05-03 20:56:39,885  - INFO - ----  test003_滑动查看到能源中心行情_com.thinkive.future.dev.standard:id/rb_list_get_attr          ----
+2018-05-03 20:56:40,312  - INFO - ----  test003_滑动查看到能源中心行情_com.thinkive.future.dev.standard:id/rb_out_list_get_attr          ----
+2018-05-03 20:56:40,721  - INFO - ----  test003_滑动查看到能源中心行情_com.thinkive.future.dev.standard:id/rb_optional_get_attr          ----
+2018-05-03 20:56:41,086  - INFO - [CheckPoint_2]: testNYZXhangqing_ : OK
+2018-05-03 20:56:42,427  - INFO - ----  test002_查看夜盘行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-03 20:57:08,021  - INFO - ----  testYePan_失败重连        ----
+2018-05-03 20:57:16,784  - INFO - ----  test002_查看夜盘行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-03 20:57:18,937  - INFO - ----  test002_查看夜盘行情_//android.widget.TextView[@text='夜盘行情']_click          ----
+2018-05-03 20:57:22,384  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_zz_click          ----
+2018-05-03 20:57:23,177  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_dl_click          ----
+2018-05-03 20:57:24,065  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_ec_click          ----
+2018-05-03 20:57:24,959  - INFO - ----  test002_查看夜盘行情_android:id/content_           ----
+2018-05-03 20:57:24,977  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_sh_get_attr          ----
+2018-05-03 20:57:25,070  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_ec_get_attr          ----
+2018-05-03 20:57:25,225  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/cb_no_prompt_get_attr          ----
+2018-05-03 20:57:25,298  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/tv_cancel_click          ----
+2018-05-03 20:57:28,170  - INFO - [CheckPoint_3]: testYePan_用例失败重连过一次，失败原因:执行过程中失败，请检查元素是否存在//android.widget.TextView[@text='夜盘行情'], : OK

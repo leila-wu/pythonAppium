@@ -97,8 +97,9 @@ class OperateElement:
                 be.SET_VALUE: lambda: self.set_value(mOperate),
                 be.ADB_TAP: lambda: self.adb_tap(mOperate, device),
                 be.GET_CONTENT_DESC: lambda: self.get_content_desc(mOperate),
-                be.PRESS_KEY_CODE: lambda: self.press_keycode(mOperate)
-
+                be.PRESS_KEY_CODE: lambda: self.press_keycode(mOperate),
+                be.GET_ATTR: lambda: self.get_attr(mOperate),
+                be.SWIPE_LEFT: lambda: self.swipeLeft(mOperate)
             }
             return elements[mOperate.get("operate_type")]()
         except IndexError:
@@ -202,12 +203,17 @@ class OperateElement:
 
     # 左滑动
     def swipeLeft(self, mOperate):
-        width = self.driver.get_window_size()["width"]
-        height = self.driver.get_window_size()["height"]
-        x1 = int(width * 0.75)
-        y1 = int(height * 0.5)
-        x2 = int(width * 0.05)
-        self.driver(x1, y1, x2, y1, 600)
+        t = mOperate["check_time"] if mOperate.get("check_time",
+                                                   "0") != "0" else be.WAIT_TIME  # 如果自定义检测时间为空，就用默认的检测等待时间
+        element = WebDriverWait(self.driver, t).until(lambda x: self.elements_by(mOperate))
+        start = element.location
+        size1 = element.size
+        y = start['y']
+        x1 = start['x'] + size1["width"]
+        x2 = size1["height"]
+        self.driver.swipe(x1, y, x2, y, 600)
+        print("--swipeLeft--")
+        return {"result": True}
 
     # swipe start_x: 200, start_y: 200, end_x: 200, end_y: 400, duration: 2000 从200滑动到400
     def swipeToDown(self):
@@ -250,14 +256,36 @@ class OperateElement:
         self.elements_by(mOperate).send_keys(mOperate["msg"])
         return {"result": True}
 
+    def get_attr(self, mOperate):
+        """
+        读取element的值,获取元素属性，判断属性与预期是否一致
+        :param mOperate:
+        :return:
+        """
+        element_info = self.elements_by(mOperate)
+        attr_key = mOperate["attr_key"]
+        attr_value = mOperate["attr_value"]
+        result = element_info.get_attribute(attr_key)
+
+        if result == "true":
+            re_result = 1
+        else:
+            re_result = 0
+
+        if re_result == attr_value:
+            print("参数校验成功")
+            return {"result": True, "text": "".join("参数校验成功")}
+        else:
+            print("参数校验失败")
+            return {"result": False, "text": "".join("参数校验失败")}
+
+
     def get_value(self, mOperate):
-        '''
+        """
         读取element的值,支持webview下获取值
         :param mOperate:
         :return:
-        '''
-
-        resutl = ""
+        """
         if mOperate.get("find_type") == be.find_elements_by_id:
             element_info = self.elements_by(mOperate)[mOperate["index"]]
             if mOperate.get("is_webview", "0") == 1:

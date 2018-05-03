@@ -1,0 +1,6 @@
+2018-05-02 21:46:50,591  - INFO - ----  test001_查看主力行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-02 21:46:54,790  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='主力行情']_click          ----
+2018-05-02 21:46:58,531  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='主力行情']_get_attr          ----
+2018-05-02 21:46:58,887  - INFO - ----  testAHomeSwipeDown_失败重连        ----
+2018-05-02 21:47:24,066  - INFO - [CheckPoint_1]: testAHomeSwipeDown_用例失败重连过一次，失败原因:请检查元素//android.widget.TextView[@text='主力行情']是否存在，判断助理行情是否被选中 操作是否成功
+执行过程中失败，请检查元素是否存在//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2], : NG

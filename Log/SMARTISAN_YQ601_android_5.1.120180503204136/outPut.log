@@ -1,0 +1,3 @@
+2018-05-03 20:41:42,245  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-03 20:41:43,432  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='大商所']_click          ----
+2018-05-03 20:41:44,776  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='大商所']_swipe_left          ----

@@ -1,14 +1,16 @@
 testinfo:
-    - id: test001
+    - id: test000
       title: 首页下拉刷新
       info: 刷新页面
 testcase:
     - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]
       find_type: xpath
+      operate_type: click
       info: 检查页面信息加载完成
     - operate_type: swipe_down
       info: 下拉刷新
+      is_time: 5
 check:
-    - element_info: com.zxjt.jjt:id/iv_mainpage_notice
+    - element_info: com.thinkive.future.dev.standard:id/tv_home_time
       find_type: id
-      info: 下拉按钮页面存在
+      info: 下拉刷新按钮自动消失

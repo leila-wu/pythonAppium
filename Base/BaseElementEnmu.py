@@ -21,6 +21,7 @@ class Element(object):
     GET_VALUE = "get_value"
     WAIT_TIME = 20
     PRESS_KEY_CODE = "press_keycode"
+    GET_ATTR="get_attr"
 
     GET_CONTENT_DESC = "get_content_desc"
 

@@ -1,0 +1,11 @@
+2018-05-03 11:22:52,905  - INFO - ----  test002_查看夜盘行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-03 11:22:56,737  - INFO - ----  test002_查看夜盘行情_//android.widget.TextView[@text='夜盘行情']_           ----
+2018-05-03 11:23:06,756  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_zz_           ----
+2018-05-03 11:23:06,773  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_dl_           ----
+2018-05-03 11:23:06,810  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_ec_           ----
+2018-05-03 11:23:06,851  - INFO - ----  test002_查看夜盘行情_android:id/content_           ----
+2018-05-03 11:23:06,886  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_sh_           ----
+2018-05-03 11:23:06,948  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_ec_           ----
+2018-05-03 11:23:06,977  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/cb_no_prompt_           ----
+2018-05-03 11:23:07,005  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/tv_cancel_           ----
+2018-05-03 11:23:07,255  - INFO - [CheckPoint_1]: testAHomeSwipeDown_ : OK

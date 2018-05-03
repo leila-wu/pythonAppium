@@ -1,0 +1,11 @@
+2018-05-02 22:34:43,506  - INFO - ----  test001_查看主力行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-02 22:34:49,894  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='主力行情']_click          ----
+2018-05-02 22:34:53,102  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='主力行情']_get_attr          ----
+2018-05-02 22:34:53,722  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='大商所']_get_attr          ----
+2018-05-02 22:34:55,139  - INFO - ----  testAHomeSwipeDown_失败重连        ----
+2018-05-02 22:35:21,144  - INFO - ----  test001_查看主力行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-02 22:35:34,520  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='主力行情']_click          ----
+2018-05-02 22:35:38,601  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='主力行情']_get_attr          ----
+2018-05-02 22:35:39,539  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='大商所']_get_attr          ----
+2018-05-02 22:35:40,237  - INFO - [CheckPoint_1]: testAHomeSwipeDown_用例失败重连过一次，失败原因:请检查元素//android.widget.TextView[@text='大商所']是否存在，判断大商所是否被选中 操作是否成功
+请检查元素//android.widget.TextView[@text='大商所']是否存在，判断大商所是否被选中 操作是否成功: NG

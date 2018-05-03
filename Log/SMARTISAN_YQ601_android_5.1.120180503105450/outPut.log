@@ -1,0 +1,4 @@
+2018-05-03 10:55:11,157  - INFO - ----  testAHomeSwipeDown_失败重连        ----
+2018-05-03 10:55:22,392  - INFO - ----  test002_查看夜盘行情_//android.widget.TextView[@text='夜盘行情']_           ----
+2018-05-03 10:55:43,529  - INFO - [CheckPoint_1]: testAHomeSwipeDown_用例失败重连过一次，失败原因:执行过程中失败，请检查元素是否存在//android.widget.TextView[@text='夜盘行情'], 
+执行过程中失败，请检查元素是否存在com.thinkive.future.dev.standard:id/dialog_yepan_zz, : NG

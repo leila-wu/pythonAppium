@@ -1,0 +1,5 @@
+2018-04-18 19:07:44,247  - INFO - ----  test002_查看主力行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-04-18 19:08:04,969  - INFO - ----  testopen_futures_quotes_失败重连        ----
+2018-04-18 19:08:13,510  - INFO - ----  test002_查看主力行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-04-18 19:08:37,604  - INFO - [CheckPoint_1]: testopen_futures_quotes_用例失败重连过一次，失败原因:执行过程中失败，请检查元素是否存在//*[@id='com.thinkive.future.dev.standard:id/quotation_futures_navigaterbar']/android.widget.LinearLayout/android.support.v7.app.ActionBar$Tab[1], 
+执行过程中失败，请检查元素是否存在//*[@id='com.thinkive.future.dev.standard:id/quotation_futures_navigaterbar']/android.widget.LinearLayout/android.support.v7.app.ActionBar$Tab[1], : NG

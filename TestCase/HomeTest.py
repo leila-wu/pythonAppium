@@ -5,7 +5,6 @@ from Base.BaseTestBase import *
 import sys
 
 from PageObject.BasePage import BasePage
-from PageObject.Home.HomeSwipeDownPage import HomeSwipeDownPage
 
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)

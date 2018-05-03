@@ -1,0 +1,4 @@
+2018-04-19 15:49:02,846  - INFO - ----  test002_查看主力行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-04-19 15:49:39,036  - INFO - ----  test002_查看主力行情_//android.widget.TextView[@text='大商所']_           ----
+2018-04-19 15:49:42,290  - INFO - ----  test002_查看主力行情_//android.widget.TextView[@text='夜盘行情']_           ----
+2018-04-19 15:49:45,175  - INFO - ----  test002_查看主力行情_//android.widget.TextView[@text='上期所']_           ----

@@ -21,32 +21,43 @@ desired_caps['platformVersion']=deviceVersion
 #设备名称
 desired_caps['deviceName']=deviceId
 #待测试的app的Java package  from appium import webdriver
-desired_caps['appPackage']= 'com.zxjt.jjt'
+desired_caps['appPackage']= 'com.thinkive.future.dev.standard'
 #待测试的app的Activity名字 '.NotesActivity'
-desired_caps['appActivity']= 'com.thinkive.android.invest_app.ui.activities.LauncherActivity'
+desired_caps['appActivity']= 'com.thinkive.futureshl.activity.LauncherActivity'
 # desired_caps['noReset'] = True
 # desired_caps['autoAcceptAlerts'] = Ture
-desired_caps['app'] = apk_path + '\\app\\test.apk'
+# desired_caps['app'] = apk_path + '\\app\\test.apk'
 #automationName 使用哪种自动化引擎。appium（默认）还是Selendroid。
 
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
-time.sleep(2)
+time.sleep(10)
 # width = driver.manage().window().getSize().width;
 # height = driver.manage().window().getSize().height;
 
-widht = driver.get_window_size()['width']
-height = driver.get_window_size()['height']
-for i in range(1,4):
-    time.sleep(2)
-    driver.swipe(int(widht * 6 / 7), int(height / 2), int(widht / 7), int(height / 2), 1000);
-
+driver.find_element_by_xpath("//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]").click()
+# driver.find_element_by_xpath("//android.widget.TextView[@text='大商所']").click()
 time.sleep(2)
-driver.find_element_by_id("com.zxjt.jjt:id/btn_start").click()
+element = driver.find_element_by_xpath("//android.widget.TextView[@text='大商所']")
+start = element.location
+x = start['x']
+y = start['y']
+
+size1 = element.size
+
+startx=size1["height"]
+endx = size1["width"] + x
+print("element的坐标x轴:"+str(x))
+print("element的坐标x轴:"+str(y))
+print("element尺寸的高:"+str(size1["width"]))
+print("endx:"+str(endx)+",y:"+str(y)+" ,startx:"+str(startx)+" ,y:"+str(y))
+driver.swipe(endx, y , startx, y)
+
+time.sleep(10)
+
 
 # el1 = driver.find_element_by_xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.widget.ImageView")
 # el1.click()
-time.sleep(2)
 # driver.find_element_by_id("com.smartisanos.notes:id/new_note_button").click()
 # time.sleep(5)
 # driver.find_element_by_id("com.smartisanos.notes:id/list_rtf_view").send_keys('test')

@@ -19,8 +19,18 @@ if __name__ == '__main__':
     PATH = lambda p: os.path.abspath(
         os.path.join(os.path.dirname(__file__), p)
     )
-    t = getYam(PATH("../yaml/home/HomeSwipeDown.yaml"))
+    a = True
+    t = getYam(PATH("../yaml/futures_quotes/zhuliangqing.yaml"))
     print(t)
+    if t["check"][1].get("attr_value") == a:
+        print('aaa')
+    else:
+        print('bbbb')
+    print(t["check"][1].get("attr_value"))
+
+    if a == True:
+        print('abc')
+
 
     # port = str(random.randint(4700, 4900))
     # bpport = str(random.randint(4700, 4900))

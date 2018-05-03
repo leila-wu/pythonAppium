@@ -1,0 +1,5 @@
+2018-05-02 20:55:28,116  - INFO - ----  test001_查看主力行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-02 20:55:52,538  - INFO - ----  testAHomeSwipeDown_失败重连        ----
+2018-05-02 20:56:03,419  - INFO - ----  test001_查看主力行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-02 20:56:27,966  - INFO - [CheckPoint_1]: testAHomeSwipeDown_用例失败重连过一次，失败原因:执行过程中失败，请检查元素是否存在//*[@id='com.thinkive.future.dev.standard:id/quotation_futures_navigaterbar']/android.widget.LinearLayout/android.support.v7.app.ActionBar$Tab[1], 
+执行过程中失败，请检查元素是否存在//*[@id='com.thinkive.future.dev.standard:id/quotation_futures_navigaterbar']/android.widget.LinearLayout/android.support.v7.app.ActionBar$Tab[1], : NG

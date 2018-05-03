@@ -1,0 +1,12 @@
+2018-05-03 20:48:26,099  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-03 20:48:27,249  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='大商所']_click          ----
+2018-05-03 20:48:28,597  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='大商所']_swipe_left          ----
+2018-05-03 20:48:30,451  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='郑商所']_click          ----
+2018-05-03 20:48:31,740  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='中金所']_click          ----
+2018-05-03 20:48:33,352  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='能源中心']_click          ----
+2018-05-03 20:48:34,845  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='能源中心']_get_attr          ----
+2018-05-03 20:48:35,299  - INFO - ----  test003_滑动查看到能源中心行情_//android.widget.TextView[@text='大商所']_get_attr          ----
+2018-05-03 20:48:35,548  - INFO - ----  test003_滑动查看到能源中心行情_com.thinkive.future.dev.standard:id/rb_list_get_attr          ----
+2018-05-03 20:48:35,685  - INFO - ----  test003_滑动查看到能源中心行情_com.thinkive.future.dev.standard:id/rb_out_list_get_attr          ----
+2018-05-03 20:48:35,846  - INFO - ----  test003_滑动查看到能源中心行情_com.thinkive.future.dev.standard:id/rb_optional_get_attr          ----
+2018-05-03 20:48:36,043  - INFO - [CheckPoint_1]: testNYZXhangqing_ : OK
