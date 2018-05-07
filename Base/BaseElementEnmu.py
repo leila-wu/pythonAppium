@@ -7,6 +7,7 @@ class Element(object):
     find_element_by_xpath = "xpath"
     find_element_by_css_selector = "css"
     find_element_by_class_name = "class_name"
+    find_elements_by_class_name = "classes"
     CLICK = "click"
     TAP = "tap"
     ACCESSIBILITY = "accessibility"
@@ -17,6 +18,7 @@ class Element(object):
     SWIPE_UP = "swipe_up"
 
     SWIPE_LEFT = "swipe_left"
+    GET_VALUE_CHECK = "get_value_check"
     SET_VALUE = "set_value"
     GET_VALUE = "get_value"
     WAIT_TIME = 20

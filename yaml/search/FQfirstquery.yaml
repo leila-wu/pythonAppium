@@ -1,0 +1,41 @@
+testinfo:
+    - id: test010
+      title: 首次查询期货行情
+      info: 查看页面展示
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/iv_quotation_futures_search
+      find_type: id
+      operate_type: click
+      info: 点击搜索查询
+    - element_info: //android.widget.TextView[@text='上期所']
+      find_type: xpath
+      operate_type: click
+      info: 切换上期所成功
+    - element_info: //android.widget.TextView[@text='大商所']
+      find_type: xpath
+      operate_type: click
+      info: 切换大商所成功
+    - element_info: //android.widget.TextView[@text='郑商所']
+      find_type: xpath
+      operate_type: click
+      info: 切换郑商所成功
+    - element_info: //android.widget.TextView[@text='中金所']
+      find_type: xpath
+      operate_type: click
+      info: 切换中金所成功
+    - element_info: //android.widget.TextView[@text='能源中心']
+      find_type: xpath
+      operate_type: click
+      info: 切换能源中心成功
+check:
+    - element_info: //android.widget.TextView[@text='-暂无合约查询记录-']
+      find_type: xpath
+      info: 首次查询提示"-暂无合约查询记录-"
+    - element_info: //*[@resource-id='com.thinkive.future.dev.standard:id/item_txt' and @text='原油']
+      find_type: xpath
+      info: 切换到能源中心后，展示能源中心的原油合同
+

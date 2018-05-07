@@ -52,7 +52,8 @@ class OperateElement:
                     return {"result": True}
                 t = mOperate["check_time"] if mOperate.get("check_time",
                                                            "0") != "0" else be.WAIT_TIME  # 如果自定义检测时间为空，就用默认的检测等待时间
-                WebDriverWait(self.driver, t).until(lambda x: self.elements_by(mOperate))  # 操作元素是否存在 elements_by封装的查找元素方法
+                WebDriverWait(self.driver, t).until(
+                    lambda x: self.elements_by(mOperate))  # 操作元素是否存在 elements_by封装的查找元素方法
                 return {"result": True}
         except selenium.common.exceptions.TimeoutException:
             # print("查找元素" + mOperate["element_info"] + "超时")
@@ -99,7 +100,8 @@ class OperateElement:
                 be.GET_CONTENT_DESC: lambda: self.get_content_desc(mOperate),
                 be.PRESS_KEY_CODE: lambda: self.press_keycode(mOperate),
                 be.GET_ATTR: lambda: self.get_attr(mOperate),
-                be.SWIPE_LEFT: lambda: self.swipeLeft(mOperate)
+                be.SWIPE_LEFT: lambda: self.swipeLeft(mOperate),
+                be.GET_VALUE_CHECK: lambda: self.get_value_check(mOperate),
             }
             return elements[mOperate.get("operate_type")]()
         except IndexError:
@@ -262,10 +264,17 @@ class OperateElement:
         :param mOperate:
         :return:
         """
-        element_info = self.elements_by(mOperate)
         attr_key = mOperate["attr_key"]
         attr_value = mOperate["attr_value"]
-        result = element_info.get_attribute(attr_key)
+        if mOperate.get("find_type") == be.find_elements_by_id:
+            element_info = self.elements_by(mOperate)[mOperate["index"]]
+        else:
+            element_info = self.elements_by(mOperate)
+
+        if mOperate.get("is_webview", "0") == 1:
+            result = element_info.text
+        else:
+            result = element_info.get_attribute(attr_key)
 
         if result == "true":
             re_result = 1
@@ -279,30 +288,47 @@ class OperateElement:
             print("参数校验失败")
             return {"result": False, "text": "".join("参数校验失败")}
 
-
     def get_value(self, mOperate):
         """
         读取element的值,支持webview下获取值
         :param mOperate:
         :return:
         """
+        resutl = ""
         if mOperate.get("find_type") == be.find_elements_by_id:
             element_info = self.elements_by(mOperate)[mOperate["index"]]
-            if mOperate.get("is_webview", "0") == 1:
-                result = element_info.text
-            else:
-                result = element_info.get_attribute("text")
-            re_reulst = re.findall(r'[a-zA-Z\d+\u4e00-\u9fa5]', result)  # 只匹配中文，大小写，字母
-            return {"result": True, "text": "".join(re_reulst)}
+        else:
+            element_info = self.elements_by(mOperate)
 
-        element_info = self.elements_by(mOperate)
         if mOperate.get("is_webview", "0") == 1:
             result = element_info.text
         else:
             result = element_info.get_attribute("text")
 
         re_reulst = re.findall(r'[a-zA-Z\d+\u4e00-\u9fa5]', result)
+
         return {"result": True, "text": "".join(re_reulst)}
+
+    def get_value_check(self, mOperate):
+        """
+        获取元素的值判断元素存在
+        """
+        resutl = ""
+        value =  mOperate["value"]
+        if mOperate.get("find_type") == be.find_elements_by_id:
+            element_info = self.elements_by(mOperate)[mOperate["index"]]
+        else:
+            element_info = self.elements_by(mOperate)
+
+        if mOperate.get("is_webview", "0") == 1:
+            result = element_info.text
+        else:
+            result = element_info.get_attribute("text")
+
+        if value == result:
+            return {"result": True, "text": "".join(value)}
+        else:
+            return {"result": False,"text":"".join("取值校验失败")}
 
     # 封装常用的标签
     def elements_by(self, mOperate):
@@ -312,7 +338,7 @@ class OperateElement:
             be.find_element_by_xpath: lambda: self.driver.find_element_by_xpath(mOperate["element_info"]),
             be.find_element_by_css_selector: lambda: self.driver.find_element_by_css_selector(mOperate['element_info']),
             be.find_element_by_class_name: lambda: self.driver.find_element_by_class_name(mOperate['element_info']),
-            be.find_elements_by_id: lambda: self.driver.find_elements_by_id(mOperate['element_info'])
+            be.find_elements_by_id: lambda: self.driver.find_elements_by_id(mOperate['element_info']),
 
         }
         return elements[mOperate["find_type"]]()

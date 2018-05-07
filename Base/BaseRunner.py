@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from Base.BaseAppiumServer import AppiumServer
 from Base.BaseLog import myLog
 import unittest
 from appium import webdriver

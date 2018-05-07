@@ -1,4 +1,0 @@
-2018-05-02 21:49:20,259  - INFO - ----  test001_查看主力行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
-2018-05-02 21:49:24,239  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='主力行情']_click          ----
-2018-05-02 21:49:27,919  - INFO - ----  test001_查看主力行情_//android.widget.TextView[@text='主力行情']_get_attr          ----
-2018-05-02 21:50:10,058  - INFO - ----  testAHomeSwipeDown_失败重连        ----

@@ -32,35 +32,17 @@ desired_caps['appActivity']= 'com.thinkive.futureshl.activity.LauncherActivity'
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
 time.sleep(10)
-# width = driver.manage().window().getSize().width;
-# height = driver.manage().window().getSize().height;
 
 driver.find_element_by_xpath("//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]").click()
-# driver.find_element_by_xpath("//android.widget.TextView[@text='大商所']").click()
+time.sleep(3)
+driver.find_element_by_id("com.thinkive.future.dev.standard:id/iv_quotation_futures_search").click()
+a = driver.find_element_by_xpath("//*[contains(@class,'android.support.v7.app.ActionBar$Tab')][1]/android.widget.TextView").get_attribute('text')
+print(a)
+
+# driver.find_element_by_id("com.thinkive.future.dev.standard:id/search_edittext").send_keys("")
+
 time.sleep(2)
-element = driver.find_element_by_xpath("//android.widget.TextView[@text='大商所']")
-start = element.location
-x = start['x']
-y = start['y']
 
-size1 = element.size
-
-startx=size1["height"]
-endx = size1["width"] + x
-print("element的坐标x轴:"+str(x))
-print("element的坐标x轴:"+str(y))
-print("element尺寸的高:"+str(size1["width"]))
-print("endx:"+str(endx)+",y:"+str(y)+" ,startx:"+str(startx)+" ,y:"+str(y))
-driver.swipe(endx, y , startx, y)
 
 time.sleep(10)
-
-
-# el1 = driver.find_element_by_xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.widget.ImageView")
-# el1.click()
-# driver.find_element_by_id("com.smartisanos.notes:id/new_note_button").click()
-# time.sleep(5)
-# driver.find_element_by_id("com.smartisanos.notes:id/list_rtf_view").send_keys('test')
-# driver.find_element_by_id("com.smartisanos.notes:id/edit_done_button").click()
-
 driver.quit()

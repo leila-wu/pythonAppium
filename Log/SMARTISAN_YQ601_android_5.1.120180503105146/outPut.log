@@ -1,7 +1,0 @@
-2018-05-03 10:51:52,876  - INFO - ----  test002_查看夜盘行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
-2018-05-03 10:51:56,794  - INFO - ----  test002_查看夜盘行情_//android.widget.TextView[@text='夜盘行情']_           ----
-2018-05-03 10:52:17,078  - INFO - ----  testAHomeSwipeDown_失败重连        ----
-2018-05-03 10:52:27,022  - INFO - ----  test002_查看夜盘行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
-2018-05-03 10:52:30,766  - INFO - ----  test002_查看夜盘行情_//android.widget.TextView[@text='夜盘行情']_           ----
-2018-05-03 10:52:51,050  - INFO - [CheckPoint_1]: testAHomeSwipeDown_用例失败重连过一次，失败原因:执行过程中失败，请检查元素是否存在com.thinkive.future.dev.standard:id/dialog_yepan_zz, 
-执行过程中失败，请检查元素是否存在com.thinkive.future.dev.standard:id/dialog_yepan_zz, : NG

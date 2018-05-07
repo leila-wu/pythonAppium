@@ -1,0 +1,28 @@
+testinfo:
+    - id: test011
+      title: 通过选择交易所的合约品种查询
+      info: 查看页面展示
+testcase:
+    - element_info: com.thinkive.future.dev.standard:id/item_txt
+      find_type: ids
+      operate_type: get_value
+      index: 1
+      info: 获取合同的值
+    - element_info: com.thinkive.future.dev.standard:id/item_txt
+      find_type: ids
+      operate_type: click
+      index: 1
+      info: 通过点击合同查询
+check:
+    - element_info: com.thinkive.future.dev.standard:id/search_edittext
+      find_type: id
+      operate_type: get_value
+      value: 搜索框文本为点击的文本
+      info: 检查上期所
+    - element_info: com.thinkive.future.dev.standard:id/name
+      find_type: ids
+      operate_type: get_value
+      index: 1
+      value: 查询列表为第一列表
+      info: 检查上期所
+

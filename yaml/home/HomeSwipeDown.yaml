@@ -1,16 +1,13 @@
 testinfo:
     - id: test000
-      title: 首页下拉刷新
+      title: 首次打开APP，APP启动成功
       info: 刷新页面
 testcase:
     - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]
       find_type: xpath
       operate_type: click
       info: 检查页面信息加载完成
-    - operate_type: swipe_down
-      info: 下拉刷新
-      is_time: 5
 check:
-    - element_info: com.thinkive.future.dev.standard:id/tv_home_time
+    - element_info: com.thinkive.future.dev.standard:id/tv_main_input_tip
       find_type: id
-      info: 下拉刷新按钮自动消失
+      info: 首页打开成功

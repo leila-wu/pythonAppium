@@ -1,5 +1,0 @@
-2018-05-03 21:29:02,577  - INFO - ----  test000_首页下拉刷新_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]_click          ----
-2018-05-03 21:29:26,309  - INFO - ----  testAHomeSwipeDown_失败重连        ----
-2018-05-03 21:29:35,089  - INFO - ----  test000_首页下拉刷新_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]_click          ----
-2018-05-03 21:30:03,673  - INFO - [CheckPoint_1]: testAHomeSwipeDown_用例失败重连过一次，失败原因:请检查元素//*[contains(@id,'请输入密码')]是否存在，下拉刷新 操作是否成功
-请检查元素//*[contains(@id,'请输入密码')]是否存在，下拉刷新 操作是否成功: NG

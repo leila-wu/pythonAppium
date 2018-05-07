@@ -1,7 +1,0 @@
-2018-05-03 21:31:45,237  - INFO - ----  test000_首页下拉刷新_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]_click          ----
-2018-05-03 21:31:47,467  - INFO - ----  test000_首页下拉刷新_ _swipe_down          ----
-2018-05-03 21:32:08,106  - INFO - ----  testAHomeSwipeDown_失败重连        ----
-2018-05-03 21:32:17,037  - INFO - ----  test000_首页下拉刷新_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]_click          ----
-2018-05-03 21:32:38,471  - INFO - ----  test000_首页下拉刷新_ _swipe_down          ----
-2018-05-03 21:33:00,149  - INFO - [CheckPoint_1]: testAHomeSwipeDown_用例失败重连过一次，失败原因:请检查元素//*[contains(@id,'com.thinkive.future.dev.standard:id/tv_home_time')]是否存在，下拉刷新 操作是否成功
-请检查元素//*[contains(@id,'com.thinkive.future.dev.standard:id/tv_home_time')]是否存在，下拉刷新 操作是否成功: NG

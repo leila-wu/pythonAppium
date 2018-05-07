@@ -1,4 +1,0 @@
-2018-04-19 14:11:44,914  - INFO - ----  testopen_futures_quotes_失败重连        ----
-2018-04-19 14:11:52,254  - INFO - ----  test002_查看主力行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
-2018-04-19 14:11:56,411  - INFO - ----  test002_查看主力行情_//android.widget.TextView[@text='主力行情']_get_value          ----
-2018-04-19 14:11:57,077  - INFO - [CheckPoint_1]: testopen_futures_quotes_用例失败重连过一次，失败原因:执行过程中失败，请检查元素是否存在//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2], : OK

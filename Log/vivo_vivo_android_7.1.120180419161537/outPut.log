@@ -1,5 +1,0 @@
-2018-04-19 16:15:42,657  - INFO - ----  test002_查看主力行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
-2018-04-19 16:15:44,588  - INFO - ----  test002_查看主力行情_//android.widget.TextView[@text='大商所']_           ----
-2018-04-19 16:15:45,343  - INFO - ----  test002_查看主力行情_//android.widget.TextView[@text='夜盘行情']_           ----
-2018-04-19 16:15:46,075  - INFO - ----  test002_查看主力行情_//android.widget.TextView[@text='上期所']_           ----
-2018-04-19 16:15:46,193  - INFO - [CheckPoint_1]: testopen_futures_quotes_ : OK

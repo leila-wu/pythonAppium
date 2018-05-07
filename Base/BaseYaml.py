@@ -20,7 +20,7 @@ if __name__ == '__main__':
         os.path.join(os.path.dirname(__file__), p)
     )
     a = True
-    t = getYam(PATH("../yaml/futures_quotes/zhuliangqing.yaml"))
+    t = getYam(PATH("../yaml/quntation_future_detial/FQfirstquery.yaml"))
     print(t)
     if t["check"][1].get("attr_value") == a:
         print('aaa')

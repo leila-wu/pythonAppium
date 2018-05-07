@@ -105,7 +105,7 @@ class PagesObjects:
 
         if self.isOperate:
             for item in self.testcheck:
-                if kwargs.get("toast", "0") != "0":
+                if item.get("toast", "0") != "0":
                     resp = self.operateElement.toast(item["element_info"], testInfo=self.testInfo,
                                                      logTest=self.logTest)
                 else:
