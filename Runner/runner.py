@@ -76,8 +76,8 @@ def runnerPool(getDevices):
 def runnerCaseApp(devices):
     starttime = datetime.now()
     suite = unittest.TestSuite()
-    suite.addTest(ParametrizedTestCase.parametrize(HomeTest, param=devices))
-    suite.addTest(ParametrizedTestCase.parametrize(HangQingList, param=devices))
+    # suite.addTest(ParametrizedTestCase.parametrize(HomeTest, param=devices))
+    # suite.addTest(ParametrizedTestCase.parametrize(HangQingList, param=devices))
     suite.addTest(ParametrizedTestCase.parametrize(HangQingSearch, param=devices))
     unittest.TextTestRunner(verbosity=2).run(suite)
     endtime = datetime.now()

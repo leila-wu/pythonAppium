@@ -3,13 +3,25 @@ testinfo:
       title: 通过选择交易所的合约品种查询
       info: 查看页面展示
 testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/iv_quotation_futures_search
+      find_type: id
+      operate_type: click
+      info: 点击搜索查询
+    - element_info: //android.widget.TextView[@text='能源中心']
+      find_type: xpath
+      operate_type: click
+      info: 切换能源中心成功
     - element_info: com.thinkive.future.dev.standard:id/item_txt
-      find_type: ids
+      find_type: id
       operate_type: get_value
       index: 1
       info: 获取合同的值
     - element_info: com.thinkive.future.dev.standard:id/item_txt
-      find_type: ids
+      find_type: id
       operate_type: click
       index: 1
       info: 通过点击合同查询
@@ -17,12 +29,19 @@ check:
     - element_info: com.thinkive.future.dev.standard:id/search_edittext
       find_type: id
       operate_type: get_value
-      value: 搜索框文本为点击的文本
-      info: 检查上期所
+      info: 检查文本框的内容与选中内容一致
     - element_info: com.thinkive.future.dev.standard:id/name
       find_type: ids
-      operate_type: get_value
       index: 1
-      value: 查询列表为第一列表
-      info: 检查上期所
+      operate_type: get_value
+      info: 检查查询结果文本包含查询条件
+    - element_info: com.thinkive.future.dev.standard:id/search_add
+      find_type: ids
+      index: 1
+      info: 查询未加入自选
+    - element_info: com.thinkive.future.dev.standard:id/hq_btn_cancel
+      find_type: id
+      operate_type: click
+      info: 取消查询
+
 

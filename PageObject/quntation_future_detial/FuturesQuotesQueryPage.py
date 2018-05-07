@@ -87,12 +87,12 @@ class FuturesQuotesQueryPage:
                     print(msg)
                     self.testInfo[0]["msg"] = msg
                     result = False
-                if resp["text"] in self.get_value:  # 删除后数据对比
-                    msg = "删除数据失败,删除前数据为：" + ".".join(self.get_value) + "当前获取的数据为：" + resp["text"]
+                if resp["text"] in self.get_value:
+                    msg = "当前获取的数据为：" + resp["text"]
                     self.msg = m_s_g + msg
                     print(msg)
                     self.testInfo[0]["msg"] = msg
-                    break
+                    return {result:True,"text":self.get_value}
         else:
             result = False
         return result

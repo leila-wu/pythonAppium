@@ -25,7 +25,7 @@ class HangQingSearch(ParametrizedTestCase):
         page.operate()
         page.checkPoint()
 
-    # 看夜盘行情
+    # 通过选择查询
     def testBSearchForChose(self):
         app = {}
         app["logTest"] = self.logTest
@@ -33,7 +33,31 @@ class HangQingSearch(ParametrizedTestCase):
         app["path"] = PATH("../yaml/search/SearchForChose.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
-        page = BasePage(app)
+        page = FuturesQuotesQueryPage(app)
+        page.operate()
+        page.checkPoint()
+
+    # 点击查询结果
+    def testBSearchForChose(self):
+        app = {}
+        app["logTest"] = self.logTest
+        app["driver"] = self.driver
+        app["path"] = PATH("../yaml/search/SearchForChose.yaml")
+        app["device"] = self.devicesName
+        app["caseName"] = sys._getframe().f_code.co_name
+        page = FuturesQuotesQueryPage(app)
+        page.operate()
+        page.checkPoint()
+
+    # 输入字母查询合同，并且查看合同详情
+    def testBSearchForChose(self):
+        app = {}
+        app["logTest"] = self.logTest
+        app["driver"] = self.driver
+        app["path"] = PATH("../yaml/search/SearchTODetial.yaml")
+        app["device"] = self.devicesName
+        app["caseName"] = sys._getframe().f_code.co_name
+        page = FuturesQuotesQueryPage(app)
         page.operate()
         page.checkPoint()
 
