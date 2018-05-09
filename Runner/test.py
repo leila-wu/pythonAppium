@@ -1,9 +1,9 @@
 #coding=utf-8
 
-a = 'test'
-b = 'test'
+a = {'result': 'test'}
+b = {'result': 'test','text': 'z'}
 
-if a == b:
+if 'text' in b.keys():
     print('a')
 else:
     print('b')

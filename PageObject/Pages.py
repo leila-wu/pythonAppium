@@ -64,8 +64,8 @@ class PagesObjects:
 
         return True
 
-    def checkPoint(self, kwargs={}):
-        result = self.check(kwargs)
+    def checkPoint(self):
+        result = self.check()
         # print(self.driver.page_source)
         if result is not True and be.RE_CONNECT:
             self.msg = "用例失败重连过一次，失败原因:" + self.testInfo[0]["msg"]
@@ -76,7 +76,7 @@ class PagesObjects:
             self.get_value = []
             self.is_get = False
             self.operate()
-            result = self.check(kwargs)
+            result = self.check()
             self.testInfo[0]["msg"] = self.msg
         self.operateElement.switchToNative()
 
@@ -96,7 +96,7 @@ class PagesObjects:
     check_point: 自定义检查结果    
     '''
 
-    def check(self, kwargs):
+    def check(self):
         result = True
         m_s_g = self.msg + "\n" if self.msg != "" else ""
         # 如果有重跑机制，成功后会默认把日志传进来
@@ -111,35 +111,45 @@ class PagesObjects:
                 else:
                     resp = self.operateElement.operate(item, self.testInfo, self.logTest, self.device)
 
-                if kwargs.get("check", "0") == "0" and not resp["result"]:
+                # 一般情况，当元素不存在时失败
+                if item.get("checking","0") == "0" and not resp["result"]:
                     m = "请检查元素" + item["element_info"] + "是否存在，" + item["info"] + " 操作是否成功"
                     self.msg = m_s_g + m
                     print(m)
                     self.testInfo[0]["msg"] = m
                     result = False
                     break
-                if kwargs.get("check", "0") == "contrary" and resp["result"]:
+                # 当元素不存在时，用例正确
+                if item.get("checking","0") == "contrary" and not resp["result"]:
                     m = "请检查%s" % item["info"] + "是否成功"
                     self.msg = m_s_g + m
                     print(self.msg)
                     self.testInfo[0]["msg"] = m
-                    result = False
+                    result = True
                     break
-                if kwargs.get("check", "0") == "contrary_getval" and self.is_get and resp["result"] in self.get_value:
-                    m = "对比数据失败，当前取到到数据为:%s,历史取到数据为:%s" % resp["text"] % self.get_value
-                    self.msg = m_s_g + m
-                    print(m)
-                    self.testInfo[0]["msg"] = m
-                    result = False
-                    break
-                if kwargs.get("check",
-                              "0") == "0" and self.is_get and resp["text"] not in self.get_value:  # 历史数据和实际数据对比
-                    result = False
-                    m = "对比数据失败,获取历史数据为：" + ".".join(self.get_value) + ",当前获取的数据为：" + resp["text"]
-                    self.msg = m_s_g + m
-                    print(m)
-                    self.testInfo[0]["msg"] = m
-                    break
+                # 判断结果是否传值
+                if 'text' in resp.keys():
+                    # 如果操作只取了一条历史数据，验证查询条件得到查询结果
+                    if len(self.get_value) == 1 and self.get_value[0] in resp["text"]:
+                        m = "数据对比成功，当前获取的数据为：" + resp["text"]
+                        self.msg = m_s_g + m
+                        print(m)
+                        self.testInfo[0]["msg"] = m
+                    # 历史数据和实际数据对比成功，记录日志
+                    elif self.is_get and resp["result"] in self.get_value:  # 历史数据和实际数据对比
+                        msg = "数据对比成功，当前获取的数据为：" + resp["text"]
+                        self.msg = m_s_g + m
+                        print(m)
+                        self.testInfo[0]["msg"] = m
+                    # 历史数据和实际数据对比失败，返回false
+                    elif self.is_get and resp["result"] not in self.get_value:
+                        result = False
+                        m = "对比数据失败,获取历史数据为：" + ".".join(self.get_value) + ",当前获取的数据为：" + resp["text"]
+                        self.msg = m_s_g + m
+                        print(m)
+                        self.testInfo[0]["msg"] = m
+                        break
+
         else:
             result = False
         return result

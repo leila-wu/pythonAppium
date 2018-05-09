@@ -1,6 +1,6 @@
 testinfo:
-    - id: test014
-      title:  输入名称查询合同，并且检查系查询记录展示在最上方
+    - id: test016
+      title:  通过查询移除自选
       info: 查看页面展示
 testcase:
     - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
@@ -11,37 +11,37 @@ testcase:
       find_type: id
       operate_type: click
       info: 点击搜索查询
-    - element_info: com.thinkive.future.dev.standard:id/search_edittext
-      find_type: id
-      operate_type: set_value
-      msg: 淀粉指数
-      info: 输入淀粉指数合同名称
-    - element_info: com.thinkive.future.dev.standard:id/name
-      find_type: id
-      operate_type: get_value
-      index: 1
-      info: 获取合同的值
-    - element_info: com.thinkive.future.dev.standard:id/name
+    - element_info: com.thinkive.future.dev.standard:id/item_txt
       find_type: id
       operate_type: click
-      index: l
-      info: 通过查询结果查看合同详情
-    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
-      find_type: id
-      index: 1
-      operate_type: click
-      info: 返回查询列表
-    - element_info: com.thinkive.future.dev.standard:id/search_imageview_clean
-      find_type: id
-      operate_type: click
-      info: 删除查询信息
-check:
-    - element_info: com.thinkive.future.dev.standard:id/75656
-      find_type: ids
       index: 0
+      info: 选择第一个查询条件查询合同
+    - element_info: com.thinkive.future.dev.standard:id/name
+      find_type: id
       operate_type: get_value
-      info: 检查历史查询记录正确
+      index: 0
+      info: 取合同的值
+    - element_info: com.thinkive.future.dev.standard:id/search_isaddedTV
+      find_type: id
+      operate_type: click
+      index: 0
+      info: 通过搜索结果移除我的自选
+    - element_info: com.thinkive.future.dev.standard:id/search_add
+      find_type: id
+      index: 0
+      info: 添加成功后，判断元素内容修改
     - element_info: com.thinkive.future.dev.standard:id/hq_btn_cancel
       find_type: id
       operate_type: click
       info: 取消查询
+    - element_info: com.thinkive.future.dev.standard:id/rb_optional
+      find_type: id
+      operate_type: click
+      info: 切换自选列表
+check:
+    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
+      find_type: ids
+      index: 0
+      operate_type: get_value
+      checking: contrary
+      info: 验证移除后没有自选信息

@@ -1,3 +1,4 @@
+# -- coding=gb18030 --
 #coding=utf-8
 
 from appium import webdriver
@@ -5,29 +6,33 @@ import os
 import re
 import time
 
-# è¯»å–è®¾å¤‡ id
-readDeviceId = list(os.popen('adb devices').readlines())
-# æ­£åˆ™è¡¨è¾¾å¼åŒ¹é…å‡º id ä¿¡æ¯
-deviceId = re.findall(r'^\w*\b', readDeviceId[1])[0]
-# è¯»å–è®¾å¤‡ç³»ç»Ÿç‰ˆæœ¬å·
+# ¶ÁÈ¡Éè±¸ id
+# readDeviceId = list(os.popen('adb devices').readlines())
+# # ÕıÔò±í´ïÊ½Æ¥Åä³ö id ĞÅÏ¢
+# deviceId = re.findall(r'^\w*\b', readDeviceId[1])[0]
+# ¶ÁÈ¡Éè±¸ÏµÍ³°æ±¾ºÅ
+
+
 deviceAndroidVersion = list(os.popen('adb shell getprop ro.build.version.release').readlines())
 deviceVersion = re.findall(r'^\w*\b', deviceAndroidVersion[0])[0]
-apk_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))  # è·å–å½“å‰é¡¹ç›®çš„æ ¹è·¯å¾„
+apk_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))  # »ñÈ¡µ±Ç°ÏîÄ¿µÄ¸ùÂ·¾¶
 desired_caps={}
-#ä½¿ç”¨çš„ç§»åŠ¨å¹³å°
+#Ê¹ÓÃµÄÒÆ¶¯Æ½Ì¨
 desired_caps['platformName']='Android'
-#æŒ‡å®šå¹³å°çš„ç‰ˆæœ¬
+#Ö¸¶¨Æ½Ì¨µÄ°æ±¾
 desired_caps['platformVersion']=deviceVersion
-#è®¾å¤‡åç§°
-desired_caps['deviceName']=deviceId
-#å¾…æµ‹è¯•çš„appçš„Java package  from appium import webdriver
+#Éè±¸Ãû³Æ
+desired_caps['deviceName']="192.168.51.101:5555"
+#´ı²âÊÔµÄappµÄJava package  from appium import webdriver
 desired_caps['appPackage']= 'com.thinkive.future.dev.standard'
-#å¾…æµ‹è¯•çš„appçš„Activityåå­— '.NotesActivity'
+#´ı²âÊÔµÄappµÄActivityÃû×Ö '.NotesActivity'
 desired_caps['appActivity']= 'com.thinkive.futureshl.activity.LauncherActivity'
+desired_caps['unicodeKeyboard'] = True
+desired_caps['resetKeyboard'] = True
 # desired_caps['noReset'] = True
 # desired_caps['autoAcceptAlerts'] = Ture
 # desired_caps['app'] = apk_path + '\\app\\test.apk'
-#automationName ä½¿ç”¨å“ªç§è‡ªåŠ¨åŒ–å¼•æ“ã€‚appiumï¼ˆé»˜è®¤ï¼‰è¿˜æ˜¯Selendroidã€‚
+#automationName Ê¹ÓÃÄÄÖÖ×Ô¶¯»¯ÒıÇæ¡£appium£¨Ä¬ÈÏ£©»¹ÊÇSelendroid¡£
 
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
@@ -36,13 +41,12 @@ time.sleep(10)
 driver.find_element_by_xpath("//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]").click()
 time.sleep(3)
 driver.find_element_by_id("com.thinkive.future.dev.standard:id/iv_quotation_futures_search").click()
-a = driver.find_element_by_xpath("//*[contains(@class,'android.support.v7.app.ActionBar$Tab')][1]/android.widget.TextView").get_attribute('text')
-print(a)
-
-# driver.find_element_by_id("com.thinkive.future.dev.standard:id/search_edittext").send_keys("")
-
-time.sleep(2)
-
-
+a = driver.find_element_by_id("com.thinkive.future.dev.standard:id/search_edittext")
+a.click()
+a.send_keys('test@@@')
+a.clear()
+st = 'ÖĞÎÄ'
+a.send_keys(u'ÖĞÎÄ')
 time.sleep(10)
 driver.quit()
+os.popen("taskkill /f /im node.exe")
