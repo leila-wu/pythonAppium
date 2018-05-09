@@ -1,0 +1,25 @@
+testinfo:
+    - id: test017
+      title:  清空查询列表
+      info: 查看页面展示
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/iv_quotation_futures_search
+      find_type: id
+      operate_type: click
+      info: 点击搜索查询
+    - element_info: com.thinkive.future.dev.standard:id/tv_clear_history
+      find_type: id
+      operate_type: click
+      info: 点击清空合同记录
+check:
+    - element_info: //android.widget.TextView[@text='-暂无合约查询记录-']
+      find_type: xpath
+      info: 清空后提示"-暂无合约查询记录-"
+    - element_info: com.thinkive.future.dev.standard:id/hq_btn_cancel
+      find_type: id
+      operate_type: click
+      info: 取消查询
