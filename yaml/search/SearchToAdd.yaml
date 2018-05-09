@@ -1,0 +1,46 @@
+testinfo:
+    - id: test016
+      title:  通过查询加入自选
+      info: 查看页面展示
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/iv_quotation_futures_search
+      find_type: id
+      operate_type: click
+      info: 点击搜索查询
+    - element_info: com.thinkive.future.dev.standard:id/item_txt
+      find_type: id
+      operate_type: click
+      index: 0
+      info: 选择第一个查询条件查询合同
+    - element_info: com.thinkive.future.dev.standard:id/name
+      find_type: id
+      operate_type: get_value
+      index: 0
+      info: 取合同的值
+    - element_info: com.thinkive.future.dev.standard:id/search_add
+      find_type: id
+      operate_type: click
+      index: 0
+      info: 通过搜索结果添加到我的自选
+    - element_info: com.thinkive.future.dev.standard:id/search_isaddedTV
+      find_type: id
+      index: 0
+      info: 添加成功后，判断元素内容修改
+    - element_info: com.thinkive.future.dev.standard:id/hq_btn_cancel
+      find_type: id
+      operate_type: click
+      info: 取消查询
+    - element_info: com.thinkive.future.dev.standard:id/rb_optional
+      find_type: id
+      operate_type: click
+      info: 切换自选列表
+check:
+    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
+      find_type: ids
+      index: 0
+      operate_type: get_value
+      info: 检查最上方的合约名称与刚刚添加的一致

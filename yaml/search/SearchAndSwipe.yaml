@@ -1,0 +1,32 @@
+testinfo:
+    - id: test015
+      title:  滑动查询结果的合同列表，检查翻页功能
+      info: 查看页面展示
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/iv_quotation_futures_search
+      find_type: id
+      operate_type: click
+      info: 点击搜索查询
+    - element_info: com.thinkive.future.dev.standard:id/search_edittext
+      find_type: id
+      operate_type: set_value
+      msg: mh
+      info: 输入简单合同条件
+    - element_info: com.thinkive.future.dev.standard:id/name
+      find_type: ids
+      operate_type: swipe_up
+      index: 9
+      info: 选择底部合同上滑
+check:
+    - element_info: //*[@resource-id='com.thinkive.future.dev.standard:id/parent_title' and @text='内盘']
+      find_type: id
+      checking: contrary
+      info: 检查历史查询记录正确
+    - element_info: com.thinkive.future.dev.standard:id/hq_btn_cancel
+      find_type: id
+      operate_type: click
+      info: 取消查询

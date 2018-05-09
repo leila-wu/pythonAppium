@@ -1,0 +1,47 @@
+testinfo:
+    - id: test012
+      title:  输入字母查询合同，并且查看合同详情
+      info: 查看页面展示
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/iv_quotation_futures_search
+      find_type: id
+      operate_type: click
+      info: 点击搜索查询
+    - element_info: com.thinkive.future.dev.standard:id/search_edittext
+      find_type: id
+      operate_type: set_value
+      msg: mh
+      info: 输入mh查询合同
+    - element_info: com.thinkive.future.dev.standard:id/name
+      find_type: id
+      operate_type: get_value
+      index: 1
+      info: 获取合同的值
+    - element_info: com.thinkive.future.dev.standard:id/name
+      find_type: id
+      operate_type: click
+      index: 1
+      info: 通过查询结果查看合同详情
+check:
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_title
+      find_type: id
+      operate_type: get_value
+      info: 获取合同详情中的合同名称
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
+      find_type: id
+      index: 1
+      operate_type: click
+      info: 返回查询列表
+    - element_info: com.thinkive.future.dev.standard:id/name
+      find_type: id
+      operate_type: get_value
+      index: 1
+      info: 检查返回后保持查询结果
+    - element_info: com.thinkive.future.dev.standard:id/hq_btn_cancel
+      find_type: id
+      operate_type: click
+      info: 取消查询
