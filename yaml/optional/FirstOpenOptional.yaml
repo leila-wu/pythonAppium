@@ -1,0 +1,48 @@
+testinfo:
+    - id: test020
+      title: 首次进入自选页面查看
+      info: 查看页面展示
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/rb_optional
+      find_type: id
+      operate_type: click
+      info: 进入自选页面
+    - element_info: //*[@resource-id='com.thinkive.future.dev.standard:id/alllist_activity_itemhead']/android.widget.LinearLayout/android.widget.RelativeLayout[0]/android.widget.TextView
+      find_type: xpath
+      operate_type: get_value_check
+      value: 最新
+      info: 进入自选页面
+    - element_info: //*[@resource-id='com.thinkive.future.dev.standard:id/alllist_activity_itemhead']/android.widget.LinearLayout/android.widget.RelativeLayout[1]/android.widget.TextView
+      find_type: xpath
+      operate_type: get_value_check
+      value: 涨幅
+      info: 进入自选页面
+    - element_info: //*[@resource-id='com.thinkive.future.dev.standard:id/alllist_activity_itemhead']/android.widget.LinearLayout/android.widget.RelativeLayout[2]/android.widget.TextView
+      find_type: xpath
+      operate_type: get_value_check
+      value: 成交量
+      info: 进入自选页面
+check:
+    - element_info: com.thinkive.future.dev.standard:id/iv_optional_add
+      find_type: id
+      info: 展示添加图片
+    - element_info: com.thinkive.future.dev.standard:id/textView3
+      find_type: id
+      info: 展示添加图片控件
+    - element_info: com.thinkive.future.dev.standard:id/rb_optional
+      find_type: id
+      operate_type: get_attr
+      attr_key: checked
+      attr_value: 1
+      info: 自选被选中
+    - element_info: com.thinkive.future.dev.standard:id/rb_out_list
+      find_type: id
+      operate_type: get_attr
+      attr_key: checked
+      attr_value: 0
+      info: 外盘未选中
+

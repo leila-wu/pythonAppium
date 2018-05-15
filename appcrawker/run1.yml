@@ -1,0 +1,79 @@
+---
+pluginList:
+- "com.testerhome.appcrawler.plugin.TagLimitPlugin"
+logLevel: "TRACE"
+saveScreen: true
+reportTitle: ""
+screenshotTimeout: 20
+currentDriver: "Android"
+tagLimitMax: 3
+tagLimit: []
+showCancel: false
+maxTime: 10800
+resultDir: "Android_20180510103345"
+capability:
+  newCommandTimeout: 120
+  launchTimeout: 120000
+  platformVersion: ""
+  platformName: ""
+  autoWebview: "false"
+  autoLaunch: "true"
+  noReset: "false"
+androidCapability:
+  deviceName: "demo"
+  appPackage: "com.thinkive.future.dev.standard"
+  appActivity: "com.thinkive.futureshl.activity.LauncherActivity"
+  app: ""
+  appium: "http://127.0.0.1:4723/wd/hub"
+iosCapability:
+  bundleId: ""
+  autoAcceptAlerts: "true"
+  platformVersion: "9.2"
+  deviceName: "iPhone 6"
+xpathAttributes:
+- "name"
+- "label"
+- "value"
+- "resource-id"
+- "content-desc"
+- "index"
+- "text"
+defineUrl: []
+baseUrl: []
+appWhiteList: []
+maxDepth: 6
+headFirst: true
+enterWebView: true
+urlBlackList: []
+urlWhiteList: []
+defaultBackAction: []
+backButton: []
+firstList: []
+selectedList:
+- "//*[@clickable='true' and contains(name(), 'Text')]"
+- "//*[@clickable='true' and contains(name(), 'Image')]"
+- "//*[@clickable='true' and contains(name(), 'Button')]"
+- "//*[@clickable='true' and contains(name(), 'CheckBox')]"
+- "//*[@clickable='true' and contains(name(), 'Layout')]//android.widget.TextView"
+lastList: []
+blackList:
+- ".*[0-9]{2}.*"
+- "//*[contains(@resource-id,'tv_more')]"
+- "//*[contains(@resource-id,'iv_mainpage_notice')]"
+- "//*[contains(@resource-id,'iv_xsrs')]"
+- "//*[contains(@resource-id,'iv_pxxx')]"
+- "//*[contains(@resource-id,'iv_user')]"
+- "//*[contains(@resource-id,'ed_no')]"
+- "//*[contains(@resource-id,'bt_mlogin')]"
+- "//*[contains(@resource-id,'btn_wykh')]"
+- "//*[contains(@resource-id,'tv_login_tip')]"
+- "//*[contains(@resource-id,'tv_loginll_look_out_icon_tip')]"
+- "//*[contains(@text,'我要开户')]"
+triggerActions: []
+autoCrawl: true
+asserts: []
+beforeElementAction: []
+afterElementAction: []
+afterUrlFinished: []
+monkeyEvents: []
+monkeyRunTimeSeconds: 30

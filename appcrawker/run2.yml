@@ -1,0 +1,96 @@
+---
+pluginList:
+- "com.testerhome.appcrawler.plugin.TagLimitPlugin"
+logLevel: "TRACE"
+saveScreen: true
+reportTitle: "期货大师"
+screenshotTimeout: 20
+currentDriver: "Android"
+tagLimitMax: 4
+tagLimit: []
+showCancel: false
+maxTime: 10800
+resultDir: "Android_20180510103345"
+capability:
+  newCommandTimeout: 120
+  launchTimeout: 120000
+  appium: "http://127.0.0.1:4723/wd/hub"
+  platformVersion: ""
+  platformName: ""
+  autoWebview: "false"
+  autoLaunch: "true"
+  noReset: "false"
+androidCapability:
+  deviceName: "demo"
+  appPackage: "com.thinkive.future.dev.standard"
+  appActivity: "com.thinkive.futureshl.activity.LauncherActivity"
+  app: ""
+  automationName: uiautomator2
+iosCapability:
+  bundleId: ""
+  autoAcceptAlerts: "true"
+  platformVersion: "9.2"
+  deviceName: "iPhone 6"
+xpathAttributes:
+- "name"
+- "label"
+- "value"
+- "resource-id"
+- "content-desc"
+- "index"
+- "text"
+defineUrl: []
+baseUrl: []
+appWhiteList: []
+maxDepth: 8
+headFirst: true
+enterWebView: true
+urlBlackList: []
+urlWhiteList: []
+defaultBackAction: []
+backButton: []
+firstList: 
+- 最新
+- 涨幅
+- 成交量
+- 夜盘行情
+- 大商所
+selectedList:
+- "//*[contains(name(), 'Layout')]"
+- "//*[contains(name(), 'Text')]"
+- "//*[@clickable='true' and contains(name(), 'Image')]"
+- "//*[@clickable='true' and contains(name(), 'Button')]"
+- "//*[@clickable='true' and contains(name(), 'CheckBox')]"
+lastList: 
+- "//*[contains(@resource-id, 'rb_optional')]"
+- "//*[contains(@resource-id, 'rb_out_list')]"
+blackList:
+- "//*[contains(@resource-id, 'rl_title')]//*"
+- "//*[contains(@resource-id, 'rl_title')]"
+- "//*[contains(@resource-id, 'ed_no')]"
+- "//*[contains(@resource-id, 'bt_mlogin')]"
+- "//*[contains(@resource-id, 'iv_mainpage_notice')]"
+- "//*[contains(@resource-id, 'tv_more')]"
+- "//*[contains(@resource-id, 'iv_xsrs')]"
+- "//*[contains(@resource-id, 'iv_pxxx')]"
+- "//*[contains(@resource-id, 'btn_wykh')]"
+- "//*[contains(@resource-id, 'll_hd')]"
+- "//*[contains(@resource-id, 'll_hd')]//*"
+- "//*[contains(@resource-id, 'tv_login_tip')]"
+- "//*[contains(@resource-id, 'tv_loginll_look_out_icon_tip')]"
+triggerActions: 
+- xpath: "//*[contains(@resource-id, 'fragment_zhuli_futures_header')]"
+  action: driver.swipe(0.9,0.5,0.1,0.5)
+  times: 1
+- xpath: "//*[contains(@resource-id, 'iv_quotation_futures_search')]"
+  times: 1
+autoCrawl: true
+asserts: []
+testcase:
+  name: "login"
+  steps: []
+beforeElementAction: []
+afterElementAction: []
+afterUrlFinished: []
+monkeyEvents: []
+monkeyRunTimeSeconds: 30
