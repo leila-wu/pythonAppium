@@ -59,10 +59,10 @@ firstList:
 - ".*设置*."
 - ".*站点*."
 selectedList:
-- //*[@clickable="true"]//android.widget.TextView[string-length(@text)>0 and string-length(@text)<20]
-- //android.widget.EditText
-- //*[contains(name(), 'Button')]
-- //*[contains(name(), 'Image')]
+- "//*[@clickable='true']//android.widget.TextView[string-length(@text)>0 and string-length(@text)<20]"
+- "//android.widget.EditText"
+- "//*[contains(name(), 'Button')]"
+- "//*[contains(name(), 'Image')]"
 - "//*[@clickable='true' and contains(name(), 'CheckBox')]"
 lastList: 
 - "自选"
@@ -72,62 +72,85 @@ lastList:
 - ".*退出交易账号*."
 - ".*保存参数*."
 - ".*恢复默认*."
-- //*[contains(@resource-id, 'indicator')]//*"
+- "//*[contains(@resource-id, 'indicator')]//*"
 blackList:
-- "//*[contains(@resource-id,'rl_title')]//*"
-- "//*[contains(@resource-id,'iv_mainpage_notice')]"
-- "//*[contains(@resource-id,'iv_xsrs')]"
-- "//*[contains(@resource-id,'iv_pxxx')]"
-- "//*[contains(@resource-id,'iv_user')]"
+- "//*[@resource-id='com.thinkive.future.dev.standard:id/rl_title']//*"
+- "//*[contains(@resource-id, 'iv_mainpage_notice')]"
+- "//*[contains(@resource-id, 'iv_xsrs')]"
+- "//*[contains(@resource-id, 'iv_pxxx')]"
+- "//*[contains(@resource-id, 'iv_user')]"
 - "//*[contains(@resource-id, 'btn_wykh')]"
 - "//*[contains(@resource-id, 'tv_login_tip')]"
 - "//*[contains(@resource-id, 'll_hd')]//*"
 - "//*[contains(@resource-id, 'ed_no')]"
 - "//*[contains(@resource-id, 'bt_mlogin')]"
 - "//*[contains(@resource-id, 'rl_mainpage_notice')]//*"
-- "//*[contains(@resource-id,'viewpager_menu')]//*"
-- "//*[contains(@resource-id,'zoushi_head_Rl')]//*"
-- "//*[contains(@resource-id,'item_all_listactivity_itemView')]//*"
+- "//*[contains(@resource-id, 'viewpager_menu')]//*"
+- "//*[contains(@resource-id, 'zoushi_head_Rl')]//*"
+- "//*[contains(@resource-id, 'item_all_listactivity_itemView')]//*"
 - ".*开户.*"
+- "^-[0-9].*"
+- "^[0-9].*"
+- "^[a-zA-Z].*[0-9]$"
+- ".*退出.*"
+- ".*修改.*"
+- ".*权益.*"
+- "风险度"
+- ".*可用.*"
+- ".*泰国.*"
+- ".*台湾.*"
+- ".*韩国.*"
+- ".*泛欧.*"
+- ".*迪拜.*"
+- ".*伦敦.*"
+- ".*马来西亚.*"
+- ".*纽约.*"
+- ".*欧洲.*"
+- ".*我的.*"
 triggerActions: 
-- xpath: "//*[@resource-id='com.thinkive.future.dev.standard/trade_login_account']"
-  action: "05197"
-  times: 1
-- xpath: "//*[@resource-id='com.thinkive.future.dev.standard/trade_login_account']"
-  times: 1
-- xpath: "//*[@resource-id='com.thinkive.future.dev.standard/trade_login_pd']"
-  action: "12345678a"
-  times: 1
-- xpath: "//*[@resource-id='com.thinkive.future.dev.standard/trade_login_pd']"
-  times: 1
-- xpath: "//*[@resource-id='com.thinkive.future.dev.standard/trade_login_btn']"
-  action: click
+- xpath: "//*[contains(@resource-id, 'more_listpop_item_text') and contains(@text, '明细')]"
   times: 2
-- xpath: "//*[@resource-id='com.thinkive.future.dev.standard/trade_login_account']"
-  action: "05197"
-  times: 1
-- xpath: "//*[contains(name(), 'EditText') and contains(@name, '交易账号')]"
-  action: "05197"
-  times: 1
-- xpath: "//*[contains(name(), 'EditText') and contains(@password, 'true')]"
-  action: "12345678a"
-  times: 1
-- xpath: "//*[contains(resource-id, 'counterSiteSelect_name') and contains(@name, '首次登录(8080)')]"
+- xpath: "//*[contains(@resource-id, 'more_listpop_item_text') and contains(@text, '设置')]"
+  times: 2
+- xpath: "//*[contains(@resource-id, 'more_listpop_item_text') and contains(@text, 'F10')]"
+  times: 2
+- xpath: "//*[contains(@resource-id, 'quntation_future_detial_wrap_more')]"
+  times: 4
+- xpath: "//*[contains(@resource-id, 'ft_header_setting')]"
+  times: 10
+- xpath: "//*[contains(@resource-id, 'search_edittext')]"
+  action: mh
+  times: 2
+- xpath: "//*[contains(@resource-id, 'key3_instrument_name')]"
+  action: sr
   times: 2
 - xpath: "^确定$"
-- xpath: ".*风险*."
+- xpath: ".*取消*."
+- xpath: ".*确认$"
 autoCrawl: true
 asserts: []
-tagLimit:
-- xpath: "//*[contains(@resource-id, 'item_alllistactivity_nameTv')]"
-  count: 3
-- xpath: "//*[contains(@resource-id, 'item_alllistactivity_codeTv')]"
-  count: 3
-- xpath: "//*[contains(@resource-id, 'name')]"
-  count: 2
-- xpath: "//*[contains(@resource-id, 'code')]"
-  count: 2
-- xpath: //*[../*[@selected='true']]
-  count: 12
-- xpath: //*[../../*/*[@selected='true']]
-  count: 12
+tagLimit: []
+testcase:
+  name: demo1
+  steps:
+  - when:
+      xpath: "//*[contains(@resource-id, 'btn_neg') and contains(@text, '稍候再说')]"
+	  action: click
+    then:
+      xpath: "//*[contains(@resource-id, 'item_txt') and contains(@text, '提示')]"
+  - xpath: //*
+    action: driver.swipe(0.5, 0.8, 0.5, 0.2)
+  - xpath: "//*[contains(@resource-id, 'item_text') and contains(@text, '交易')]"
+    action: click
+  - xpath: "//*[contains(@resource-id, 'tradeHome_header01') and contains(@text, '下单')]"
+    action: click
+  - xpath: "//*[contains(@resource-id, 'ft_header_site_select') and contains(@text, '站点')]"
+    action: click
+  - xpath: "//*[contains(@resource-id, 'counterSiteSelect_name') and contains(@text, '首次登录(8080)')]"
+    action: click
+  - xpath: "//*[@resource-id='com.thinkive.future.dev.standard:id/trade_login_account']"
+    action: "05197"
+  - xpath: "//*[@password='true' and contains(@resource-id, 'trade_login_pd')]"
+    action: "12345678a"
+  - xpath: "//*[contains(@resource-id, 'trade_login_btn') and contains(@text, '登录')]"
+    action: click
