@@ -8,7 +8,7 @@ def getYam(path):
     try:
         with open(path, encoding='utf-8') as f:
             x = yaml.load(f)
-            # print(x)
+            print(type(x))
             return x
     except FileNotFoundError:
         print(u"找不到文件")
@@ -20,9 +20,9 @@ if __name__ == '__main__':
         os.path.join(os.path.dirname(__file__), p)
     )
     a = True
-    t = getYam(PATH("../yaml/quntation_future_detial/FQfirstquery.yaml"))
+    t = getYam(PATH("../yaml/futures_quotes/FQfirstquery.yaml"))
     print(t)
-    if t["check"][1].get("attr_value") == a:
+    if t["check"][1].get("attr_value","0") == a:
         print('aaa')
     else:
         print('bbbb')

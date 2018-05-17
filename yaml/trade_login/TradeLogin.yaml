@@ -1,0 +1,52 @@
+testinfo:
+    - id: test050
+      title:  模拟交易登录
+      info: 查看页面展示
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[3]
+      find_type: xpath
+      operate_type: click
+      info: 切换到交易界面
+    - element_info: com.thinkive.future.dev.standard:id/tradeHome_header01
+      find_type: id
+      operate_type: click
+      info: 点击下单
+    - element_info: com.thinkive.future.dev.standard:id/ft_header_site_select
+      find_type: id
+      operate_type: click
+      info: 进入站点页面选择站点
+    - element_info: //*[@resource-id='com.thinkive.future.dev.standard:id/csselect_recyclerView']/android.widget.RelativeLayout[3]
+      find_type: xpath
+      operate_type: click
+      info: 选择首次登录8080
+    - element_info: com.thinkive.future.dev.standard:id/trade_login_account
+      find_type: id
+      operate_type: set_value
+      msg: 05197
+      info: 输入登录帐号
+    - element_info: com.thinkive.future.dev.standard:id/trade_login_pd
+      find_type: id
+      operate_type: set_value
+      msg: 12345678a
+      info: 输入登录密码
+    - element_info: com.thinkive.future.dev.standard:id/trade_login_btn
+      find_type: id
+      operate_type: click
+      info: 点击登录按钮
+check:
+    - element_info: com.thinkive.future.dev.standard:id/ft_risk_contentTitle
+      find_type: id
+      info: 登录跳转成功
+    - element_info: com.thinkive.future.dev.standard:id/ft_risk_ok
+      find_type: id
+      operate_type: click
+      info: 风险提示确认
+    - element_info: com.thinkive.future.dev.standard:id/ft_hint1_ok
+      find_type: id
+      operate_type: click
+      info: 温馨提示确认
+    - element_info: com.thinkive.future.dev.standard:id/header_back_img
+      find_type: id
+      operate_type: click
+      info: 返回到交易页面
+	
