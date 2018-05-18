@@ -12,7 +12,7 @@ PATH = lambda p: os.path.abspath(
 
 
 class HomeTest(ParametrizedTestCase):
-    # 首页下拉
+    # 进入首页打开APP成功
     def testAHomeSwipeDown(self):
         app = {}
         app["logTest"] = self.logTest
