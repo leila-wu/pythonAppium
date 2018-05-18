@@ -1,6 +1,6 @@
 testinfo:
     - id: test021
-      title: 通过+号添加自选
+      title: 自选页滑动
       info: 查看页面展示
 testcase:
     - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
@@ -11,33 +11,17 @@ testcase:
       find_type: id
       operate_type: click
       info: 进入自选页面
-    - element_info: com.thinkive.future.dev.standard:id/iv_optional_add
-      find_type: id
-      operate_type: click
-      info: 点击+号
-    - element_info: com.thinkive.future.dev.standard:id/search_edittext
-      find_type: id
-      operate_type: set_value
-      msg: mh
-      info: 输入过滤信息
-    - element_info: com.thinkive.future.dev.standard:id/ll_add_unadd
-      find_type: ids
-      index: 0
-      operate_type: click
-      info: 获取第一条记录，加入自选
-    - element_info: com.thinkive.future.dev.standard:id/name
+    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
       find_type: ids
       index: 0
       operate_type: get_value
-      info: 记录加入自选的产品
-    - element_info: com.thinkive.future.dev.standard:id/hq_btn_cancel
-      find_type: id
-      index: 1
-      operate_type: click
-      info: 返回自选列表
+      info: 获取第一条记录
+    - operate_type: swipe_up
+      info: 向上滑动
 check:
     - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
       find_type: ids
       index: 0
       operate_type: get_value
-      info: 验证得到的值与加入的值一致
+      checking: checking
+      info: 验证取到的第一条记录已经修改，滑动生效

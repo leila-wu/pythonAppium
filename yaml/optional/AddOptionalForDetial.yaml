@@ -7,34 +7,27 @@ testcase:
       find_type: xpath
       operate_type: click
       info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
+      find_type: ids
+      index: 0
+      operate_type: click
+      info: 进入第一个产品详情
+    - element_info: com.thinkive.future.dev.standard:id/activity_detail_addOptionalTv
+      find_type: id
+      operate_type: click
+      info: 点击加入自选
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_title
+      find_type: id
+      operate_type: get_value
+      info: 获取产品名称
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
+      find_type: id
+      operate_type: click
+      info: 返回行情页面
     - element_info: com.thinkive.future.dev.standard:id/rb_optional
       find_type: id
       operate_type: click
       info: 进入自选页面
-    - element_info: com.thinkive.future.dev.standard:id/iv_optional_add
-      find_type: id
-      operate_type: click
-      info: 点击+号
-    - element_info: com.thinkive.future.dev.standard:id/search_edittext
-      find_type: id
-      operate_type: set_value
-      msg: mh
-      info: 输入过滤信息
-    - element_info: com.thinkive.future.dev.standard:id/ll_add_unadd
-      find_type: ids
-      index: 0
-      operate_type: click
-      info: 获取第一条记录，加入自选
-    - element_info: com.thinkive.future.dev.standard:id/name
-      find_type: ids
-      index: 0
-      operate_type: get_value
-      info: 记录加入自选的产品
-    - element_info: com.thinkive.future.dev.standard:id/hq_btn_cancel
-      find_type: id
-      index: 1
-      operate_type: click
-      info: 返回自选列表
 check:
     - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
       find_type: ids

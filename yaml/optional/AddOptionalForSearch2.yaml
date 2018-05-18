@@ -6,30 +6,36 @@ testcase:
     - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
       find_type: xpath
       operate_type: click
-      info: 切换到行情界面
-    - element_info: com.thinkive.future.dev.standard:id/rb_optional
+      info: 切换到行界面
+    - element_info: com.thinkive.future.dev.standard:id/iv_quotation_futures_search
       find_type: id
       operate_type: click
-      info: 进入自选页面
-    - element_info: com.thinkive.future.dev.standard:id/iv_optional_add
-      find_type: id
+      info: 点击搜索查询
+    - element_info: com.thinkive.future.dev.standard:id/item_txt
+      find_type: ids
       operate_type: click
-      info: 点击+号
-    - element_info: com.thinkive.future.dev.standard:id/search_edittext
-      find_type: id
-      operate_type: set_value
-      msg: mh
-      info: 输入过滤信息
+      index: 1
+      info: 通过点击合同查询
+    - element_info: com.thinkive.future.dev.standard:id/ll_add_unadd
+      find_type: ids
+      index: 4
+      operate_type: click
+      info: 获取第五条记录，加入自选
+    - element_info: com.thinkive.future.dev.standard:id/ll_add_unadd
+      find_type: ids
+      index: 3
+      operate_type: click
+      info: 获取第四条记录，加入自选
     - element_info: com.thinkive.future.dev.standard:id/ll_add_unadd
       find_type: ids
       index: 2
       operate_type: click
-      info: 获取记录，加入自选
+      info: 获取第三条记录，加入自选
     - element_info: com.thinkive.future.dev.standard:id/ll_add_unadd
       find_type: ids
       index: 1
       operate_type: click
-      info: 获取录，加入自选
+      info: 获取第二条记录，加入自选
     - element_info: com.thinkive.future.dev.standard:id/ll_add_unadd
       find_type: ids
       index: 0
@@ -39,12 +45,15 @@ testcase:
       find_type: ids
       index: 0
       operate_type: get_value
-      info: 记录加入自选的产品
+      info: 记录最后一条加入自选的产品
     - element_info: com.thinkive.future.dev.standard:id/hq_btn_cancel
       find_type: id
-      index: 1
       operate_type: click
-      info: 返回自选列表
+      info: 返回行情页面
+    - element_info: com.thinkive.future.dev.standard:id/rb_optional
+      find_type: id
+      operate_type: click
+      info: 进入自选页面
 check:
     - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
       find_type: ids
