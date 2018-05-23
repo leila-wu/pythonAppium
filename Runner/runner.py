@@ -59,6 +59,8 @@ def runnerPool(getDevices):
         _initApp["port"] = getDevices[i]["port"]
         _initApp["appPackage"] = "com.thinkive.future.dev.standard"
         _initApp["appActivity"] = "com.thinkive.futureshl.activity.LauncherActivity"
+        _initApp["unicodeKeyboard"] = "true"
+        _initApp["resetKeyboard"] = "true"
         # _initApp["automationName"] = "uiautomator2"
         _initApp["automationName"] ="Appium"
         _initApp["systemPort"] = getDevices[i]["systemPort"]

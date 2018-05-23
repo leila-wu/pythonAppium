@@ -1,5 +1,5 @@
 import xlsxwriter
-import os
+
 from Base.BaseAndroidPhone import getPhoneInfo
 from Base.BaseElementEnmu import Element
 from Base.BaseExcel import OperateReport
@@ -110,7 +110,7 @@ def countSumDevices(devices, result, phone_name):
 
 # 统计所有用例数
 def countSum(result):
-    print("----countSum----")
+    # print("----countSum----")
     data = {"sum": 0, "pass": 0, "fail": 0}
     _read = read(PATH("../Log/sum.pickle"))
     if _read:

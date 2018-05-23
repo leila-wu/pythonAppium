@@ -1,35 +1,30 @@
-import re
-
-import os
-
-import appium.common.exceptions
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions
-
-__author__ = 'shikun'
 # -*- coding: utf-8 -*-
-from selenium.webdriver.support.ui import WebDriverWait
-import selenium.common.exceptions
-from Base.BaseElementEnmu import Element as be
+
 import time
 import os
+import re
+import appium.common.exceptions
+import selenium.common.exceptions
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.ui import WebDriverWait
+from Base.BaseElementEnmu import Element as BE
 
-'''
-# 此脚本主要用于查找元素是否存在，操作页面元素
-'''
 
-
+"""
+此脚本主要用于查找元素是否存在，操作页面元素
+"""
 class OperateElement:
     def __init__(self, driver=""):
         self.driver = driver
 
     def findElement(self, mOperate):
-        '''
+        """
         查找元素.mOperate,dict|list
         operate_type：对应的操作
         element_info：元素详情
         find_type: find类型
-        '''
+        """
         try:
             if type(mOperate) == list:  # 多检查点
                 for item in mOperate:
@@ -39,7 +34,7 @@ class OperateElement:
                         self.switchToNative()
                     # if item.get("element_info", "0") == "0":  # 如果没有页面元素，就不检测是页面元素，可能是滑动等操作
                     #     return {"result": True}
-                    t = item["check_time"] if item.get("check_time", "0") != "0" else be.WAIT_TIME
+                    t = item["check_time"] if item.get("check_time", "0") != "0" else BE.WAIT_TIME
                     WebDriverWait(self.driver, t).until(lambda x: self.elements_by(item))
                 return {"result": True}
             if type(mOperate) == dict:  # 单检查点
@@ -51,19 +46,18 @@ class OperateElement:
                 if mOperate.get("element_info", "0") == "0":  # 如果没有页面元素，就不检测是页面元素，可能是滑动等操作
                     return {"result": True}
                 t = mOperate["check_time"] if mOperate.get("check_time",
-                                                           "0") != "0" else be.WAIT_TIME  # 如果自定义检测时间为空，就用默认的检测等待时间
-                WebDriverWait(self.driver, t).until(
-                    lambda x: self.elements_by(mOperate))  # 操作元素是否存在 elements_by封装的查找元素方法
+                                                           "0") != "0" else BE.WAIT_TIME  # 如果自定义检测时间为空，就用默认的检测等待时间
+                WebDriverWait(self.driver, t).until(lambda x: self.elements_by(mOperate))  # 操作元素是否存在
                 return {"result": True}
         except selenium.common.exceptions.TimeoutException:
-            # print("查找元素" + mOperate["element_info"] + "超时")
-            return {"result": False}
+            # print("==查找元素超时==")
+            return {"result": False, "type": BE.TIME_OUT}
         except selenium.common.exceptions.NoSuchElementException:
-            # print("查找元素" + mOperate["element_info"] + "不存在")
-            return {"result": False}
+            # print("==查找元素不存在==")
+            return {"result": False, "type": BE.NO_SUCH}
         except selenium.common.exceptions.WebDriverException:
-            print("WebDriver出现问题了")
-            return {"result": False, "text": "selenium.common.exceptions.WebDriverException异常"}
+            # print("WebDriver出现问题了")
+            return {"result": False, "type": BE.WEB_DROVER_EXCEPTION}
 
     '''
     查找元素.mOperate是字典
@@ -82,47 +76,49 @@ class OperateElement:
         else:
             return res
 
-    def operate_by(self, mOperate, testInfo, logTest, device):
+    def operate_by(self, operate, testInfo, logTest, device):
         try:
-            info = mOperate.get("element_info", " ") + "_" + mOperate.get("operate_type", " ") + str(mOperate.get(
-                "code", " ")) + mOperate.get("msg", " ")
+            info = operate.get("element_info", " ") + "_" + operate.get("operate_type", " ") + str(operate.get(
+                "code", " ")) + operate.get("msg", " ")
             logTest.buildStartLine(testInfo[0]["id"] + "_" + testInfo[0]["title"] + "_" + info)  # 记录日志
+            print("==操作步骤：%s==" % info)
 
-            if mOperate.get("operate_type", "0") == "0":  # 如果没有此字段，说明没有相应操作，一般是检查点，直接判定为成功
+            if operate.get("operate_type", "0") == "0":  # 如果没有此字段，说明没有相应操作，一般是检查点，直接判定为成功
                 return {"result": True}
             elements = {
-                be.SWIPE_DOWN: lambda: self.swipeToDown(),
-                be.SWIPE_UP: lambda: self.swipeToUp(),
-                be.CLICK: lambda: self.click(mOperate),
-                be.GET_VALUE: lambda: self.get_value(mOperate),
-                be.SET_VALUE: lambda: self.set_value(mOperate),
-                be.ADB_TAP: lambda: self.adb_tap(mOperate, device),
-                be.GET_CONTENT_DESC: lambda: self.get_content_desc(mOperate),
-                be.PRESS_KEY_CODE: lambda: self.press_keycode(mOperate),
-                be.GET_ATTR: lambda: self.get_attr(mOperate),
-                be.SWIPE_LEFT: lambda: self.swipeLeft(mOperate),
-                be.GET_VALUE_CHECK: lambda: self.get_value_check(mOperate),
+                BE.SWIPE_DOWN: lambda: self.swipeToDown(),
+                BE.SWIPE_UP: lambda: self.swipeToUp(),
+                BE.CLICK: lambda: self.click(operate),
+                BE.GET_VALUE: lambda: self.get_value(operate),
+                BE.SET_VALUE: lambda: self.set_value(operate),
+                BE.ADB_TAP: lambda: self.adb_tap(operate, device),
+                BE.GET_CONTENT_DESC: lambda: self.get_content_desc(operate),
+                BE.PRESS_KEY_CODE: lambda: self.press_keycode(operate),
+                BE.GET_ATTR: lambda: self.get_attr(operate),
+                BE.SWIPE_LEFT: lambda: self.swipeLeft(operate),
+                BE.IS_CHECKED: lambda: self.swipeLeft(operate),
+                BE.IS_DISPLAYED: lambda: self.swipeLeft(operate),
+                BE.IS_SELECTED: lambda: self.swipeLeft(operate),
             }
-            return elements[mOperate.get("operate_type")]()
+            return elements[operate.get("operate_type")]()
         except IndexError:
             logTest.buildStartLine(
-                testInfo[0]["id"] + "_" + testInfo[0]["title"] + "_" + mOperate["element_info"] + "索引错误")  # 记录日志
-            print(mOperate["element_info"] + "索引错误")
-            return {"result": False}
+                testInfo[0]["id"] + "_" + testInfo[0]["title"] + "_" + operate["element_info"] + "索引错误")  # 记录日志
+            # print(operate["element_info"] + "索引错误")
+            return {"result": False, "type": BE.INDEX_ERROR}
 
         except selenium.common.exceptions.NoSuchElementException:
             logTest.buildStartLine(
-                testInfo[0]["id"] + "_" + testInfo[0]["title"] + "_" + mOperate[
+                testInfo[0]["id"] + "_" + testInfo[0]["title"] + "_" + operate[
                     "element_info"] + "页面元素不存在或没加载完成")  # 记录日志
-            print(mOperate["element_info"] + "页面元素不存在或没有加载完成")
-
-            return {"result": False}
+            # print(operate["element_info"] + "页面元素不存在或没有加载完成")
+            return {"result": False, "type": BE.NO_SUCH}
         except selenium.common.exceptions.StaleElementReferenceException:
             logTest.buildStartLine(
-                testInfo[0]["id"] + "_" + testInfo[0]["title"] + "_" + mOperate[
+                testInfo[0]["id"] + "_" + testInfo[0]["title"] + "_" + operate[
                     "element_info"] + "页面元素已经变化")  # 记录日志
-            print(mOperate["element_info"] + "页面元素已经变化")
-            return {"result": False}
+            # print(operate["element_info"] + "页面元素已经变化")
+            return {"result": False, "type": BE.STALE_ELEMENT_REFERENCE_EXCEPTION}
         except KeyError:
             # 如果key不存在，一般都是在自定义的page页面去处理了，这里直接返回为真
             return {"result": True}
@@ -154,9 +150,9 @@ class OperateElement:
     # 点击事件
     def click(self, mOperate):
         # print(self.driver.page_source)
-        if mOperate["find_type"] == be.find_element_by_id or mOperate["find_type"] == be.find_element_by_xpath:
+        if mOperate["find_type"] == BE.find_element_by_id or mOperate["find_type"] == BE.find_element_by_xpath:
             self.elements_by(mOperate).click()
-        elif mOperate.get("find_type") == be.find_elements_by_id:
+        elif mOperate.get("find_type") == BE.find_elements_by_id:
             self.elements_by(mOperate)[mOperate["index"]].click()
         return {"result": True}
 
@@ -206,14 +202,15 @@ class OperateElement:
     # 左滑动
     def swipeLeft(self, mOperate):
         t = mOperate["check_time"] if mOperate.get("check_time",
-                                                   "0") != "0" else be.WAIT_TIME  # 如果自定义检测时间为空，就用默认的检测等待时间
+                                                   "0") != "0" else BE.WAIT_TIME  # 如果自定义检测时间为空，就用默认的检测等待时间
         element = WebDriverWait(self.driver, t).until(lambda x: self.elements_by(mOperate))
         start = element.location
         size1 = element.size
-        y = start['y']
-        x1 = start['x'] + size1["width"]
+        y = start['y'] + size1["height"]/2
+        x1 = start['x'] + size1["width"]/2
         x2 = size1["height"]
         self.driver.swipe(x1, y, x2, y, 600)
+
         print("--swipeLeft--")
         return {"result": True}
 
@@ -258,6 +255,27 @@ class OperateElement:
         self.elements_by(mOperate).send_keys(mOperate["msg"])
         return {"result": True}
 
+    def get_value(self, mOperate):
+        """
+        读取element的值,支持webview下获取值
+        :param mOperate:
+        :return:
+        """
+        resutl = ""
+        if mOperate.get("find_type") == BE.find_elements_by_id:
+            element_info = self.elements_by(mOperate)[mOperate["index"]]
+        else:
+            element_info = self.elements_by(mOperate)
+
+        if mOperate.get("is_webview", "0") == 1:
+            result = element_info.text
+        else:
+            result = element_info.get_attribute("text")
+
+        re_reulst = re.findall(r'[a-zA-Z\d+\u4e00-\u9fa5]', result)
+
+        return {"result": True, "text": "".join(re_reulst)}
+		
     def get_attr(self, mOperate):
         """
         读取element的值,获取元素属性，判断属性与预期是否一致
@@ -266,7 +284,7 @@ class OperateElement:
         """
         attr_key = mOperate["attr_key"]
         attr_value = mOperate["attr_value"]
-        if mOperate.get("find_type") == be.find_elements_by_id:
+        if mOperate.get("find_type") == BE.find_elements_by_id:
             element_info = self.elements_by(mOperate)[mOperate["index"]]
         else:
             element_info = self.elements_by(mOperate)
@@ -288,57 +306,37 @@ class OperateElement:
             print("参数校验失败")
             return {"result": False, "text": "".join("参数校验失败")}
 
-    def get_value(self, mOperate):
-        """
-        读取element的值,支持webview下获取值
-        :param mOperate:
-        :return:
-        """
-        resutl = ""
-        if mOperate.get("find_type") == be.find_elements_by_id:
+    def get_is_enabled(self, mOperate):
+        return self.elements_by(mOperate).is_enabled()
+
+    def get_is_selected(self, mOperate):
+        return self.elements_by(mOperate).is_selected()
+
+    def get_is_displayed(self, mOperate):
+        return self.elements_by(mOperate).is_displayed()
+
+    def get_is_checked(self, mOperate):
+        attr_key = mOperate["attr_key"]
+        if mOperate.get("find_type") == BE.find_elements_by_id:
             element_info = self.elements_by(mOperate)[mOperate["index"]]
         else:
             element_info = self.elements_by(mOperate)
 
-        if mOperate.get("is_webview", "0") == 1:
-            result = element_info.text
+        result = element_info.get_attribute(attr_key)
+
+        if result == "true":
+            return {"result": True, "text": "".join("元素被选中")}
         else:
-            result = element_info.get_attribute("text")
-
-        re_reulst = re.findall(r'[a-zA-Z\d+\u4e00-\u9fa5]', result)
-
-        return {"result": True, "text": "".join(re_reulst)}
-
-    def get_value_check(self, mOperate):
-        """
-        获取元素的值判断元素存在
-        """
-        resutl = ""
-        value =  mOperate["value"]
-        if mOperate.get("find_type") == be.find_elements_by_id:
-            element_info = self.elements_by(mOperate)[mOperate["index"]]
-        else:
-            element_info = self.elements_by(mOperate)
-
-        if mOperate.get("is_webview", "0") == 1:
-            result = element_info.text
-        else:
-            result = element_info.get_attribute("text")
-
-        if value == result:
-            return {"result": True, "text": "".join(value)}
-        else:
-            return {"result": False,"text":"".join("取值校验失败")}
+            return {"result": False, "text": "".join("元素未被选中")}
 
     # 封装常用的标签
     def elements_by(self, mOperate):
-
         elements = {
-            be.find_element_by_id: lambda: self.driver.find_element_by_id(mOperate["element_info"]),
-            be.find_element_by_xpath: lambda: self.driver.find_element_by_xpath(mOperate["element_info"]),
-            be.find_element_by_css_selector: lambda: self.driver.find_element_by_css_selector(mOperate['element_info']),
-            be.find_element_by_class_name: lambda: self.driver.find_element_by_class_name(mOperate['element_info']),
-            be.find_elements_by_id: lambda: self.driver.find_elements_by_id(mOperate['element_info']),
+            BE.find_element_by_id: lambda: self.driver.find_element_by_id(mOperate["element_info"]),
+            BE.find_element_by_xpath: lambda: self.driver.find_element_by_xpath(mOperate["element_info"]),
+            BE.find_element_by_css_selector: lambda: self.driver.find_element_by_css_selector(mOperate['element_info']),
+            BE.find_element_by_class_name: lambda: self.driver.find_element_by_class_name(mOperate['element_info']),
+            BE.find_elements_by_id: lambda: self.driver.find_elements_by_id(mOperate['element_info']),
 
         }
         return elements[mOperate["find_type"]]()

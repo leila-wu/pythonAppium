@@ -6,34 +6,21 @@ import re
 import math
 from math import ceil
 import subprocess
-
+# 得到手机信息
 def getPhoneInfo(devices):
-    """得到手机信息
-
-    :param devices:
-    :return:
-    """
-    # adb -s 指定手机，执行shell命令
     cmd = "adb -s " + devices +" shell cat /system/build.prop "
     print(cmd)
     # phone_info = os.popen(cmd).readlines()
     phone_info = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout.readlines()
     result = {"release": "5.0", "model": "model2", "brand": "brand1", "device": "device1"}
-    # 版本
-    release = "ro.build.version.release="
-    # 型号
-    model = "ro.product.model="
-    # 品牌
-    brand = "ro.product.brand="
-    # 设备名
-    device = "ro.product.device="
+    release = "ro.build.version.release=" # 版本
+    model = "ro.product.model=" #型号
+    brand = "ro.product.brand=" # 品牌
+    device = "ro.product.device=" # 设备名
     for line in phone_info:
-         # 分隔符，默认为所有的空字符，包括空格、换行(\n)、制表符(\t)等。
          for i in line.split():
-            #  格式转码，将str转换成unicode
             temp = i.decode()
             if temp.find(release) >= 0:
-                # 字符串切片的应用
                 result["release"] = temp[len(release):]
                 break
             if temp.find(model) >= 0:

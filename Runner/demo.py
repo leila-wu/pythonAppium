@@ -27,9 +27,9 @@ desired_caps['deviceName']="192.168.51.101:5555"
 desired_caps['appPackage']= 'com.thinkive.future.dev.standard'
 #待测试的app的Activity名字 '.NotesActivity'
 desired_caps['appActivity']= 'com.thinkive.futureshl.activity.LauncherActivity'
-desired_caps['unicodeKeyboard'] = True
-desired_caps['resetKeyboard'] = True
-# desired_caps['noReset'] = True
+desired_caps['unicodeKeyboard'] = 'True'
+desired_caps['resetKeyboard'] = 'True'
+desired_caps['noReset'] = 'True'
 # desired_caps['autoAcceptAlerts'] = Ture
 # desired_caps['app'] = apk_path + '\\app\\test.apk'
 #automationName 使用哪种自动化引擎。appium（默认）还是Selendroid。
@@ -40,13 +40,10 @@ time.sleep(10)
 
 driver.find_element_by_xpath("//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]").click()
 time.sleep(3)
-driver.find_element_by_id("com.thinkive.future.dev.standard:id/iv_quotation_futures_search").click()
-a = driver.find_element_by_id("com.thinkive.future.dev.standard:id/search_edittext")
-a.click()
-a.send_keys('test@@@')
-a.clear()
-st = '中文'
-a.send_keys(u'中文')
+driver.find_element_by_id("com.thinkive.future.dev.standard:id/rb_optional").click()
+time.sleep(1)
+driver.swipe(957.5,151.0,120.0,300,600)
+
 time.sleep(10)
 driver.quit()
-os.popen("taskkill /f /im node.exe")
+# os.popen("taskkill /f /im node.exe")

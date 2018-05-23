@@ -1,3 +1,4 @@
+from Base.BaseError import get_error
 from Base.BaseYaml import getYam
 from Base.BaseOperate import OperateElement
 import time
@@ -105,50 +106,70 @@ class PagesObjects:
 
         if self.isOperate:
             for item in self.testcheck:
-                if item.get("toast", "0") != "0":
-                    resp = self.operateElement.toast(item["element_info"], testInfo=self.testInfo,
-                                                     logTest=self.logTest)
+                if item.get("check", be.DEFAULT_CHECK) == be.TOAST:
+                    result = \
+                        self.operateElement.toast(item["element_info"], testInfo=self.testInfo, logTest=self.logTest)[
+                            "result"]
+                    if result is False:
+                        m = get_error(
+                            {"type": be.DEFAULT_CHECK, "element_info": item["element_info"], "info": item["info"]})
+                        self.msg = m_s_g + m
+                        print(m)
+                        self.testInfo[0]["msg"] = m
+                    break
                 else:
                     resp = self.operateElement.operate(item, self.testInfo, self.logTest, self.device)
 
                 # 一般情况，当元素不存在时失败
-                if item.get("checking","0") == "0" and not resp["result"]:
-                    m = "请检查元素" + item["element_info"] + "是否存在，" + item["info"] + " 操作是否成功"
+                if item.get("check", be.DEFAULT_CHECK) == be.DEFAULT_CHECK  and not resp["result"]:
+                    m = get_error(
+                        {"type": be.DEFAULT_CHECK, "element_info": item["element_info"], "info": item["info"]})
                     self.msg = m_s_g + m
                     print(m)
                     self.testInfo[0]["msg"] = m
                     result = False
                     break
-                # 当元素不存在时，用例正确
-                if item.get("checking","0") == "contrary" and not resp["result"]:
-                    m = "请检查%s" % item["info"] + "是否成功"
+
+                # 相反检查点，表示如果检查元素存在就说明失败，如删除后，此元素依然存在
+                if item.get("check", be.DEFAULT_CHECK) == be.CONTRARY and resp["result"]:
+                    m = get_error({"type": be.CONTRARY, "element_info": item["element_info"], "info": item["info"]})
                     self.msg = m_s_g + m
-                    print(self.msg)
-                    self.testInfo[0]["msg"] = m
-                    result = True
+                    print(m)
+                    self.testInfo[0]["msg"] = self.msg
+                    result = False
                     break
-                # 判断结果是否传值
-                if 'text' in resp.keys():
-                    # 如果操作只取了一条历史数据，验证查询条件得到查询结果
-                    if len(self.get_value) == 1 and self.get_value[0] in resp["text"]:
-                        m = "数据对比成功，当前获取的数据为：" + resp["text"]
-                        self.msg = m_s_g + m
-                        print(m)
-                        self.testInfo[0]["msg"] = m
-                    # 历史数据和实际数据对比成功，记录日志
-                    elif self.is_get and resp["result"] in self.get_value:  # 历史数据和实际数据对比
-                        msg = "数据对比成功，当前获取的数据为：" + resp["text"]
-                        self.msg = m_s_g + m
-                        print(m)
-                        self.testInfo[0]["msg"] = m
-                    # 历史数据和实际数据对比失败，返回false
-                    elif self.is_get and resp["result"] not in self.get_value:
-                        result = False
-                        m = "对比数据失败,获取历史数据为：" + ".".join(self.get_value) + ",当前获取的数据为：" + resp["text"]
-                        self.msg = m_s_g + m
-                        print(m)
-                        self.testInfo[0]["msg"] = m
-                        break
+
+                # 历史数据与实际数据对比，值相等检查点
+                if item.get("check", be.DEFAULT_CHECK) == be.COMPARE and self.is_get and resp["text"] \
+                        not in self.get_value:  # 历史数据和实际数据对比
+                    result = False
+                    m = get_error({"type": be.COMPARE, "current": item["element_info"], "history": resp["text"]})
+                    self.msg = m_s_g + m
+                    print(m)
+                    self.testInfo[0]["msg"] = m
+                    break
+
+                # 检查点关键字contrary_getval: 相反值检查点，如果对比成功，说明失败
+                if item.get("check", be.DEFAULT_CHECK) == be.CONTRARY_GETVAL and self.is_get and resp["result"] \
+                        in self.get_value:
+                    m = get_error(
+                        {"type": be.CONTRARY_GETVAL, "current": item["element_info"], "history": resp["text"]})
+                    self.msg = m_s_g + m
+                    print(m)
+                    self.testInfo[0]["msg"] = m
+                    result = False
+                    break
+
+                # 检查点关键字contrary_getval: 相反值检查点，如果对比成功，说明失败
+                if item.get("check", be.DEFAULT_CHECK) == be.CONTRARY_GETVAL and self.is_get and resp["result"] \
+                        in self.get_value:
+                    m = get_error(
+                        {"type": be.CONTRARY_GETVAL, "current": item["element_info"], "history": resp["text"]})
+                    self.msg = m_s_g + m
+                    print(m)
+                    self.testInfo[0]["msg"] = m
+                    result = False
+                    break
 
         else:
             result = False

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from Base.BaseAppiumServer import AppiumServer
 from Base.BaseLog import myLog
 import unittest
 from appium import webdriver
@@ -17,12 +18,12 @@ def appium_testcase(devices):
     desired_caps = {}
 
     if str(devices["platformName"]).lower() == "android":
-        desired_caps['appPackage'] = devices["appPackage"]
-        desired_caps['appActivity'] = devices["appActivity"]
+        # desired_caps['appPackage'] = devices["appPackage"]
+        # desired_caps['appActivity'] = devices["appActivity"]
         desired_caps['udid'] = devices["deviceName"]
+        desired_caps['app'] = devices["app"]
         # desired_caps["recreateChromeDriverSessions"] = "True"
         # 解决多次切换到webview报错问题，每次切换到非chrome-Driver时kill掉session 注意这个设置在appium 1.5版本上才做了处理
-        # desired_caps["automationName"] = "uiautomator2"
     else:
         # desired_caps['automationName'] = devices["automationName"] # Xcode8.2以上无UIAutomation,需使用XCUITest
         desired_caps['bundleId'] = devices["bundleId"]
@@ -58,19 +59,16 @@ class ParametrizedTestCase(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        print('setUpClass')
+        pass
         cls.driver = appium_testcase(devicess)
         cls.devicesName = devicess["deviceName"]
         cls.logTest = myLog().getLog(cls.devicesName)  # 每个设备实例化一个日志记录器
-        pass
 
     def setUp(self):
-        print('setUp')
         pass
 
     @classmethod
     def tearDownClass(cls):
-        print('tearDownClass')
         cls.driver.close_app()
         cls.driver.quit()
         pass
@@ -79,7 +77,7 @@ class ParametrizedTestCase(unittest.TestCase):
 
     @staticmethod
     def parametrize(testcase_klass, param=None):
-        print("---parametrize-----")
+        # print("---parametrize-----")
         # print(param)
         testloader = unittest.TestLoader()
         testnames = testloader.getTestCaseNames(testcase_klass)
