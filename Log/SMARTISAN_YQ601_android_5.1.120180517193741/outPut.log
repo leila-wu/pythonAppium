@@ -1,0 +1,10 @@
+2018-05-17 19:37:46,264  - INFO - ----  test020_首次进入自选页面查看_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-17 19:37:50,032  - INFO - ----  test020_首次进入自选页面查看_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-17 19:37:50,991  - INFO - ----  test020_首次进入自选页面查看_//android.widget.TextView[@text='最新']_click          ----
+2018-05-17 19:37:55,253  - INFO - ----  test020_首次进入自选页面查看_//android.widget.TextView[@text='涨幅']_           ----
+2018-05-17 19:37:55,456  - INFO - ----  test020_首次进入自选页面查看_//android.widget.TextView[@text='成交量']_           ----
+2018-05-17 19:37:55,919  - INFO - ----  test020_首次进入自选页面查看_com.thinkive.future.dev.standard:id/iv_optional_add_           ----
+2018-05-17 19:37:56,093  - INFO - ----  test020_首次进入自选页面查看_//android.widget.TextView[@text='添加自选']_           ----
+2018-05-17 19:37:56,143  - INFO - ----  test020_首次进入自选页面查看_com.thinkive.future.dev.standard:id/rb_optional_get_attr          ----
+2018-05-17 19:37:56,821  - INFO - ----  test020_首次进入自选页面查看_com.thinkive.future.dev.standard:id/rb_out_list_get_attr          ----
+2018-05-17 19:37:57,695  - INFO - [CheckPoint_1]: testAFirstOpenOptional_ : OK

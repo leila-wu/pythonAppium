@@ -1,0 +1,35 @@
+testinfo:
+    - id: test026
+      title: 自选页滑动
+      info: 查看页面展示
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/rb_optional
+      find_type: id
+      operate_type: click
+      info: 进入自选页面
+    - element_info: //android.widget.TextView[@text='最新']
+      find_type: xpath
+      index: 0
+      info: 判断列表存在最新
+    - element_info: //android.widget.TextView[@text='涨幅']
+      find_type: xpath
+      index: 0
+      info: 判断列表存在涨幅
+    - element_info: //android.widget.TextView[@text='成交量']
+      find_type: xpath
+      index: 0
+      info: 判断列表存在涨幅
+    - element_info: //android.widget.TextView[@text='成交量']
+      find_type: xpath
+      index: 0
+      operate_type: swipe_left
+      info: 判断列表存在涨幅
+check:
+    - element_info: //android.widget.TextView[@text='涨跌']
+      find_type: xpath
+      index: 0
+      info: 判断列表存在涨跌

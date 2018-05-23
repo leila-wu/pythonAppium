@@ -22,6 +22,16 @@ testcase:
       info: 输入过滤信息
     - element_info: com.thinkive.future.dev.standard:id/ll_add_unadd
       find_type: ids
+      index: 4
+      operate_type: click
+      info: 获取记录，加入自选
+    - element_info: com.thinkive.future.dev.standard:id/ll_add_unadd
+      find_type: ids
+      index: 3
+      operate_type: click
+      info: 获取记录，加入自选
+    - element_info: com.thinkive.future.dev.standard:id/ll_add_unadd
+      find_type: ids
       index: 2
       operate_type: click
       info: 获取记录，加入自选

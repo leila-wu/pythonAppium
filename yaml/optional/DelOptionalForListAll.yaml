@@ -1,6 +1,6 @@
 testinfo:
-    - id: test021
-      title: 通过+号添加自选
+    - id: test032
+      title: 通过编辑删除所有自选记录
       info: 查看页面展示
 testcase:
     - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
@@ -11,33 +11,32 @@ testcase:
       find_type: id
       operate_type: click
       info: 进入自选页面
-    - element_info: com.thinkive.future.dev.standard:id/iv_optional_add
+    - element_info: com.thinkive.future.dev.standard:id/tv_optional_edit
       find_type: id
       operate_type: click
-      info: 点击+号
-    - element_info: com.thinkive.future.dev.standard:id/search_edittext
-      find_type: id
-      operate_type: set_value
-      msg: mh
-      info: 输入过滤信息
-    - element_info: com.thinkive.future.dev.standard:id/ll_add_unadd
+      info: 点击编辑按钮
+    - element_info: com.thinkive.future.dev.standard:id/optional_tv_chose_all
       find_type: ids
       index: 0
       operate_type: click
-      info: 获取第一条记录，加入自选
-    - element_info: com.thinkive.future.dev.standard:id/name
+      info: 选择全部记录
+    - element_info: com.thinkive.future.dev.standard:id/tv_delete
       find_type: ids
       index: 0
-      operate_type: get_value
-      info: 记录加入自选的产品
-    - element_info: com.thinkive.future.dev.standard:id/hq_btn_cancel
+      operate_type: click
+      info: 点击删除操作
+    - element_info: com.thinkive.future.dev.standard:id/tv_delete
+      find_type: id
+      index: 0
+      operate_type: click
+      info: 点击确认删除操作
+    - element_info: com.thinkive.future.dev.standard:id/tv_optional_edit
       find_type: id
       index: 1
       operate_type: click
       info: 返回自选列表
 check:
-    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
-      find_type: ids
+    - element_info: com.thinkive.future.dev.standard:id/iv_optional_add
+      find_type: id
       index: 0
-      operate_type: get_value
-      info: 验证得到的值与加入的值一致
+      info: 验证删除所有产品合同后，+号出现

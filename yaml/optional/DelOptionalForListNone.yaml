@@ -1,6 +1,6 @@
 testinfo:
-    - id: test031
-      title: 通过编辑删除一条自选记录
+    - id: test030
+      title: 未选择记录删除操作
       info: 查看页面展示
 testcase:
     - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
@@ -15,22 +15,12 @@ testcase:
       find_type: id
       operate_type: click
       info: 点击编辑按钮
-    - element_info: com.thinkive.future.dev.standard:id/cb_check
-      find_type: ids
-      index: 0
-      operate_type: click
-      info: 选择第一条记录
-    - element_info: com.thinkive.future.dev.standard:id/tv_stock_name
-      find_type: ids
-      index: 0
-      operate_type: get_value
-      info: 记录被删除自选的名称
     - element_info: com.thinkive.future.dev.standard:id/tv_delete
       find_type: id
       index: 0
       operate_type: click
       info: 点击删除操作
-    - element_info: com.thinkive.future.dev.standard:id/tv_delete
+    - element_info: //
       find_type: id
       index: 0
       operate_type: click
@@ -41,7 +31,7 @@ testcase:
       operate_type: click
       info: 返回自选列表
 check:
-    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
+    - element_info: //*[contains(@text,'请选择要删除的合约')]
       find_type: ids
       index: 0
       operate_type: get_value

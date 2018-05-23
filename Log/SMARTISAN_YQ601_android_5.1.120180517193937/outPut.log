@@ -1,0 +1,9 @@
+2018-05-17 19:39:42,356  - INFO - ----  test021_通过+号添加自选_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-17 19:39:46,388  - INFO - ----  test021_通过+号添加自选_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-17 19:39:48,395  - INFO - ----  test021_通过+号添加自选_com.thinkive.future.dev.standard:id/iv_optional_add_click          ----
+2018-05-17 19:39:50,591  - INFO - ----  test021_通过+号添加自选_com.thinkive.future.dev.standard:id/search_edittext_set_value mh        ----
+2018-05-17 19:39:58,708  - INFO - ----  test021_通过+号添加自选_com.thinkive.future.dev.standard:id/ll_add_unadd_click          ----
+2018-05-17 19:40:00,740  - INFO - ----  test021_通过+号添加自选_com.thinkive.future.dev.standard:id/name_get_value          ----
+2018-05-17 19:40:01,495  - INFO - ----  test021_通过+号添加自选_com.thinkive.future.dev.standard:id/hq_btn_cancel_click          ----
+2018-05-17 19:40:03,200  - INFO - ----  test021_通过+号添加自选_com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv_get_value          ----
+2018-05-17 19:40:03,930  - INFO - [CheckPoint_1]: testBAddOptionalFirstself_数据对比成功，当前获取的数据为：棉花1807: OK

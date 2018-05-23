@@ -1,0 +1,12 @@
+2018-05-17 19:36:00,155  - INFO - ----  test020_首次进入自选页面查看_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-17 19:36:04,059  - INFO - ----  test020_首次进入自选页面查看_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-17 19:36:05,537  - INFO - ----  test020_首次进入自选页面查看_//android.widget.TextView[@text='最新']_click          ----
+2018-05-17 19:36:09,374  - INFO - ----  test020_首次进入自选页面查看_//android.widget.TextView[@text='涨幅']_           ----
+2018-05-17 19:36:09,584  - INFO - ----  test020_首次进入自选页面查看_//android.widget.TextView[@text='成交量']_           ----
+2018-05-17 19:36:09,753  - INFO - ----  test020_首次进入自选页面查看_com.thinkive.future.dev.standard:id/iv_optional_add_           ----
+2018-05-17 19:36:30,472  - INFO - ----  testAFirstOpenOptional_失败重连        ----
+2018-05-17 19:36:40,566  - INFO - ----  test020_首次进入自选页面查看_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-17 19:36:42,008  - INFO - ----  test020_首次进入自选页面查看_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-17 19:36:43,642  - INFO - ----  test020_首次进入自选页面查看_//android.widget.TextView[@text='最新']_click          ----
+2018-05-17 19:37:05,522  - INFO - [CheckPoint_1]: testAFirstOpenOptional_用例失败重连过一次，失败原因:请检查元素//android.widget.TextView[@text='添加自选']是否存在，展示添加图片控件 操作是否成功
+执行过程中失败，请检查元素是否存在//android.widget.TextView[@text='涨幅'], : NG

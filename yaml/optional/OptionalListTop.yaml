@@ -1,7 +1,7 @@
 testinfo:
-    - id: test031
-      title: 通过编辑删除一条自选记录
-      info: 查看页面展示
+    - id: test027
+      title: 自选产品置顶操作
+      info: 编辑-选择-置顶
 testcase:
     - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
       find_type: xpath
@@ -15,26 +15,16 @@ testcase:
       find_type: id
       operate_type: click
       info: 点击编辑按钮
-    - element_info: com.thinkive.future.dev.standard:id/cb_check
-      find_type: ids
-      index: 0
-      operate_type: click
-      info: 选择第一条记录
     - element_info: com.thinkive.future.dev.standard:id/tv_stock_name
       find_type: ids
-      index: 0
+      index: 8
       operate_type: get_value
       info: 记录被删除自选的名称
-    - element_info: com.thinkive.future.dev.standard:id/tv_delete
-      find_type: id
-      index: 0
+    - element_info: com.thinkive.future.dev.standard:id/iv_set_top
+      find_type: ids
+      index: 8
       operate_type: click
-      info: 点击删除操作
-    - element_info: com.thinkive.future.dev.standard:id/tv_delete
-      find_type: id
-      index: 0
-      operate_type: click
-      info: 点击确认删除操作
+      info: 选中弟9条记录，点击置顶操作
     - element_info: com.thinkive.future.dev.standard:id/tv_optional_edit
       find_type: id
       index: 1
