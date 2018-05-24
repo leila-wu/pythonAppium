@@ -1,7 +1,6 @@
 import os
 
 from Base.BaseRunner import ParametrizedTestCase
-from Base.BaseTestBase import *
 import sys
 
 from PageObject.BasePage import BasePage
@@ -12,54 +11,42 @@ PATH = lambda p: os.path.abspath(
 
 
 class HomeTest(ParametrizedTestCase):
-    # 进入首页打开APP成功
-    def testAHomeSwipeDown(self):
+    # # 进入首页打开APP成功
+    # def testAHomeSwipeDown(self):
+    #     app = {}
+    #     app["logTest"] = self.logTest
+    #     app["driver"] = self.driver
+    #     app["path"] = PATH("../yaml/home/AHomeSwipeDown.yaml")
+    #     app["device"] = self.devicesName
+    #     app["caseName"] = sys._getframe().f_code.co_name
+    #
+    #     page = BasePage(app)
+    #     page.operate()
+    #     page.checkPoint()
+
+    # 自选列表向左滑动
+    def testGOptionalForLeftSwipe(self):
         app = {}
         app["logTest"] = self.logTest
         app["driver"] = self.driver
-        app["path"] = PATH("../yaml/home/HomeSwipeDown.yaml")
-        app["device"] = self.devicesName
-        app["caseName"] = sys._getframe().f_code.co_name
-
-        page = BasePage(app)
-        page.operate()
-        page.checkPoint()
-
-    # 点击+号添加自选
-    def testBAddOptionalFirst(self):
-        app = {}
-        app["logTest"] = self.logTest
-        app["driver"] = self.driver
-        app["path"] = PATH("../yaml/optional/AddOptionalFirst.yaml")
-        app["device"] = self.devicesName
-        app["caseName"] = sys._getframe().f_code.co_name
-        page = BasePage(app)
-        page.operate()
-        page.checkPoint()
-
-    # 未选择记录删除
-    def testKDelOptionalForListNone(self):
-        app = {}
-        app["logTest"] = self.logTest
-        app["driver"] = self.driver
-        app["path"] = PATH("../yaml/optional/DelOptionalForListNone.yaml")
+        app["path"] = PATH("../yaml/optional/GOptionalForLeftSwipe.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
         page = BasePage(app)
         page.operate()
         page.checkPoint()
 
-    # 通过编辑删除一条自选记录
-    def testLDelOptionalForListOne(self):
-        app = {}
-        app["logTest"] = self.logTest
-        app["driver"] = self.driver
-        app["path"] = PATH("../yaml/optional/DelOptionalForListOne.yaml")
-        app["device"] = self.devicesName
-        app["caseName"] = sys._getframe().f_code.co_name
-        page = BasePage(app)
-        page.operate()
-        page.checkPoint()
+    # # 编辑-选择-置顶自选列表置顶操作
+    # def testHOptionalListTop(self):
+    #     app = {}
+    #     app["logTest"] = self.logTest
+    #     app["driver"] = self.driver
+    #     app["path"] = PATH("../yaml/optional/HOptionalListTop.yaml")
+    #     app["device"] = self.devicesName
+    #     app["caseName"] = sys._getframe().f_code.co_name
+    #     page = BasePage(app)
+    #     page.operate()
+    #     page.checkPoint()
 
     @classmethod
     def setUpClass(cls):

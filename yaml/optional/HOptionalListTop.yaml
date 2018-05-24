@@ -19,7 +19,7 @@ testcase:
       find_type: ids
       index: 8
       operate_type: get_value
-      info: 记录被删除自选的名称
+      info: 记录被置顶自选的名称
     - element_info: com.thinkive.future.dev.standard:id/iv_set_top
       find_type: ids
       index: 8
@@ -35,4 +35,5 @@ check:
       find_type: ids
       index: 0
       operate_type: get_value
+      checking: compare
       info: 验证得到的值与加入的值一致

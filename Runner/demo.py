@@ -43,6 +43,7 @@ time.sleep(3)
 driver.find_element_by_id("com.thinkive.future.dev.standard:id/rb_optional").click()
 time.sleep(1)
 driver.swipe(957.5,151.0,120.0,300,600)
+driver.get_page
 
 time.sleep(10)
 driver.quit()

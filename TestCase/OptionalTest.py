@@ -1,6 +1,5 @@
 import os
 from Base.BaseRunner import ParametrizedTestCase
-from Base.BaseTestBase import *
 import sys
 from PageObject.BasePage import BasePage
 
@@ -15,7 +14,7 @@ class OptionalTest(ParametrizedTestCase):
         app = {}
         app["logTest"] = self.logTest
         app["driver"] = self.driver
-        app["path"] = PATH("../yaml/optional/FirstOpenOptional.yaml")
+        app["path"] = PATH("../yaml/optional/AFirstOpenOptional.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
         page = BasePage(app)
@@ -34,24 +33,24 @@ class OptionalTest(ParametrizedTestCase):
         page.operate()
         page.checkPoint()
 
-    # 通过查询添加多个产品到自选
+    # 通过搜索一次添加多个产品合同到自选
     def testCAddOptionalForSearch(self):
         app = {}
         app["logTest"] = self.logTest
         app["driver"] = self.driver
-        app["path"] = PATH("../yaml/optional/AddOptionalForSearch.yaml")
+        app["path"] = PATH("../yaml/optional/CAddOptionalForSearch.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
         page = BasePage(app)
         page.operate()
         page.checkPoint()
 
-    # # 通过查询添加多个产品到自选
-    def testDAddOptionalForSearch2(self):
+    # 通过搜索一次添加多个产品合同到自选
+    def testDAddOptionalForSearch1(self):
         app = {}
         app["logTest"] = self.logTest
         app["driver"] = self.driver
-        app["path"] = PATH("../yaml/optional/AddOptionalForSearch2.yaml")
+        app["path"] = PATH("../yaml/optional/DAddOptionalForSearch1.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
         page = BasePage(app)
@@ -63,7 +62,7 @@ class OptionalTest(ParametrizedTestCase):
         app = {}
         app["logTest"] = self.logTest
         app["driver"] = self.driver
-        app["path"] = PATH("../yaml/optional/AddOptionalForDetial.yaml")
+        app["path"] = PATH("../yaml/optional/EAddOptionalForDetial.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
         page = BasePage(app)
@@ -75,7 +74,7 @@ class OptionalTest(ParametrizedTestCase):
         app = {}
         app["logTest"] = self.logTest
         app["driver"] = self.driver
-        app["path"] = PATH("../yaml/optional/AddOptionalForSwipe.yaml")
+        app["path"] = PATH("../yaml/optional/FAddOptionalForSwipe.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
         page = BasePage(app)
@@ -87,7 +86,7 @@ class OptionalTest(ParametrizedTestCase):
         app = {}
         app["logTest"] = self.logTest
         app["driver"] = self.driver
-        app["path"] = PATH("../yaml/optional/OptionalForLeftSwipe.yaml")
+        app["path"] = PATH("../yaml/optional/GOptionalForLeftSwipe.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
         page = BasePage(app)
@@ -99,7 +98,7 @@ class OptionalTest(ParametrizedTestCase):
         app = {}
         app["logTest"] = self.logTest
         app["driver"] = self.driver
-        app["path"] = PATH("../yaml/optional/OptionalListTop.yaml")
+        app["path"] = PATH("../yaml/optional/HOptionalListTop.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
         page = BasePage(app)

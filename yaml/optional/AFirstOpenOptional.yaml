@@ -24,20 +24,20 @@ testcase:
 check:
     - element_info: com.thinkive.future.dev.standard:id/iv_optional_add
       find_type: id
+      checking: default_check
       info: 展示添加图片
     - element_info: //android.widget.TextView[@text='添加自选']
       find_type: xpath
-      info: 展示添加图片控件
+      checking: default_check
+      info: 验证自选文本
     - element_info: com.thinkive.future.dev.standard:id/rb_optional
       find_type: id
-      operate_type: get_attr
-      attr_key: checked
-      attr_value: 1
+      operate_type: is_checked
+      checking: default_check
       info: 自选被选中
     - element_info: com.thinkive.future.dev.standard:id/rb_out_list
       find_type: id
-      operate_type: get_attr
-      attr_key: checked
-      attr_value: 0
+      operate_type: is_checked
+      checking: contrary
       info: 外盘未选中
 

@@ -1,6 +1,6 @@
 import os
 from Base.BaseRunner import ParametrizedTestCase
-from Base.BaseTestBase import *
+# from Base.BaseTestBase import *
 import sys
 
 from PageObject.BasePage import BasePage
@@ -10,13 +10,13 @@ PATH = lambda p: os.path.abspath(
 )
 
 
-class HangQingList(ParametrizedTestCase):
+class FutureList(ParametrizedTestCase):
     # 查看主页行情
-    def testHangQingList(self):
+    def testAFirstOpenFutureList(self):
         app = {}
         app["logTest"] = self.logTest
         app["driver"] = self.driver
-        app["path"] = PATH("../yaml/futures_quotes/zhuliangqing.yaml")
+        app["path"] = PATH("../yaml/futures_quotes/FirstOpenFutureList.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
         page = BasePage(app)
@@ -24,11 +24,11 @@ class HangQingList(ParametrizedTestCase):
         page.checkPoint()
 
     # 查看夜盘行情
-    def testYePan(self):
+    def testBYePan(self):
         app = {}
         app["logTest"] = self.logTest
         app["driver"] = self.driver
-        app["path"] = PATH("../yaml/futures_quotes/yepanhangqing.yaml")
+        app["path"] = PATH("../yaml/futures_quotes/YepanFuture.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
         page = BasePage(app)
@@ -37,8 +37,8 @@ class HangQingList(ParametrizedTestCase):
 
     @classmethod
     def setUpClass(cls):
-        super(HangQingList, cls).setUpClass()
+        super(FutureList, cls).setUpClass()
 
     @classmethod
     def tearDownClass(cls):
-        super(HangQingList, cls).tearDownClass()
+        super(FutureList, cls).tearDownClass()

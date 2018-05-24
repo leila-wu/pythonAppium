@@ -5,18 +5,20 @@ from math import floor
 import subprocess
 import os
 import json
-'''
-apk文件的读取信息
-'''
+
+"""
+ apk文件的读取信息
+"""
+
+
 class ApkInfo():
     def __init__(self, apkPath):
         self.apkPath = apkPath
 
-# 得到app的文件大小
+    # 得到app的文件大小
     def getApkSize(self):
         size = floor(os.path.getsize(self.apkPath) / (1024 * 1000))
         return str(size) + "M"
-
 
     def getApkBaseInfo(self):
         p = subprocess.Popen("aapt dump badging %s" % self.apkPath, stdout=subprocess.PIPE,
@@ -35,7 +37,7 @@ class ApkInfo():
         print('versionName:' + versionName)
         return packagename, versionName, versionCode
 
-    #得到应用名字
+    # 得到应用名字
     def getApkName(self):
         p = subprocess.Popen("aapt dump badging %s" % self.apkPath, stdout=subprocess.PIPE,
                              stderr=subprocess.PIPE,
@@ -48,8 +50,7 @@ class ApkInfo():
             if match is not None:
                 return match.group(1)
 
-
-    #得到启动类
+    # 得到启动类
 
     def getApkActivity(self):
         p = subprocess.Popen("aapt dump badging %s" % self.apkPath, stdout=subprocess.PIPE,
@@ -58,9 +59,11 @@ class ApkInfo():
         (output, err) = p.communicate()
         print("=====getApkActivity=========")
         match = re.compile("launchable-activity: name=(\S+)").search(output.decode())
-        print("match=%s" %match)
+        print("match=%s" % match)
         if match is not None:
             return match.group(1)
+
+
 if __name__ == '__main__':
     pass
     # ApkInfo(r"D:\app\appium\Img\Jianshu-2.3.1.apk").getApkActivity()
@@ -69,5 +72,3 @@ if __name__ == '__main__':
     # # ApkInfo(r"D:\app\appium_study\Img\t.apk").get_apk_name()
     # ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_activity()
     # ApkInfo(r"D:\app\appium_study\Img\t.apk").get_apk_activity()
-
-

@@ -1,10 +1,12 @@
-__author__ = "shikun"
 import pickle
 import os
+
 
 def write(data, path="data.pickle"):
     with open(path, 'wb') as f:
         pickle.dump(data, f, 0)
+
+
 def read(path):
     with open(path, 'rb') as f:
         try:
@@ -15,6 +17,7 @@ def read(path):
     # print("------read-------")
     # print(data)
     return data
+
 
 def readInfo(path):
     # data = []
@@ -28,7 +31,6 @@ def readInfo(path):
     # print("------read-------")
     # print(data)
     return data
-
 
 
 def writeInfo(data="", path="data.pickle"):
@@ -47,6 +49,7 @@ def writeInfo(data="", path="data.pickle"):
         # print("------writeInfo-------")
         # print(result)
         pickle.dump(result, f)
+
 
 if __name__ == "__main__":
     # write("用例失败重连过一次，失败原因：", "../Log/connect64dd15b8-ca91-11e7-87ae-38c98647adce.pickle")

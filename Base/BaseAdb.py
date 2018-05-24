@@ -1,8 +1,6 @@
-
 # -*- coding: utf-8 -*-
 
 import subprocess
-
 import os
 import random
 
@@ -11,7 +9,6 @@ class AndroidDebugBridge(object):
     def call_adb(self, command):
         command_result = ''
         command_text = 'adb %s' % command
-        # print(command_text)
         results = os.popen(command_text, "r")
         while 1:
             line = results.readline()
@@ -38,11 +35,13 @@ class AndroidDebugBridge(object):
         # print(result)
         # print(devices)
         return devices
+
     # 状态
     def get_state(self):
         result = self.call_adb("get-state")
         result = result.strip(' \t\n\r')
         return result or None
+
     #重启
     def reboot(self, option):
         command = "reboot"

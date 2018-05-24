@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from TestCase.HangQingSearch import HangQingSearch
-from TestCase.HangQingList import HangQingList
+from TestCase.FutureSearch import FutureSearch
+from TestCase.FutureList import FutureList
 import sys
 import platform
 from Base.BaseAndroidPhone import *
@@ -13,6 +13,7 @@ from Base.BaseInit import mk_file, init
 from Base.BaseStatistics import countDate, writeExcel
 from Base.BasePickle import *
 from datetime import datetime
+from Base.BaseApk import ApkInfo
 
 from TestCase.HomeTest import HomeTest
 from TestCase.OptionalTest import OptionalTest
@@ -24,7 +25,8 @@ PATH = lambda p: os.path.abspath(
 
 
 def kill_adb():
-    """停止adb服务并重启
+    """
+    停止adb服务并重启
      windows通过编写执行bat文件停止adb进程，使用的是taskkill
      其他操作系统（linux mac）使用killall命令停止进程
      adb start-server 启动adb服务，windows与Linux,mac处理一致"
@@ -41,7 +43,8 @@ def kill_adb():
 
 
 def runnerPool(getDevices):
-    """通过设备Id获取设备其他信息，启动多进程。有多少个设备启动多少个进程
+    """
+    通过设备Id获取设备其他信息，启动多进程。有多少个设备启动多少个进程
     :param getDevices:  设备列表  判断有多少个设备，每个设备分别加载app信息
     :return:
     """
@@ -54,19 +57,20 @@ def runnerPool(getDevices):
         _initApp = {}
         _initApp["deviceName"] = getDevices[i]["devices"]
         _initApp["platformVersion"] = getPhoneInfo(devices=_initApp["deviceName"])["release"]
-        # _initApp["platformVersion"] = "6.0"
         _initApp["platformName"] = "android"
-        _initApp["port"] = getDevices[i]["port"]
-        _initApp["appPackage"] = "com.thinkive.future.dev.standard"
-        _initApp["appActivity"] = "com.thinkive.futureshl.activity.LauncherActivity"
-        _initApp["unicodeKeyboard"] = "true"
-        _initApp["resetKeyboard"] = "true"
-        # _initApp["automationName"] = "uiautomator2"
-        _initApp["automationName"] ="Appium"
+        # _initApp["automationName"] = "Appium"
+        _initApp["automationName"] = "uiautomator2"
         _initApp["systemPort"] = getDevices[i]["systemPort"]
-        # _initApp["appPackage"] = apkInfo.getApkBaseInfo()[0]
-        # _initApp["appActivity"] = apkInfo.getApkActivity()
-        # _initApp["app"] = getDevices[i]["app"]
+
+        _initApp["port"] = getDevices[i]["port"]
+        # _initApp["appPackage"] = "com.thinkive.future.dev.standard"
+        # _initApp["appActivity"] = "com.thinkive.futureshl.activity.LauncherActivity"
+
+        _initApp["app"] = getDevices[i]["app"]
+        apkInfo = ApkInfo(_initApp["app"])
+        _initApp["appPackage"] = apkInfo.getApkBaseInfo()[0]
+        _initApp["appActivity"] = apkInfo.getApkActivity()
+
         _pool.append(_initApp)
         devices_Pool.append(_initApp)
 
@@ -79,10 +83,10 @@ def runnerPool(getDevices):
 def runnerCaseApp(devices):
     starttime = datetime.now()
     suite = unittest.TestSuite()
-    # suite.addTest(ParametrizedTestCase.parametrize(HomeTest, param=devices))
-    # suite.addTest(ParametrizedTestCase.parametrize(HangQingList, param=devices))
-    # suite.addTest(ParametrizedTestCase.parametrize(HangQingSearch, param=devices))
-    suite.addTest(ParametrizedTestCase.parametrize(OptionalTest, param=devices))
+    suite.addTest(ParametrizedTestCase.parametrize(HomeTest, param=devices))
+    # suite.addTest(ParametrizedTestCase.parametrize(FutureList, param=devices))
+    # suite.addTest(ParametrizedTestCase.parametrize(FutureSearch, param=devices))
+    # suite.addTest(ParametrizedTestCase.parametrize(OptionalTest, param=devices))
     unittest.TextTestRunner(verbosity=2).run(suite)
     endtime = datetime.now()
     countDate(datetime.now().strftime('%Y-%m-%d %H:%M:%S'), str((endtime - starttime).seconds) + "秒")
@@ -104,14 +108,13 @@ if __name__ == '__main__':
             app["port"] = str(random.randint(4700, 4900))
             app["bport"] = str(random.randint(4700, 4900))
             app["systemPort"] = str(random.randint(4700, 4900))
+            app["app"] = PATH("../app/JY_JC-BASE-YF-BSE-2018005_Android_SIT_91_.apk")  # 测试的app路径,喜马拉雅app
             l_devices.append(app)
 
         appium_server = AppiumServer(l_devices)
         appium_server.start_server()
         runnerPool(l_devices)
-        print('runnerPool(l_devices)')
         writeExcel()
-        print('writeExcel()')
         appium_server.stop_server(l_devices)
     else:
         print("没有可用的安卓设备")

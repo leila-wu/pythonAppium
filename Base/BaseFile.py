@@ -1,11 +1,8 @@
-__author__ = 'shikun'
-
 import os
 
-
-'''
+"""
 操作文件
-'''
+"""
 
 
 def write_data(f, method='w+', data=""):

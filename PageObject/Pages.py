@@ -24,13 +24,13 @@ class PagesObjects:
         self.driver = kwargs["driver"]
         if kwargs.get("launch_app", "0") == "0":  # 若为空，重新打开app
             self.driver.launch_app()
-        self.path = kwargs["path"]
+        # self.path = kwargs["path"]
         self.operateElement = OperateElement(self.driver)
         self.isOperate = True
-        test_msg = getYam(self.path)
-        self.testInfo = test_msg["testinfo"]
-        self.testCase = test_msg["testcase"]
-        self.testcheck = test_msg["check"]
+        self.test_msg = kwargs["test_msg"]
+        self.testInfo = self.test_msg[1]["testinfo"]
+        self.testCase = self.test_msg[1]["testcase"]
+        self.testcheck = self.test_msg[1]["check"]
         self.device = kwargs["device"]
         self.logTest = kwargs["logTest"]
         self.caseName = kwargs["caseName"]
@@ -43,6 +43,9 @@ class PagesObjects:
     '''
 
     def operate(self):
+        if self.test_msg[0] is False: # 如果用例编写错误
+            self.isOperate = False
+            return False
         for item in self.testCase:
             m_s_g = self.msg + "\n" if self.msg != "" else ""
             result = self.operateElement.operate(item, self.testInfo, self.logTest, self.device)
@@ -106,10 +109,10 @@ class PagesObjects:
 
         if self.isOperate:
             for item in self.testcheck:
-                if item.get("check", be.DEFAULT_CHECK) == be.TOAST:
+                if item.get("checking", be.DEFAULT_CHECK) == be.TOAST:
                     result = \
-                        self.operateElement.toast(item["element_info"], testInfo=self.testInfo, logTest=self.logTest)[
-                            "result"]
+                    self.operateElement.toast(item["element_info"], testInfo=self.testInfo, logTest=self.logTest)[
+                        "result"]
                     if result is False:
                         m = get_error(
                             {"type": be.DEFAULT_CHECK, "element_info": item["element_info"], "info": item["info"]})
@@ -121,7 +124,7 @@ class PagesObjects:
                     resp = self.operateElement.operate(item, self.testInfo, self.logTest, self.device)
 
                 # 一般情况，当元素不存在时失败
-                if item.get("check", be.DEFAULT_CHECK) == be.DEFAULT_CHECK  and not resp["result"]:
+                if item.get("checking", be.DEFAULT_CHECK) == be.DEFAULT_CHECK and not resp["result"]:
                     m = get_error(
                         {"type": be.DEFAULT_CHECK, "element_info": item["element_info"], "info": item["info"]})
                     self.msg = m_s_g + m
@@ -131,7 +134,7 @@ class PagesObjects:
                     break
 
                 # 相反检查点，表示如果检查元素存在就说明失败，如删除后，此元素依然存在
-                if item.get("check", be.DEFAULT_CHECK) == be.CONTRARY and resp["result"]:
+                if item.get("checking", be.DEFAULT_CHECK) == be.CONTRARY and resp["result"]:
                     m = get_error({"type": be.CONTRARY, "element_info": item["element_info"], "info": item["info"]})
                     self.msg = m_s_g + m
                     print(m)
@@ -140,8 +143,7 @@ class PagesObjects:
                     break
 
                 # 历史数据与实际数据对比，值相等检查点
-                if item.get("check", be.DEFAULT_CHECK) == be.COMPARE and self.is_get and resp["text"] \
-                        not in self.get_value:  # 历史数据和实际数据对比
+                if item.get("checking", be.DEFAULT_CHECK) == be.COMPARE and self.is_get and resp["text"] not in self.get_value:  # 历史数据和实际数据对比
                     result = False
                     m = get_error({"type": be.COMPARE, "current": item["element_info"], "history": resp["text"]})
                     self.msg = m_s_g + m
@@ -150,8 +152,8 @@ class PagesObjects:
                     break
 
                 # 检查点关键字contrary_getval: 相反值检查点，如果对比成功，说明失败
-                if item.get("check", be.DEFAULT_CHECK) == be.CONTRARY_GETVAL and self.is_get and resp["result"] \
-                        in self.get_value:
+                if item.get("checking", be.DEFAULT_CHECK) == be.CONTRARY_GETVAL and self.is_get and resp[
+                    "result"] in self.get_value:
                     m = get_error(
                         {"type": be.CONTRARY_GETVAL, "current": item["element_info"], "history": resp["text"]})
                     self.msg = m_s_g + m
@@ -160,9 +162,9 @@ class PagesObjects:
                     result = False
                     break
 
-                # 检查点关键字contrary_getval: 相反值检查点，如果对比成功，说明失败
-                if item.get("check", be.DEFAULT_CHECK) == be.CONTRARY_GETVAL and self.is_get and resp["result"] \
-                        in self.get_value:
+                # 检查点关键字contain: 包含。比如模糊查询，查询结果包含查询条件
+                if item.get("checking", be.DEFAULT_CHECK) == "contain" and self.is_get and self.get_value[0] not in resp[
+                    "text"]:
                     m = get_error(
                         {"type": be.CONTRARY_GETVAL, "current": item["element_info"], "history": resp["text"]})
                     self.msg = m_s_g + m

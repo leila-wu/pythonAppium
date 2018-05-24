@@ -1,17 +1,15 @@
 import requests
-
-# requests.packages.urllib.disable_warnings(InsecureRequestWarning)
 from urllib3 import disable_warnings
 from urllib3.connectionpool import InsecureRequestWarning
+import json
+
 disable_warnings(InsecureRequestWarning)
 
-
-import json
 
 # 封装HTTP GET请求方法
 def get(**kwargs):
     data = {}
-    url = kwargs["protocol"] + "://"+kwargs["host"]+ kwargs["url"]
+    url = kwargs["protocol"] + "://" + kwargs["host"] + kwargs["url"]
     print(url)
     r = requests.get(url, headers=kwargs.get("headers", None), verify=False)
     if r.status_code == 200 and len(r.text) > 0:
@@ -20,6 +18,8 @@ def get(**kwargs):
     data["status_code"] = r.status_code
     # print(data)
     return data
+
+
 # 封装HTTP POST请求方法,支持上传图片
 def post(files=None, **kwargs):
     result = {}
@@ -30,16 +30,20 @@ def post(files=None, **kwargs):
         data = json.dumps(kwargs["data"])
         print(data)
     print(url)
-    r = requests.post(url, files=files,  data=data, verify=False, headers=kwargs["headers"])
+    r = requests.post(url, files=files, data=data, verify=False, headers=kwargs["headers"])
     result["status_code"] = r.status_code
     if r.status_code == 200 and len(r.text) > 0:
         r.encoding = 'UTF-8'
         result = json.loads(r.text)
     result["status_code"] = r.status_code
     return result
-'''
- 登陆
-'''
+
+
+"""
+登录
+"""
+
+
 def post_login(**kwargs):
     result = {}
     # url = kwargs["protocol"] + "://" + kwargs["host"] + ':' + str(kwargs["port"])+ kwargs["url"]
@@ -59,8 +63,9 @@ def post_login(**kwargs):
     # print("--登陆接口--")
     # print(result)
     return result
+
+
 if __name__ == '__main__':
-
-
     headers = {'content-type': 'application/json'}
-    post(protocol="http", host="ivt3.hschefu.com", port=9199, url="/login", data={'password': '12345678','username': 'xiangjin'}, headers=headers)
+    post(protocol="http", host="ivt3.hschefu.com", port=9199, url="/login",
+         data={'password': '12345678', 'username': 'xiangjin'}, headers=headers)

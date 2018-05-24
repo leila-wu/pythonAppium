@@ -28,18 +28,19 @@ testcase:
       info: 通过查询结果查看合同详情
 check:
     - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_title
-      find_type: ids
+      find_type: id
       operate_type: get_value
+      checking: compare
       info: 获取合同详情中的合同名称
     - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
       find_type: id
-      index: 1
       operate_type: click
       info: 返回查询列表
     - element_info: com.thinkive.future.dev.standard:id/name
       find_type: ids
-      operate_type: get_value
       index: 0
+      operate_type: get_value
+      checking: compare
       info: 检查返回后保持查询结果
     - element_info: com.thinkive.future.dev.standard:id/hq_btn_cancel
       find_type: id

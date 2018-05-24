@@ -1,5 +1,5 @@
 testinfo:
-    - id: test016
+    - id: test017
       title:  通过查询移除自选
       info: 查看页面展示
 testcase:
@@ -43,5 +43,5 @@ check:
       find_type: ids
       index: 0
       operate_type: get_value
-      checking: contrary
+      checking: contrary_getval
       info: 验证移除后没有自选信息

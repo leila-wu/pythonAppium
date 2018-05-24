@@ -11,17 +11,13 @@ PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
 )
 
-'''
+"""
 统计数据相关
-'''
-
-'''
 result bool
 logTest 记录日志类 class
 driver
 testinfo
-
-'''
+"""
 
 
 def countInfo(**kwargs):
@@ -69,7 +65,6 @@ def countInfo(**kwargs):
 
 # 本地没有设备用例的记录统计
 def countSumNoDevices(devices, result, _read, phone_name):
-
     if _read is None:
         _read = []
     # get_phone = getPhoneInfo(devices)
@@ -141,9 +136,9 @@ def countDate(testDate, testSumDate):
         print("统计数据失败")
 
 
-'''
+"""
 测试报告
-'''
+"""
 
 
 def writeExcel():

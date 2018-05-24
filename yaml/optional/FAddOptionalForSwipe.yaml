@@ -14,12 +14,14 @@ testcase:
     - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
       find_type: ids
       index: 0
-      operate_type: swipe_left
-      info: 获取第一条记录
+      operate_type: get_value
+      info: 记录第一条记录
+    - operate_type: swipe_up
+      info: 向上滑动
 check:
     - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
       find_type: ids
       index: 0
       operate_type: get_value
-      checking: contrary
+      checking: contrary_getval
       info: 验证取到的第一条记录已经修改，滑动生效

@@ -46,6 +46,7 @@ def get_men_total(devices):
             men_total = line[len(men_total_str) +1:].replace("kB", "").strip()
             break
     return int(men_total)
+
 # 得到几核cpu
 def get_cpu_kel(devices):
     cmd = "adb -s " +devices +" shell cat /proc/cpuinfo"

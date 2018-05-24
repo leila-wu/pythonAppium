@@ -27,24 +27,22 @@ testcase:
 check:
     - element_info: android:id/content
       find_type: id
+      checking: default_check # 默认检查点
       info: 判断夜盘弹出框是否存在
     - element_info: com.thinkive.future.dev.standard:id/dialog_yepan_sh
       find_type: id
-      operate_type: get_attr
-      attr_key: checked
-      attr_value: 0
+      operate_type: is_checked
+      checking: contrary  #相反检查点，此处未选中false取相反
       info: 判断夜盘提醒框中，上期所没有被选中
     - element_info: com.thinkive.future.dev.standard:id/dialog_yepan_ec
       find_type: id
-      operate_type: get_attr
-      attr_key: checked
-      attr_value: 1
+      operate_type: is_checked
+      checking: default_check # 默认检查点
       info: 判断夜盘提醒框中，能源中心被选中
     - element_info: com.thinkive.future.dev.standard:id/cb_no_prompt
       find_type: id
-      operate_type: get_attr
-      attr_key: checked
-      attr_value: 0
+      operate_type: is_checked
+      checking: contrary  #相反检查点，此处未选中false取相反
       info: 未选择不再提示
     - element_info: com.thinkive.future.dev.standard:id/tv_cancel
       find_type: id

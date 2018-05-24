@@ -43,4 +43,5 @@ check:
       find_type: ids
       index: 0
       operate_type: get_value
+      checking: compare
       info: 检查最上方的合约名称与刚刚添加的一致

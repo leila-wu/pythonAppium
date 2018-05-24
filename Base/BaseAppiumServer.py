@@ -23,7 +23,7 @@ class AppiumServer:
         """
         for i in range(0, len(self.kwargs)):
             cmd = "appium --session-override  -p %s -bp %s -U %s" % (
-            self.kwargs[i]["port"], self.kwargs[i]["bport"], self.kwargs[i]["devices"])
+                self.kwargs[i]["port"], self.kwargs[i]["bport"], self.kwargs[i]["devices"])
             print(cmd)
             if platform.system() == "Windows":  # windows下启动server
                 t1 = RunServer(cmd)
@@ -99,5 +99,4 @@ class RunServer(threading.Thread):
 
 
 if __name__ == "__main__":
-
     pass

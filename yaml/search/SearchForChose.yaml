@@ -29,16 +29,14 @@ check:
     - element_info: com.thinkive.future.dev.standard:id/search_edittext
       find_type: id
       operate_type: get_value
+      checking: compare
       info: 检查文本框的内容与选中内容一致
     - element_info: com.thinkive.future.dev.standard:id/name
       find_type: ids
       index: 1
       operate_type: get_value
+      checking: contain
       info: 检查查询结果文本包含查询条件
-    - element_info: com.thinkive.future.dev.standard:id/search_add
-      find_type: ids
-      index: 1
-      info: 查询未加入自选
     - element_info: com.thinkive.future.dev.standard:id/hq_btn_cancel
       find_type: id
       operate_type: click

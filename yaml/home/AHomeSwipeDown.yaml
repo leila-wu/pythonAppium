@@ -10,4 +10,5 @@ testcase:
 check:
     - element_info: com.thinkive.future.dev.standard:id/tv_main_input_tip
       find_type: id
+      checking: default_check
       info: 首页打开成功

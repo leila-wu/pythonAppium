@@ -1,5 +1,5 @@
 testinfo:
-    - id: test017
+    - id: test018
       title:  清空查询列表
       info: 查看页面展示
 testcase:
@@ -18,6 +18,7 @@ testcase:
 check:
     - element_info: //android.widget.TextView[@text='-暂无合约查询记录-']
       find_type: xpath
+      checking: default_check
       info: 清空后提示"-暂无合约查询记录-"
     - element_info: com.thinkive.future.dev.standard:id/hq_btn_cancel
       find_type: id

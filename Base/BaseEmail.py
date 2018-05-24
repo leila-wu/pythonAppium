@@ -6,12 +6,17 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 import smtplib
 import os
+
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
 )
+
+
 def _format_addr(s):
     name, addr = parseaddr(s)
     return formataddr((Header(name, 'utf-8').encode(), addr))
+
+
 def send_mail(**kwargs):
     '''
     :param f: 附件路径
@@ -41,6 +46,8 @@ def send_mail(**kwargs):
     server.login(from_addr, password)
     server.sendmail(from_addr, kwargs["to_addr"], msg.as_string())
     server.quit()
+
+
 if __name__ == '__main__':
     to_addr = ["284772894@qq.com"]
     mail_host = "smtp.qq.com"
@@ -50,4 +57,5 @@ if __name__ == '__main__':
     header_msg = "接口测试"
     attach = "接口测试"
     report = PATH("../Runner/report.xlsx")
-    send_mail(to_addr = to_addr, mail_host = mail_host, mail_user=mail_user, port=port, mail_pass=mail_pass, header_msg=header_msg, report=report, attach=attach, report_name="接口测试报告")
+    send_mail(to_addr=to_addr, mail_host=mail_host, mail_user=mail_user, port=port, mail_pass=mail_pass,
+              header_msg=header_msg, report=report, attach=attach, report_name="接口测试报告")

@@ -88,17 +88,17 @@ class OperateElement:
             elements = {
                 BE.SWIPE_DOWN: lambda: self.swipeToDown(),
                 BE.SWIPE_UP: lambda: self.swipeToUp(),
+                BE.SWIPE_LEFT: lambda: self.swipeLeft(operate),
                 BE.CLICK: lambda: self.click(operate),
                 BE.GET_VALUE: lambda: self.get_value(operate),
                 BE.SET_VALUE: lambda: self.set_value(operate),
                 BE.ADB_TAP: lambda: self.adb_tap(operate, device),
                 BE.GET_CONTENT_DESC: lambda: self.get_content_desc(operate),
                 BE.PRESS_KEY_CODE: lambda: self.press_keycode(operate),
-                BE.GET_ATTR: lambda: self.get_attr(operate),
-                BE.SWIPE_LEFT: lambda: self.swipeLeft(operate),
-                BE.IS_CHECKED: lambda: self.swipeLeft(operate),
-                BE.IS_DISPLAYED: lambda: self.swipeLeft(operate),
-                BE.IS_SELECTED: lambda: self.swipeLeft(operate),
+                BE.IS_CHECKED: lambda: self.get_is_checked(operate),
+                BE.IS_DISPLAYED: lambda: self.get_is_displayed(operate),
+                BE.IS_SELECTED: lambda: self.get_is_selected(operate),
+                BE.IS_ENABLED: lambda: self.get_is_enabled(operate),
             }
             return elements[operate.get("operate_type")]()
         except IndexError:
@@ -275,54 +275,32 @@ class OperateElement:
         re_reulst = re.findall(r'[a-zA-Z\d+\u4e00-\u9fa5]', result)
 
         return {"result": True, "text": "".join(re_reulst)}
-		
-    def get_attr(self, mOperate):
-        """
-        读取element的值,获取元素属性，判断属性与预期是否一致
-        :param mOperate:
-        :return:
-        """
-        attr_key = mOperate["attr_key"]
-        attr_value = mOperate["attr_value"]
-        if mOperate.get("find_type") == BE.find_elements_by_id:
-            element_info = self.elements_by(mOperate)[mOperate["index"]]
-        else:
-            element_info = self.elements_by(mOperate)
-
-        if mOperate.get("is_webview", "0") == 1:
-            result = element_info.text
-        else:
-            result = element_info.get_attribute(attr_key)
-
-        if result == "true":
-            re_result = 1
-        else:
-            re_result = 0
-
-        if re_result == attr_value:
-            print("参数校验成功")
-            return {"result": True, "text": "".join("参数校验成功")}
-        else:
-            print("参数校验失败")
-            return {"result": False, "text": "".join("参数校验失败")}
 
     def get_is_enabled(self, mOperate):
-        return self.elements_by(mOperate).is_enabled()
+        if self.elements_by(mOperate).is_enabled():
+            return {"result": True, "text": "".join("元素被选中")}
+        else:
+            return {"result": False, "text": "".join("元素未被选中")}
 
     def get_is_selected(self, mOperate):
-        return self.elements_by(mOperate).is_selected()
+        if self.elements_by(mOperate).is_selected():
+            return {"result": True, "text": "".join("元素被选中")}
+        else:
+            return {"result": False, "text": "".join("元素未被选中")}
 
     def get_is_displayed(self, mOperate):
-        return self.elements_by(mOperate).is_displayed()
+        if self.elements_by(mOperate).is_displayed():
+            return {"result": True, "text": "".join("元素被选中")}
+        else:
+            return {"result": False, "text": "".join("元素未被选中")}
 
     def get_is_checked(self, mOperate):
-        attr_key = mOperate["attr_key"]
         if mOperate.get("find_type") == BE.find_elements_by_id:
             element_info = self.elements_by(mOperate)[mOperate["index"]]
         else:
             element_info = self.elements_by(mOperate)
 
-        result = element_info.get_attribute(attr_key)
+        result = element_info.get_attribute("checked")
 
         if result == "true":
             return {"result": True, "text": "".join("元素被选中")}

@@ -1,6 +1,6 @@
 import os
 from Base.BaseRunner import ParametrizedTestCase
-from Base.BaseTestBase import *
+# from Base.BaseTestBase import *
 import sys
 from PageObject.BasePage import BasePage
 
@@ -9,7 +9,7 @@ PATH = lambda p: os.path.abspath(
 )
 
 
-class HangQingSearch(ParametrizedTestCase):
+class FutureSearch(ParametrizedTestCase):
     # 首次点击查询按钮，检查查询列表空
     def testAFirstSearch(self):
         app = {}
@@ -120,8 +120,8 @@ class HangQingSearch(ParametrizedTestCase):
 
     @classmethod
     def setUpClass(cls):
-        super(HangQingSearch, cls).setUpClass()
+        super(FutureSearch, cls).setUpClass()
 
     @classmethod
     def tearDownClass(cls):
-        super(HangQingSearch, cls).tearDownClass()
+        super(FutureSearch, cls).tearDownClass()

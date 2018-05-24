@@ -1,5 +1,5 @@
 testinfo:
-    - id: test022
+    - id: test023
       title: 通过+号添加自选
       info: 查看页面展示
 testcase:
@@ -14,7 +14,7 @@ testcase:
     - element_info: com.thinkive.future.dev.standard:id/item_txt
       find_type: ids
       operate_type: click
-      index: 0
+      index: 1
       info: 通过点击合同查询
     - element_info: com.thinkive.future.dev.standard:id/ll_add_unadd
       find_type: ids
@@ -59,4 +59,5 @@ check:
       find_type: ids
       index: 0
       operate_type: get_value
+      checking: compare
       info: 验证得到的值与加入的值一致
