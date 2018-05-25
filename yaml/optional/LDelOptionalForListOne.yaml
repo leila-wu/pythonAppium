@@ -45,4 +45,5 @@ check:
       find_type: ids
       index: 0
       operate_type: get_value
-      info: 验证得到的值与加入的值一致
+      checking: contrary_getval
+      info: 验证删除成功

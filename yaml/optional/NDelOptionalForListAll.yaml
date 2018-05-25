@@ -30,13 +30,9 @@ testcase:
       index: 0
       operate_type: click
       info: 点击确认删除操作
-    - element_info: com.thinkive.future.dev.standard:id/tv_optional_edit
-      find_type: id
-      index: 1
-      operate_type: click
-      info: 返回自选列表
 check:
     - element_info: com.thinkive.future.dev.standard:id/iv_optional_add
       find_type: id
       index: 0
+      checking: default_check
       info: 验证删除所有产品合同后，+号出现

@@ -1,0 +1,187 @@
+首次查看详情：
+获取产品名称：  com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv ids 0
+点击：com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv   ids 0
+验证
+获取详情的合同名称： com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_title  比较值是否相等
+判断分时被选中   com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_fenRb  is_checked
+判断盘口未被选中   com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_panKou  is_checked   取相反
+返回行情列表：　com.thinkive.future.dev.standard:id/detail_news_wrap_back
+
+
+切换详情盘口：
+进入详情口，点击盘口： com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_panKou
+验证：
+盘口被选中： com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_panKou is_checked
+分时未被选中   com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_fenRb  is_checked   取相反
+盘口信息获取成功： com.thinkive.future.dev.standard:id/detail_head_msg  
+//android.widget.TextView[@Text='开盘']
+//android.widget.TextView[@Text='最高']
+//android.widget.TextView[@Text='最低']
+//android.widget.TextView[@Text='均价']
+//android.widget.TextView[@Text='结算']
+//android.widget.TextView[@Text='昨结']
+//android.widget.TextView[@Text='昨收']
+//android.widget.TextView[@Text='成交量']
+//android.widget.TextView[@Text='持仓量']
+//android.widget.TextView[@Text='日增仓']
+//android.widget.TextView[@Text='外盘']
+//android.widget.TextView[@Text='内盘']
+//android.widget.TextView[@Text='涨停']
+//android.widget.TextView[@Text='跌停']
+
+切换到K线：
+K线被选中： com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_KRb  is_checked
+分时未被选中   com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_fenRb   is_checked   取相反
+日K被选中： com.thinkive.future.dev.standard:id/fragment_k_chart_radio_dayk is_checked
+周K未被选中： com.thinkive.future.dev.standard:id/fragment_k_chart_radio_weekk  is_checked   取相反
+月K未被选中： com.thinkive.future.dev.standard:id/fragment_k_chart_radio_monthk    is_checked   取相反
+
+K线切换周K：
+K线切换月K：
+
+K现点击周期：
+点击周期：com.thinkive.future.dev.standard:id/fragment_k_chart_radio_minutesk_ll
+选择15分钟：  com.thinkive.future.dev.standard:id/fragment_hq_min_select_fifteen
+
+K线点击指标：
+点击指标：com.thinkive.future.dev.standard:id/fragment_k_chart_radio_zhibiaok_ll
+点击MA： com.thinkive.future.dev.standard:id/item_pop_norm_name   ids 0
+点击EMA： //android.widget.TextView[@Text='EMA']
+点击BOLL： //android.widget.TextView[@Text='BOLL']
+点击PUBU：  //android.widget.TextView[@Text='PUBU']
+
+点击摆动指标：  //android.widget.TextView[@Text='摆动指标']  
+//android.widget.TextView[@Text='MACD']
+//android.widget.TextView[@Text='KDJ']
+//android.widget.TextView[@Text='RSI']
+//android.widget.TextView[@Text='WR']
+
+切换到资讯：
+点击资讯：   com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_ziRb
+产品名称保持 ： com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_title  get_value
+获取到咨询标题： com.thinkive.future.dev.standard:id/zixun_title  ids 0
+
+
+查看咨询：
+获取资讯标题： com.thinkive.future.dev.standard:id/zixun_title  get_value
+点击咨询标题  com.thinkive.future.dev.standard:id/zixun_title
+验证资讯标题：com.thinkive.future.dev.standard:id/news_title
+点击放大字体：　com.thinkive.future.dev.standard:id/news_detial_wrap
+返回：　com.thinkive.future.dev.standard:id/detail_news_wrap_back
+返回行情列表：　com.thinkive.future.dev.standard:id/detail_news_wrap_back
+
+更多设置：
+点击more：　com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_more
+
+
+点击刷新
+//android.widget.TextView[@Text='刷新']
+
+
+点击明细
+//android.widget.TextView[@Text='明细']
+验证合同没变： com.thinkive.future.dev.standard:id/activity_mingxi_titleName_TV
+//android.widget.TextView[@Text='时间']
+//android.widget.TextView[@Text='价格']
+//android.widget.TextView[@Text='现手']
+//android.widget.TextView[@Text='仓差']
+com.thinkive.future.dev.standard:id/module_five_col_1_subtitle5 (性质。五条值)
+返回： com.thinkive.future.dev.standard:id/activity_mingxi_back_img
+
+点击F10
+//android.widget.TextView[@Text='F10']
+验证：
+标题 包含 产品名称com.thinkive.future.dev.standard:id/activity_f10_titleName_TV
+返回： com.thinkive.future.dev.standard:id/activity_f10_back_img
+
+点击设置
+//android.widget.TextView[@Text='设置']
+验证：
+抬头设置   com.thinkive.future.dev.standard:id/system_setting  
+指标参数修改  com.thinkive.future.dev.standard:id/system_setting_parameter
+
+设置夜盘时间提醒：
+点击：com.thinkive.future.dev.standard:id/system_yepan_info
+返回：　com.thinkive.future.dev.standard:id/activity_setting_back_img
+进入夜盘提醒，夜盘弹出框没有
+
+
+点击抬头设置：
+验证：
+最新被选中： 
+//android.widget.TextView[@text='最新']/../android.widget.CheckBox  is_checked  ture
+//android.widget.TextView[@text='涨幅']/../android.widget.CheckBox  is_checked  ture
+//android.widget.TextView[@text='成交量']/../android.widget.CheckBox  is_checked  ture
+//android.widget.TextView[@text='涨跌']/../android.widget.CheckBox  is_checked  ture
+//android.widget.TextView[@text='持仓量']/../android.widget.CheckBox  is_checked  ture
+//android.widget.TextView[@text='日增仓']/../android.widget.CheckBox  is_checked  ture
+//android.widget.TextView[@text='现手']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='振幅']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='买价']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='卖价']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='买量']/../android.widget.CheckBox  is_checked  false
+
+swipe_up
+//android.widget.TextView[@text='内盘']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='外盘']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='昨持仓']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='开盘价']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='最高价']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='最低价']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='均价']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='涨停']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='跌停']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='昨收价']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='昨结算']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='结算价']/../android.widget.CheckBox  is_checked  false
+//android.widget.TextView[@text='时间']/../android.widget.CheckBox  is_checked  false
+
+取消抬头，新增抬头
+com.thinkive.future.dev.standard:id/headset_cb_check  0-6 点击取消   7-10 点击增加
+返回详情页：com.thinkive.future.dev.standard:id/headsetting_backimg
+返回行情页：com.thinkive.future.dev.standard:id/detail_news_wrap_back
+首页判断：
+//android.widget.TextView[@text='现手']
+//android.widget.TextView[@text='振幅']
+//android.widget.TextView[@text='买价']
+
+
+指标参数修改：
+
+
+com.thinkive.future.dev.standard:id/activity_parameter_titleName_TV  get_value 标题
+//android.widget.TextView[@Text='MA']   is_selected true
+点击EMA： //android.widget.TextView[@Text='EMA']  is_selected false
+点击BOLL： //android.widget.TextView[@Text='MACD']   is_selected false
+保存参数：com.thinkive.future.dev.standard:id/tv_save_parameter
+返回： com.thinkive.future.dev.standard:id/activity_parameter_back_img
+
+修改参数并保存：
+修改参数： com.thinkive.future.dev.standard:id/et_paramater_five_value  ids 4   clear   msg:101  get_value
+保存参数：com.thinkive.future.dev.standard:id/tv_save_parameter
+返回： com.thinkive.future.dev.standard:id/activity_parameter_back_img
+验证：
+查看保存参数：
+com.thinkive.future.dev.standard:id/et_paramater_five_value  ids 5 
+返回： com.thinkive.future.dev.standard:id/activity_parameter_back_img
+
+
+恢复默认：
+切换：//android.widget.TextView[@Text='MACD']
+获取参数：com.thinkive.future.dev.standard:id/et_paramater_three_value ids 2  get_value
+修改参数：com.thinkive.future.dev.standard:id/et_paramater_three_value ids 2  ids 4   clear   msg:101  
+点击恢复默认： com.thinkive.future.dev.standard:id/tv_recover_default
+获取参数：com.thinkive.future.dev.standard:id/et_paramater_three_value ids 2  get_value
+返回 com.thinkive.future.dev.standard:id/activity_parameter_back_img
+ 
+
+//android.widget.TextView[@Text='KDJ']
+//android.widget.TextView[@Text='RSI']
+//android.widget.TextView[@Text='WR']
+//android.widget.TextView[@Text='BIAS']
+//android.widget.TextView[@Text='ATR']
+//android.widget.TextView[@Text='DMI']
+//android.widget.TextView[@Text='CCI']
+//android.widget.TextView[@Text='MTM']
+//android.widget.TextView[@Text='PSY']
+返回 ： com.thinkive.future.dev.standard:id/activity_parameter_back_img
