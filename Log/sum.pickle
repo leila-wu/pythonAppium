@@ -13,11 +13,19 @@ V2017/12/4 13:00
 p6
 sVsum
 p7
-L0L
+L1L
 sVpass
 p8
 L0L
 sVfail
 p9
-L0L
+L1L
+sVtestDate
+p10
+V2018-05-25 15:43:15
+p11
+sVtestSumDate
+p12
+V123\u79d2
+p13
 s.

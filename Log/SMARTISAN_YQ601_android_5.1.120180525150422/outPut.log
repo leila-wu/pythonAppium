@@ -1,0 +1,6 @@
+2018-05-25 15:04:33,739  - INFO - ----  test030_未选择记录删除操作_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-25 15:04:43,767  - INFO - ----  test030_未选择记录删除操作_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-25 15:04:44,961  - INFO - ----  test030_未选择记录删除操作_com.thinkive.future.dev.standard:id/tv_optional_edit_click          ----
+2018-05-25 15:04:47,252  - INFO - ----  test030_未选择记录删除操作_com.thinkive.future.dev.standard:id/tv_delete_click          ----
+2018-05-25 15:04:47,367  - INFO - ----  test030_未选择记录删除操作_查找弹窗元素_//*[contains(@text,'请选择要删除的合约')]        ----
+2018-05-25 15:04:48,885  - INFO - [CheckPoint_1]: testKDelOptionalForListNone_ : OK

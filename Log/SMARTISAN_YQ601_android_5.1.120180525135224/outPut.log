@@ -1,0 +1,6 @@
+2018-05-25 13:52:41,089  - INFO - ----  test025_自选页滑动_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-25 13:52:58,217  - INFO - ----  test025_自选页滑动_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-25 13:53:04,986  - INFO - ----  test025_自选页滑动_com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv_get_value          ----
+2018-05-25 13:53:06,646  - INFO - ----  test025_自选页滑动_ _swipe_up          ----
+2018-05-25 13:53:09,353  - INFO - ----  test025_自选页滑动_com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv_get_value          ----
+2018-05-25 13:53:10,344  - INFO - [CheckPoint_1]: testFAddOptionalForSwipe_ : OK

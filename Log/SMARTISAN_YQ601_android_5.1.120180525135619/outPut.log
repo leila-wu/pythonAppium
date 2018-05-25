@@ -1,0 +1,15 @@
+2018-05-25 13:56:37,677  - INFO - ----  test026_自选页滑动_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-25 13:56:48,583  - INFO - ----  test026_自选页滑动_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-25 13:56:51,819  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='最新']_           ----
+2018-05-25 13:56:52,082  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='涨幅']_           ----
+2018-05-25 13:56:52,447  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='成交量']_           ----
+2018-05-25 13:56:52,624  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='成交量']_swipe_left          ----
+2018-05-25 13:56:58,450  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='成交量']_           ----
+2018-05-25 13:57:22,614  - INFO - ----  testGOptionalForLeftSwipe_失败重连        ----
+2018-05-25 13:57:37,004  - INFO - ----  test026_自选页滑动_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-25 13:57:37,490  - INFO - ----  test026_自选页滑动_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-25 13:57:47,692  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='最新']_           ----
+2018-05-25 13:57:48,014  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='涨幅']_           ----
+2018-05-25 13:57:48,242  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='成交量']_           ----
+2018-05-25 13:57:48,446  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='成交量']_swipe_left          ----
+2018-05-25 13:57:57,651  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='成交量']_           ----

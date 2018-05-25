@@ -1,0 +1,8 @@
+2018-05-24 20:15:15,213  - INFO - ----  test026_自选页滑动_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-24 20:15:15,554  - INFO - ----  test026_自选页滑动_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-24 20:15:17,579  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='最新']_           ----
+2018-05-24 20:15:17,673  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='涨幅']_           ----
+2018-05-24 20:15:17,733  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='成交量']_           ----
+2018-05-24 20:15:17,798  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='成交量']_swipe_left          ----
+2018-05-24 20:15:19,444  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='合约名称']_           ----
+2018-05-24 20:15:19,723  - INFO - [CheckPoint_1]: testGOptionalForLeftSwipe_ : OK

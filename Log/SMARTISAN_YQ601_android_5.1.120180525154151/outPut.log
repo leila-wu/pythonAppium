@@ -1,0 +1,15 @@
+2018-05-25 15:42:02,984  - INFO - ----  test026_自选页滑动_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-25 15:42:03,856  - INFO - ----  test026_自选页滑动_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-25 15:42:05,791  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='最新']_           ----
+2018-05-25 15:42:06,086  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='涨幅']_           ----
+2018-05-25 15:42:06,252  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='成交量']_           ----
+2018-05-25 15:42:06,417  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='成交量']_swipe_left          ----
+2018-05-25 15:42:31,673  - INFO - ----  testGOptionalForLeftSwipe_失败重连        ----
+2018-05-25 15:42:43,226  - INFO - ----  test026_自选页滑动_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-25 15:42:44,142  - INFO - ----  test026_自选页滑动_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-25 15:42:45,593  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='最新']_           ----
+2018-05-25 15:42:46,039  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='涨幅']_           ----
+2018-05-25 15:42:46,200  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='成交量']_           ----
+2018-05-25 15:42:46,354  - INFO - ----  test026_自选页滑动_//android.widget.TextView[@text='成交量']_swipe_left          ----
+2018-05-25 15:43:11,733  - INFO - [CheckPoint_1]: testGOptionalForLeftSwipe_用例失败重连过一次，失败原因:==检查点_判断列表存在涨跌失败，请检查_//android.widget.TextView[@text='涨跌']==
+==检查点_判断列表存在涨跌失败，请检查_//android.widget.TextView[@text='涨跌']==: NG

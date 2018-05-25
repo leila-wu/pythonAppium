@@ -1,0 +1,3 @@
+2018-05-25 14:48:41,130  - INFO - ----  test030_未选择记录删除操作_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-25 14:48:42,032  - INFO - ----  test030_未选择记录删除操作_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-25 14:49:04,766  - INFO - ----  testKDelOptionalForListNone_失败重连        ----

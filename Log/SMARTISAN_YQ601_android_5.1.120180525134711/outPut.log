@@ -1,0 +1,34 @@
+2018-05-25 13:47:21,662  - INFO - ----  test022_通过查询条件加入自选1_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-25 13:47:22,535  - INFO - ----  test022_通过查询条件加入自选1_com.thinkive.future.dev.standard:id/iv_quotation_futures_search_click          ----
+2018-05-25 13:47:27,468  - INFO - ----  test022_通过查询条件加入自选1_com.thinkive.future.dev.standard:id/item_txt_click          ----
+2018-05-25 13:47:29,150  - INFO - ----  test022_通过查询条件加入自选1_com.thinkive.future.dev.standard:id/ll_add_unadd_click          ----
+2018-05-25 13:47:29,403  - INFO - ----  test022_通过查询条件加入自选1_com.thinkive.future.dev.standard:id/ll_add_unadd_click          ----
+2018-05-25 13:47:30,612  - INFO - ----  test022_通过查询条件加入自选1_com.thinkive.future.dev.standard:id/ll_add_unadd_click          ----
+2018-05-25 13:47:31,344  - INFO - ----  test022_通过查询条件加入自选1_com.thinkive.future.dev.standard:id/ll_add_unadd_click          ----
+2018-05-25 13:47:32,630  - INFO - ----  test022_通过查询条件加入自选1_com.thinkive.future.dev.standard:id/ll_add_unadd_click          ----
+2018-05-25 13:47:33,410  - INFO - ----  test022_通过查询条件加入自选1_com.thinkive.future.dev.standard:id/name_get_value          ----
+2018-05-25 13:47:34,040  - INFO - ----  test022_通过查询条件加入自选1_com.thinkive.future.dev.standard:id/hq_btn_cancel_click          ----
+2018-05-25 13:47:41,129  - INFO - ----  test022_通过查询条件加入自选1_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-25 13:48:02,641  - INFO - ----  test022_通过查询条件加入自选1_com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv_get_value          ----
+2018-05-25 13:48:04,402  - INFO - [CheckPoint_1]: testCAddOptionalForSearch_ : OK
+2018-05-25 13:48:25,492  - INFO - ----  test023_通过查询条件加入自选2_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-25 13:48:53,587  - INFO - ----  test023_通过查询条件加入自选2_com.thinkive.future.dev.standard:id/iv_quotation_futures_search_click          ----
+2018-05-25 13:48:58,157  - INFO - ----  test023_通过查询条件加入自选2_com.thinkive.future.dev.standard:id/item_txt_click          ----
+2018-05-25 13:48:59,844  - INFO - ----  test023_通过查询条件加入自选2_com.thinkive.future.dev.standard:id/ll_add_unadd_click          ----
+2018-05-25 13:49:00,184  - INFO - ----  test023_通过查询条件加入自选2_com.thinkive.future.dev.standard:id/ll_add_unadd_click          ----
+2018-05-25 13:49:00,904  - INFO - ----  test023_通过查询条件加入自选2_com.thinkive.future.dev.standard:id/ll_add_unadd_click          ----
+2018-05-25 13:49:01,648  - INFO - ----  test023_通过查询条件加入自选2_com.thinkive.future.dev.standard:id/ll_add_unadd_click          ----
+2018-05-25 13:49:02,484  - INFO - ----  test023_通过查询条件加入自选2_com.thinkive.future.dev.standard:id/ll_add_unadd_click          ----
+2018-05-25 13:49:03,186  - INFO - ----  test023_通过查询条件加入自选2_com.thinkive.future.dev.standard:id/name_get_value          ----
+2018-05-25 13:49:03,781  - INFO - ----  test023_通过查询条件加入自选2_com.thinkive.future.dev.standard:id/hq_btn_cancel_click          ----
+2018-05-25 13:49:16,005  - INFO - ----  test023_通过查询条件加入自选2_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-25 13:49:19,345  - INFO - ----  test023_通过查询条件加入自选2_com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv_get_value          ----
+2018-05-25 13:49:20,107  - INFO - [CheckPoint_2]: testDAddOptionalForSearch1_ : OK
+2018-05-25 13:49:31,226  - INFO - ----  test024_通过产品合同详情加入自选_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-25 13:49:46,204  - INFO - ----  test024_通过产品合同详情加入自选_com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv_click          ----
+2018-05-25 13:49:53,311  - INFO - ----  test024_通过产品合同详情加入自选_com.thinkive.future.dev.standard:id/activity_detail_addOptionalTv_click          ----
+2018-05-25 13:49:53,662  - INFO - ----  test024_通过产品合同详情加入自选_com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_title_get_value          ----
+2018-05-25 13:49:54,859  - INFO - ----  test024_通过产品合同详情加入自选_com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back_click          ----
+2018-05-25 13:49:55,641  - INFO - ----  test024_通过产品合同详情加入自选_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-25 13:50:04,118  - INFO - ----  test024_通过产品合同详情加入自选_com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv_get_value          ----
+2018-05-25 13:50:16,388  - INFO - [CheckPoint_3]: testEAddOptionalForDetial_ : OK
