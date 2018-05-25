@@ -1,6 +1,6 @@
 testinfo:
     - id: test024
-      title: 通过+号添加自选
+      title: 通过产品合同详情加入自选
       info: 查看页面展示
 testcase:
     - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]

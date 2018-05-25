@@ -28,11 +28,9 @@ testcase:
       index: 0
       operate_type: swipe_left
       info: 判断列表存在涨幅
-    - element_info: //android.widget.TextView[@text='涨跌']
-      find_type: xpath
-      operate_type: click
+      is_time: 3
 check:
-    - element_info: //android.widget.TextView[@text='涨跌']
-      find_type: xpath
+    - element_info: com.thinkive.future.dev.standard:id/activity_allList_headlefticon
+      find_type: id
       checking: default_check
       info: 判断列表存在涨跌

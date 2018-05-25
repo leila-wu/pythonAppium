@@ -30,6 +30,7 @@ desired_caps['appActivity']= 'com.thinkive.futureshl.activity.LauncherActivity'
 desired_caps['unicodeKeyboard'] = 'True'
 desired_caps['resetKeyboard'] = 'True'
 desired_caps['noReset'] = 'True'
+desired_caps['automationName'] = 'uiautomator2'
 # desired_caps['autoAcceptAlerts'] = Ture
 # desired_caps['app'] = apk_path + '\\app\\test.apk'
 #automationName 使用哪种自动化引擎。appium（默认）还是Selendroid。
@@ -42,8 +43,9 @@ driver.find_element_by_xpath("//android.widget.HorizontalScrollView/android.widg
 time.sleep(3)
 driver.find_element_by_id("com.thinkive.future.dev.standard:id/rb_optional").click()
 time.sleep(1)
-driver.swipe(957.5,151.0,120.0,300,600)
-driver.get_page
+driver.swipe(980,275,120.0,275,600)
+ele = driver.find_element_by_xpath("//android.widget.TextView[@text='涨跌']")
+print(ele)
 
 time.sleep(10)
 driver.quit()

@@ -1,8 +1,0 @@
-2018-05-25 14:25:42,093  - INFO - ----  test029_通过查询结果取消自选_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
-2018-05-25 14:25:42,457  - INFO - ----  test029_通过查询结果取消自选_com.thinkive.future.dev.standard:id/iv_quotation_futures_search_click          ----
-2018-05-25 14:26:05,040  - INFO - ----  test029_通过查询结果取消自选_com.thinkive.future.dev.standard:id/item_txt_click          ----
-2018-05-25 14:26:06,829  - INFO - ----  test029_通过查询结果取消自选_com.thinkive.future.dev.standard:id/ll_add_unadd_click          ----
-2018-05-25 14:26:07,190  - INFO - ----  test029_通过查询结果取消自选_com.thinkive.future.dev.standard:id/name_get_value          ----
-2018-05-25 14:26:07,750  - INFO - ----  test029_通过查询结果取消自选_com.thinkive.future.dev.standard:id/hq_btn_cancel_click          ----
-2018-05-25 14:26:09,951  - INFO - ----  test029_通过查询结果取消自选_com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv_get_value          ----
-2018-05-25 14:26:10,433  - INFO - [CheckPoint_1]: testJDelOptionalForSearch_ : OK

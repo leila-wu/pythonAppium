@@ -1,8 +1,0 @@
-2018-05-25 14:20:11,645  - INFO - ----  test028_从产品详情取消自选_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
-2018-05-25 14:20:37,558  - INFO - ----  test028_从产品详情取消自选_com.thinkive.future.dev.standard:id/rb_optional_click          ----
-2018-05-25 14:20:46,843  - INFO - ----  test028_从产品详情取消自选_com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv_click          ----
-2018-05-25 14:20:49,662  - INFO - ----  test028_从产品详情取消自选_com.thinkive.future.dev.standard:id/activity_detail_addOptionalTv_click          ----
-2018-05-25 14:20:49,959  - INFO - ----  test028_从产品详情取消自选_com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_title_get_value          ----
-2018-05-25 14:20:50,481  - INFO - ----  test028_从产品详情取消自选_com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back_click          ----
-2018-05-25 14:20:52,322  - INFO - ----  test028_从产品详情取消自选_com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv_get_value          ----
-2018-05-25 14:20:52,779  - INFO - [CheckPoint_1]: testIDelOptionalForDetial_ : OK

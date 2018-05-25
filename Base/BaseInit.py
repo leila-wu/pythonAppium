@@ -26,13 +26,13 @@ def mk_file():
     write(data=data, path=PATH("../Log/"+Element.SUM_FILE))
 
 
-def init(devices):
-    # 每次都重新安装uiautomator2都两个应用
-    os.popen("adb -s %s uninstall io.appium.uiautomator2.server.test" % devices)
-    os.popen("adb -s %s uninstall io.appium.uiautomator2.server" % devices)
-    os.popen("adb -s %s install -r %s" % (devices, PATH("../app/appium-uiautomator2-server-v1.7.0.apk")))
-    os.popen("adb -s %s install -r %s" % (devices, PATH("../app/appium-uiautomator2-server-debug-androidTest.apk")))
-    # os.popen("adb install -r "+PATH("../app/android-system-webview-60.apk"))
+# def init(devices):
+#     # 每次都重新安装uiautomator2都两个应用
+#     os.popen("adb -s %s uninstall io.appium.uiautomator2.server.test" % devices)
+#     os.popen("adb -s %s uninstall io.appium.uiautomator2.server" % devices)
+#     os.popen("adb -s %s install -r %s" % (devices, PATH("../app/appium-uiautomator2-server-v1.7.0.apk")))
+#     os.popen("adb -s %s install -r %s" % (devices, PATH("../app/appium-uiautomator2-server-debug-androidTest.apk")))
+#     # os.popen("adb install -r "+PATH("../app/android-system-webview-60.apk"))
 
 
 def destroy():
