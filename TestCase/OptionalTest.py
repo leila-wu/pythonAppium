@@ -110,7 +110,7 @@ class OptionalTest(ParametrizedTestCase):
         app = {}
         app["logTest"] = self.logTest
         app["driver"] = self.driver
-        app["path"] = PATH("../yaml/optional/DelOptionalForDetial.yaml")
+        app["path"] = PATH("../yaml/optional/IDelOptionalForDetial.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
         page = BasePage(app)
@@ -122,7 +122,7 @@ class OptionalTest(ParametrizedTestCase):
         app = {}
         app["logTest"] = self.logTest
         app["driver"] = self.driver
-        app["path"] = PATH("../yaml/optional/DelOptionalForSearch.yaml")
+        app["path"] = PATH("../yaml/optional/JDelOptionalForSearch.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
         page = BasePage(app)
@@ -134,7 +134,7 @@ class OptionalTest(ParametrizedTestCase):
         app = {}
         app["logTest"] = self.logTest
         app["driver"] = self.driver
-        app["path"] = PATH("../yaml/optional/DelOptionalForListNone.yaml")
+        app["path"] = PATH("../yaml/optional/KDelOptionalForListNone.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
         page = BasePage(app)
