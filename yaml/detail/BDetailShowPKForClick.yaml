@@ -1,0 +1,94 @@
+testinfo:
+    - id: test041
+      title: 从产品合同详情展示盘口信息
+      info: 查看产品合同详情的盘口信息
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
+      find_type: ids
+      index: 0
+      operate_type: click
+      info: 点击行情第一条记录的产品合同名称
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_panKou
+      find_type: id
+      operate_type: click
+      info: 切换展示盘口
+check:
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_panKou
+      find_type: id
+      operate_type: is_checked
+      checking: default_check
+      info: 验证默认展示分时信息
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_fenRb
+      find_type: id
+      operate_type: is_checked
+      checking: contrary
+      info: 验证默认盘口存在但是未选中展示
+    - element_info: com.thinkive.future.dev.standard:id/detail_head_msg
+      find_type: id
+      checking: default_check
+      info: 验证盘口标题存在
+    - element_info: //android.widget.TextView[@Text='开盘']
+      find_type: xpath
+      checking: default_check
+      info: 验证盘口关键字开盘
+    - element_info: //android.widget.TextView[@Text='最高']
+      find_type: xpath
+      checking: default_check
+      info: 验证盘口关键字最高
+    - element_info: //android.widget.TextView[@Text='最低']
+      find_type: xpath
+      checking: default_check
+      info: 验证盘口关键字最低
+    - element_info: //android.widget.TextView[@Text='均价']
+      find_type: xpath
+      checking: default_check
+      info: 验证盘口关键字均价
+    - element_info: //android.widget.TextView[@Text='结算']
+      find_type: xpath
+      checking: default_check
+      info: 验证盘口关键字结算
+    - element_info: //android.widget.TextView[@Text='昨结']
+      find_type: xpath
+      checking: default_check
+      info: 验证盘口关键字昨结
+    - element_info: //android.widget.TextView[@Text='昨收']
+      find_type: xpath
+      checking: default_check
+      info: 验证盘口关键字昨收
+    - element_info: //android.widget.TextView[@Text='成交量']
+      find_type: xpath
+      checking: default_check
+      info: 验证盘口关键字成交量
+    - element_info: //android.widget.TextView[@Text='持仓量']
+      find_type: xpath
+      checking: default_check
+      info: 验证盘口关键字持仓量
+    - element_info: //android.widget.TextView[@Text='日增仓']
+      find_type: xpath
+      checking: default_check
+      info: 验证盘口关键字日增仓
+    - element_info: //android.widget.TextView[@Text='外盘']
+      find_type: xpath
+      checking: default_check
+      info: 验证盘口关键字外盘
+    - element_info: //android.widget.TextView[@Text='内盘']
+      find_type: xpath
+      checking: default_check
+      info: 验证盘口关键字内盘
+    - element_info: //android.widget.TextView[@Text='涨停']
+      find_type: xpath
+      checking: default_check
+      info: 验证盘口关键字涨停
+    - element_info: //android.widget.TextView[@Text='跌停']
+      find_type: xpath
+      checking: default_check
+      info: 验证盘口关键字跌停
+    - element_info: com.thinkive.future.dev.standard:id/detail_news_wrap_back
+      find_type: id
+      operate_type: click
+      info: 返回行情
+

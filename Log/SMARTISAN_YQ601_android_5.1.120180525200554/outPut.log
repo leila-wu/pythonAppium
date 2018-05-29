@@ -1,0 +1,11 @@
+2018-05-25 20:06:06,734  - INFO - ----  test032_通过编辑删除所有自选记录_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-25 20:06:07,099  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-25 20:06:27,873  - INFO - ----  testNDelOptionalForListAll_失败重连        ----
+2018-05-25 20:06:39,720  - INFO - ----  test032_通过编辑删除所有自选记录_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-25 20:06:40,086  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-25 20:06:41,649  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/tv_optional_edit_click          ----
+2018-05-25 20:06:43,271  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/optional_tv_chose_all_click          ----
+2018-05-25 20:06:43,477  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/tv_delete_click          ----
+2018-05-25 20:06:44,942  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/tv_delete_click          ----
+2018-05-25 20:06:47,109  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/iv_optional_add_           ----
+2018-05-25 20:06:47,414  - INFO - [CheckPoint_1]: testNDelOptionalForListAll_用例失败重连过一次，失败原因:执行过程中失败，请检查元素是否存在com.thinkive.future.dev.standard:id/tv_optional_edit, : OK

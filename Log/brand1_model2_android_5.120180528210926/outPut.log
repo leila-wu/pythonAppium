@@ -1,0 +1,7 @@
+2018-05-28 21:09:39,294  - INFO - ----  test030_未选择记录删除操作_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-28 21:09:39,580  - INFO - ----  test030_未选择记录删除操作_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-28 21:10:01,050  - INFO - ----  testKDelOptionalForListNone_失败重连        ----
+2018-05-28 21:10:13,300  - INFO - ----  test030_未选择记录删除操作_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-28 21:10:13,555  - INFO - ----  test030_未选择记录删除操作_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-28 21:10:56,607  - INFO - [CheckPoint_1]: testKDelOptionalForListNone_用例失败重连过一次，失败原因:执行过程中失败，请检查元素是否存在com.thinkive.future.dev.standard:id/tv_optional_edit, 
+执行过程中失败，请检查元素是否存在com.thinkive.future.dev.standard:id/tv_optional_edit, : NG

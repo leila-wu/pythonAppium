@@ -1,0 +1,6 @@
+2018-05-25 20:02:09,611  - INFO - ----  test032_通过编辑删除所有自选记录_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-25 20:02:13,403  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-25 20:02:16,371  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/tv_optional_edit_click          ----
+2018-05-25 20:02:18,483  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/optional_tv_chose_all_click          ----
+2018-05-25 20:02:19,801  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/tv_delete_click          ----
+2018-05-25 20:02:21,396  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/tv_delete_click          ----

@@ -1,0 +1,48 @@
+testinfo:
+    - id: test045
+      title: 从产品合同详情展示资讯信息
+      info: 查看产品合同详情的资讯信息
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
+      find_type: ids
+      index: 0
+      operate_type: click
+      info: 点击行情第一条记录的产品合同名称
+check:
+    - operate_type: swipe_right
+      info: 合同详情分时图向右滑动
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_panKou
+      find_type: id
+      operate_type: is_checked
+      checking: default_check
+      info: 分时右滑，盘口被选中
+    - operate_type: swipe_left
+      info: 盘口向左滑动
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_fenRb
+      find_type: id
+      operate_type: is_checked
+      checking: default_check
+      info: 合同详情盘口左滑，分时被选中
+    - operate_type: swipe_left
+      info: 合同详情分时向左滑动
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_KRb
+      find_type: id
+      operate_type: is_checked
+      checking: default_check
+      info: 合同详情分时左滑，K线被选中
+    - operate_type: swipe_left
+      info: 合同详情K线向左滑动
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_ziRb
+      find_type: id
+      operate_type: is_checked
+      checking: default_check
+      info: 合同详情K线左滑，资讯被选中
+    - element_info: com.thinkive.future.dev.standard:id/detail_news_wrap_back
+      find_type: id
+      operate_type: click
+      info: 返回行情
+

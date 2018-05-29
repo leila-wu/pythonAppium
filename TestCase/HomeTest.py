@@ -108,6 +108,18 @@ class HomeTest(ParametrizedTestCase):
         page.operate()
         page.checkPoint()
 
+    # # 通过编辑删除所有自选记录
+    # def testNDelOptionalForListAll(self):
+    #     app = {}
+    #     app["logTest"] = self.logTest
+    #     app["driver"] = self.driver
+    #     app["path"] = PATH("../yaml/optional/NDelOptionalForListAll.yaml")
+    #     app["device"] = self.devicesName
+    #     app["caseName"] = sys._getframe().f_code.co_name
+    #     page = BasePage(app)
+    #     page.operate()
+    #     page.checkPoint()
+
     @classmethod
     def setUpClass(cls):
         super(HomeTest, cls).setUpClass()

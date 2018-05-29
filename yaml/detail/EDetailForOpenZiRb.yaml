@@ -1,0 +1,48 @@
+testinfo:
+    - id: test044
+      title: 查看资讯信息内容
+      info: 查看资讯信息内容
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
+      find_type: ids
+      index: 0
+      operate_type: click
+      info: 点击行情第一条记录的产品合同名称
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_ziRb
+      find_type: id
+      operate_type: click
+      info: 切换展示资讯
+    - element_info: com.thinkive.future.dev.standard:id/zixun_title
+      find_type: ids
+      index: 0
+      operate_type: get_value
+      info: 记录资讯的标题
+    - element_info: com.thinkive.future.dev.standard:id/zixun_title
+      find_type: ids
+      index: 0
+      operate_type: click
+      info: 查看资讯内容
+check:
+    - element_info: com.thinkive.future.dev.standard:id/news_title
+      find_type: id
+      operate_type: get_value
+      checking: compare
+      info: 验证资讯内容与选择的记录一致
+    - element_info: com.thinkive.future.dev.standard:id/news_detial_wrap
+      find_type: id
+      operate_type: click
+      checking: default_check
+      info: 点击实现字体大小切换
+    - element_info: com.thinkive.future.dev.standard:id/detail_news_wrap_back
+      find_type: id
+      checking: click
+      info: 返回资讯列表
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
+      find_type: id
+      operate_type: click
+      info: 返回行情
+

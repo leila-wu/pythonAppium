@@ -1,0 +1,8 @@
+2018-05-25 20:03:17,709  - INFO - ----  test032_通过编辑删除所有自选记录_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-05-25 20:03:21,185  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/rb_optional_click          ----
+2018-05-25 20:03:23,470  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/tv_optional_edit_click          ----
+2018-05-25 20:03:25,276  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/optional_tv_chose_all_click          ----
+2018-05-25 20:03:26,619  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/tv_delete_click          ----
+2018-05-25 20:03:27,784  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/tv_delete_click          ----
+2018-05-25 20:03:29,005  - INFO - ----  test032_通过编辑删除所有自选记录_com.thinkive.future.dev.standard:id/iv_optional_add_           ----
+2018-05-25 20:03:29,280  - INFO - [CheckPoint_1]: testNDelOptionalForListAll_ : OK

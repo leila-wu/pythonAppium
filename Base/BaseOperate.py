@@ -86,9 +86,11 @@ class OperateElement:
             if operate.get("operate_type", "0") == "0":  # 如果没有此字段，说明没有相应操作，一般是检查点，直接判定为成功
                 return {"result": True}
             elements = {
-                BE.SWIPE_DOWN: lambda: self.swipeToDown(),
-                BE.SWIPE_UP: lambda: self.swipeToUp(),
-                BE.SWIPE_LEFT: lambda: self.swipeLeft(operate),
+                BE.SWIPE_DOWN: lambda: self.swipeDown(),
+                BE.SWIPE_UP: lambda: self.swipeUp(),
+                BE.SWIPE_LEFT: lambda: self.swipeLeft(),
+                BE.SWIPE_RIGHT: lambda: self.swipeRight(),
+                BE.SWIPE_TO_LEFT: lambda: self.swipeToLeft(operate),
                 BE.CLICK: lambda: self.click(operate),
                 BE.GET_VALUE: lambda: self.get_value(operate),
                 BE.SET_VALUE: lambda: self.set_value(operate),
@@ -96,9 +98,8 @@ class OperateElement:
                 BE.GET_CONTENT_DESC: lambda: self.get_content_desc(operate),
                 BE.PRESS_KEY_CODE: lambda: self.press_keycode(operate),
                 BE.IS_CHECKED: lambda: self.get_is_checked(operate),
-                BE.IS_DISPLAYED: lambda: self.get_is_displayed(operate),
                 BE.IS_SELECTED: lambda: self.get_is_selected(operate),
-                BE.IS_ENABLED: lambda: self.get_is_enabled(operate),
+                BE.LONG_TAP: lambda: self.my_tap(operate),
             }
             return elements[operate.get("operate_type")]()
         except IndexError:
@@ -125,7 +126,6 @@ class OperateElement:
 
     # 获取到元素到坐标点击，主要解决浮动层遮档无法触发driver.click的问题
     def adb_tap(self, mOperate, device):
-
         bounds = self.elements_by(mOperate).location
         x = str(bounds["x"])
         y = str(bounds["y"])
@@ -135,6 +135,17 @@ class OperateElement:
         os.system(cmd)
 
         return {"result": True}
+
+    def my_tap(self,mOperate):
+        """实现长按功能"""
+        t = mOperate["check_time"] if mOperate.get("check_time",
+                                                   "0") != "0" else BE.WAIT_TIME  # 如果自定义检测时间为空，就用默认的检测等待时间
+        element = WebDriverWait(self.driver, t).until(lambda x: self.elements_by(mOperate))
+        start = element.location
+        size1 = element.size
+        x = start['x'] + size1['width'] / 2
+        y = start['y'] + size1['height'] / 2
+        self.driver.tap([(x,y)],10000)
 
     def toast(self, xpath, logTest, testInfo):
         logTest.buildStartLine(testInfo[0]["id"] + "_" + testInfo[0]["title"] + "_" + "查找弹窗元素_" + xpath)  # 记录日志
@@ -200,7 +211,7 @@ class OperateElement:
             return {"result": False, "text": "appium.common.exceptions.NoSuchContextException异常"}
 
     # 左滑动
-    def swipeLeft(self, mOperate):
+    def swipeToLeft(self, mOperate):
         t = mOperate["check_time"] if mOperate.get("check_time",
                                                    "0") != "0" else BE.WAIT_TIME  # 如果自定义检测时间为空，就用默认的检测等待时间
         element = WebDriverWait(self.driver, t).until(lambda x: self.elements_by(mOperate))
@@ -215,7 +226,7 @@ class OperateElement:
         return {"result": True}
 
     # swipe start_x: 200, start_y: 200, end_x: 200, end_y: 400, duration: 2000 从200滑动到400
-    def swipeToDown(self):
+    def swipeDown(self):
         height = self.driver.get_window_size()["height"]
         x1 = int(self.driver.get_window_size()["width"] * 0.5)
         y1 = int(height * 0.25)
@@ -226,7 +237,7 @@ class OperateElement:
         print("--swipeToDown--")
         return {"result": True}
 
-    def swipeToUp(self):
+    def swipeUp(self):
         height = self.driver.get_window_size()["height"]
         width = self.driver.get_window_size()["width"]
         self.driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4)
@@ -236,15 +247,27 @@ class OperateElement:
         #     self.driver.swipe(540, 800, 540, 560, 0)
         #     time.sleep(2)
 
-    def swipeToRight(self):
+    def swipeRight(self):
+        self.mySwipe(0.05, 0.5, 0.75, 0.5)
+        print("--swipeToRight--")
+        return {"result": True}
+
+    def swipeLeft(self):
+        self.mySwipe(0.9,0.5,0.1,0.5)
+        print("--swipeToLeft--")
+        return {"result": True}
+        # height = self.driver.get_window_size()["height"]
+        # width = self.driver.get_window_size()["width"]
+        # x1 = int(width * 0.05)
+        # y1 = int(height * 0.5)
+        # x2 = int(width * 0.75)
+        # self.driver.swipe(x1, y1, x1, x2, 1000)
+        # # self.driver.swipe(0, 1327, 500, 900, 1000)
+
+    def mySwipe(self,x,y,x1,y1):
         height = self.driver.get_window_size()["height"]
         width = self.driver.get_window_size()["width"]
-        x1 = int(width * 0.05)
-        y1 = int(height * 0.5)
-        x2 = int(width * 0.75)
-        self.driver.swipe(x1, y1, x1, x2, 1000)
-        # self.driver.swipe(0, 1327, 500, 900, 1000)
-        print("--swipeToUp--")
+        self.driver.swipe(int(width * x), int(height * y), int(width * x1), int(height * y1), 1000)
 
     def set_value(self, mOperate):
         """
@@ -276,20 +299,8 @@ class OperateElement:
 
         return {"result": True, "text": "".join(re_reulst)}
 
-    def get_is_enabled(self, mOperate):
-        if self.elements_by(mOperate).is_enabled():
-            return {"result": True, "text": "".join("元素被选中")}
-        else:
-            return {"result": False, "text": "".join("元素未被选中")}
-
     def get_is_selected(self, mOperate):
         if self.elements_by(mOperate).is_selected():
-            return {"result": True, "text": "".join("元素被选中")}
-        else:
-            return {"result": False, "text": "".join("元素未被选中")}
-
-    def get_is_displayed(self, mOperate):
-        if self.elements_by(mOperate).is_displayed():
             return {"result": True, "text": "".join("元素被选中")}
         else:
             return {"result": False, "text": "".join("元素未被选中")}
@@ -315,6 +326,8 @@ class OperateElement:
             BE.find_element_by_css_selector: lambda: self.driver.find_element_by_css_selector(mOperate['element_info']),
             BE.find_element_by_class_name: lambda: self.driver.find_element_by_class_name(mOperate['element_info']),
             BE.find_elements_by_id: lambda: self.driver.find_elements_by_id(mOperate['element_info']),
+            # BE.find_elements_by_UIautomator: lambda: self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.thinkive.future.dev.standard:id/tv_optional_edit")'),
+            BE.find_elements_by_UIautomator: lambda: self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.thinkive.future.dev.standard:id/tv_optional_edit")')
 
         }
         return elements[mOperate["find_type"]]()

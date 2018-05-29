@@ -38,15 +38,17 @@ desired_caps['automationName'] = 'uiautomator2'
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
 time.sleep(10)
-
 driver.find_element_by_xpath("//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]").click()
 time.sleep(3)
-driver.find_element_by_id("com.thinkive.future.dev.standard:id/rb_optional").click()
+ele1 = driver.find_element_by_id("com.thinkive.future.dev.standard:id/rb_optiona")
+# elements[0].click()
+# ele1 = driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.thinkive.future.dev.standard:id/rb_optional")')
+# driver.find_element_by_android_uiautomator('new UiSelector().text("втя║")').click()
+ele1.click()
 time.sleep(1)
-driver.swipe(980,275,120.0,275,600)
-ele = driver.find_element_by_xpath("//android.widget.TextView[@text='уг╣Ь']")
-print(ele)
-
+# driver.find_elements_by_id("com.thinkive.future.dev.standard:id/tv_optional_edit")
+ele2 = driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.thinkive.future.dev.standard:id/tv_optional_edit")')
+ele2.click()
 time.sleep(10)
 driver.quit()
 # os.popen("taskkill /f /im node.exe")

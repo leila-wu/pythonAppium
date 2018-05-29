@@ -1,0 +1,49 @@
+testinfo:
+    - id: test042
+      title: 从产品合同详情展示K线信息
+      info: 查看产品合同详情的K线信息
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
+      find_type: ids
+      index: 0
+      operate_type: click
+      info: 点击行情第一条记录的产品合同名称
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_KRb
+      find_type: id
+      operate_type: click
+      info: 切换展示K线
+check:
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_KRb
+      find_type: id
+      operate_type: is_checked
+      checking: default_check
+      info: 验证K线被选中
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_fenRb
+      find_type: id
+      operate_type: is_checked
+      checking: contrary
+      info: 验证分时没有被选中
+    - element_info: com.thinkive.future.dev.standard:id/fragment_k_chart_radio_dayk
+      find_type: id
+      operate_type: is_checked
+      checking: default_check
+      info: 验证默认展示日K数据
+    - element_info: com.thinkive.future.dev.standard:id/fragment_k_chart_radio_weekk
+      find_type: id
+      operate_type: is_checked
+      checking: contrary
+      info: 验证默认周K数据未展示
+    - element_info: com.thinkive.future.dev.standard:id/fragment_k_chart_radio_monthk
+      find_type: id
+      operate_type: is_checked
+      checking: contrary
+      info: 验证默认月K数据未展示
+    - element_info: com.thinkive.future.dev.standard:id/detail_news_wrap_back
+      find_type: id
+      operate_type: click
+      info: 返回行情
+

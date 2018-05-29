@@ -26,7 +26,7 @@ testcase:
     - element_info: //android.widget.TextView[@text='成交量']
       find_type: xpath
       index: 0
-      operate_type: swipe_left
+      operate_type: swipe_to_left
       info: 判断列表存在涨幅
       is_time: 3
 check:

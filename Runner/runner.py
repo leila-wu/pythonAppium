@@ -58,8 +58,8 @@ def runnerPool(getDevices):
         _initApp["deviceName"] = getDevices[i]["devices"]
         _initApp["platformVersion"] = getPhoneInfo(devices=_initApp["deviceName"])["release"]
         _initApp["platformName"] = "android"
-        _initApp["automationName"] = "Appium"
-        # _initApp["automationName"] = "uiautomator2"
+        # _initApp["automationName"] = "Appium"
+        _initApp["automationName"] = "uiautomator2"
         _initApp["systemPort"] = getDevices[i]["systemPort"]
 
         _initApp["port"] = getDevices[i]["port"]
