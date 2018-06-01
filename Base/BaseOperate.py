@@ -92,12 +92,14 @@ class OperateElement:
                 BE.SWIPE_RIGHT: lambda: self.swipeRight(),
                 BE.SWIPE_TO_LEFT: lambda: self.swipeToLeft(operate),
                 BE.CLICK: lambda: self.click(operate),
+                BE.CLEAR: lambda: self.clear(operate),
                 BE.GET_VALUE: lambda: self.get_value(operate),
                 BE.SET_VALUE: lambda: self.set_value(operate),
-                BE.ADB_TAP: lambda: self.adb_tap(operate, device),
+                BE.ADB_TAP: lambda: self.adb_tap(operate),
                 BE.GET_CONTENT_DESC: lambda: self.get_content_desc(operate),
                 BE.PRESS_KEY_CODE: lambda: self.press_keycode(operate),
                 BE.IS_CHECKED: lambda: self.get_is_checked(operate),
+                BE.IS_CLICKABLE: lambda: self.get_is_clickable(operate),
                 BE.IS_SELECTED: lambda: self.get_is_selected(operate),
                 BE.LONG_TAP: lambda: self.my_tap(operate),
             }
@@ -125,15 +127,22 @@ class OperateElement:
             return {"result": True}
 
     # 获取到元素到坐标点击，主要解决浮动层遮档无法触发driver.click的问题
-    def adb_tap(self, mOperate, device):
-        bounds = self.elements_by(mOperate).location
-        x = str(bounds["x"])
-        y = str(bounds["y"])
+    # def adb_tap(self, mOperate, device):
+    #     bounds = self.elements_by(mOperate).location
+    #     x = str(bounds["x"])
+    #     y = str(bounds["y"])
+    #
+    #     cmd = "adb -s " + device + " shell input tap " + x + " " + y
+    #     print(cmd)
+    #     os.system(cmd)
+    #
+    #     return {"result": True}
 
-        cmd = "adb -s " + device + " shell input tap " + x + " " + y
-        print(cmd)
-        os.system(cmd)
-
+    def adb_tap(self, mOperate):
+        li = mOperate.get("msg").split(',')
+        x = li[0]
+        y = li[1]
+        self.driver.tap(x , y)
         return {"result": True}
 
     def my_tap(self,mOperate):
@@ -145,7 +154,9 @@ class OperateElement:
         size1 = element.size
         x = start['x'] + size1['width'] / 2
         y = start['y'] + size1['height'] / 2
-        self.driver.tap([(x,y)],10000)
+        self.driver.tap([(x,y)], 10000)
+
+        return {"result": True}
 
     def toast(self, xpath, logTest, testInfo):
         logTest.buildStartLine(testInfo[0]["id"] + "_" + testInfo[0]["title"] + "_" + "查找弹窗元素_" + xpath)  # 记录日志
@@ -165,6 +176,15 @@ class OperateElement:
             self.elements_by(mOperate).click()
         elif mOperate.get("find_type") == BE.find_elements_by_id:
             self.elements_by(mOperate)[mOperate["index"]].click()
+        return {"result": True}
+
+    # 点击事件
+    def clear(self, mOperate):
+        # print(self.driver.page_source)
+        if mOperate["find_type"] == BE.find_element_by_id or mOperate["find_type"] == BE.find_element_by_xpath:
+            self.elements_by(mOperate).clear()
+        elif mOperate.get("find_type") == BE.find_elements_by_id:
+            self.elements_by(mOperate)[mOperate["index"]].clear()
         return {"result": True}
 
     # code 事件
@@ -305,6 +325,19 @@ class OperateElement:
         else:
             return {"result": False, "text": "".join("元素未被选中")}
 
+    def get_is_clickable(self, mOperate):
+        if mOperate.get("find_type") == BE.find_elements_by_id:
+            element_info = self.elements_by(mOperate)[mOperate["index"]]
+        else:
+            element_info = self.elements_by(mOperate)
+
+        result = element_info.get_attribute("clickable")
+
+        if result == "true":
+            return {"result": True, "text": "".join("元素可以被点击")}
+        else:
+            return {"result": False, "text": "".join("元素不可以被点击")}
+
     def get_is_checked(self, mOperate):
         if mOperate.get("find_type") == BE.find_elements_by_id:
             element_info = self.elements_by(mOperate)[mOperate["index"]]
@@ -326,7 +359,6 @@ class OperateElement:
             BE.find_element_by_css_selector: lambda: self.driver.find_element_by_css_selector(mOperate['element_info']),
             BE.find_element_by_class_name: lambda: self.driver.find_element_by_class_name(mOperate['element_info']),
             BE.find_elements_by_id: lambda: self.driver.find_elements_by_id(mOperate['element_info']),
-            # BE.find_elements_by_UIautomator: lambda: self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.thinkive.future.dev.standard:id/tv_optional_edit")'),
             BE.find_elements_by_UIautomator: lambda: self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.thinkive.future.dev.standard:id/tv_optional_edit")')
 
         }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from TestCase.FutureDeatilTest import FutureDeatailTest
 from TestCase.FutureSearch import FutureSearch
 from TestCase.FutureList import FutureList
 import sys
@@ -63,8 +64,8 @@ def runnerPool(getDevices):
         _initApp["systemPort"] = getDevices[i]["systemPort"]
 
         _initApp["port"] = getDevices[i]["port"]
-        # _initApp["appPackage"] = "com.thinkive.future.dev.standard"
-        # _initApp["appActivity"] = "com.thinkive.futureshl.activity.LauncherActivity"
+        _initApp["appPackage"] = "com.thinkive.future.dev.standard"
+        _initApp["appActivity"] = "com.thinkive.futureshl.activity.LauncherActivity"
 
         _initApp["app"] = getDevices[i]["app"]
         apkInfo = ApkInfo(_initApp["app"])
@@ -79,6 +80,21 @@ def runnerPool(getDevices):
     pool.close()
     pool.join()
 
+def get_devices(getDevices):
+    devices_Pool = []
+    for i in range(0, len(getDevices)):
+        print(i)
+        print(getDevices)
+        desired_caps = {}
+        desired_caps['appPackage'] = "com.thinkive.future.dev.standard"
+        desired_caps['appActivity'] = "com.thinkive.futureshl.activity.LauncherActivity"
+        desired_caps['deviceName'] = getDevices[0]["devices"]
+        desired_caps['platformVersion'] = getPhoneInfo(devices=desired_caps["deviceName"])["release"]
+        desired_caps['platformName'] = "android"
+        desired_caps["automationName"] = "uiautomator2"
+        devices_Pool.append(desired_caps)
+        return desired_caps
+    # return devices_Pool
 
 def runnerCaseApp(devices):
     starttime = datetime.now()
@@ -87,6 +103,7 @@ def runnerCaseApp(devices):
     # suite.addTest(ParametrizedTestCase.parametrize(FutureList, param=devices))
     # suite.addTest(ParametrizedTestCase.parametrize(FutureSearch, param=devices))
     # suite.addTest(ParametrizedTestCase.parametrize(OptionalTest, param=devices))
+    # suite.addTest(ParametrizedTestCase.parametrize(FutureDeatailTest, param=devices))
     unittest.TextTestRunner(verbosity=2).run(suite)
     endtime = datetime.now()
     countDate(datetime.now().strftime('%Y-%m-%d %H:%M:%S'), str((endtime - starttime).seconds) + "秒")
@@ -98,6 +115,7 @@ if __name__ == '__main__':
 
     # 获取设备列表
     devicess = AndroidDebugBridge().attached_devices()
+
     if len(devicess) > 0:
         mk_file()
         l_devices = []

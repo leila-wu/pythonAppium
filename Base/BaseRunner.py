@@ -28,7 +28,6 @@ def appium_testcase(devices):
         # desired_caps['automationName'] = devices["automationName"] # Xcode8.2以上无UIAutomation,需使用XCUITest
         desired_caps['bundleId'] = devices["bundleId"]
         desired_caps['udid'] = devices["udid"]
-        # desired_caps['newCommandTimeout'] = 3600  # 1 hour
 
     desired_caps['platformVersion'] = devices["platformVersion"]
     desired_caps['platformName'] = devices["platformName"]
@@ -40,7 +39,7 @@ def appium_testcase(devices):
     desired_caps["resetKeyboard"] = "True"
     desired_caps["systemPort"] = devices["systemPort"]
 
-    # desired_caps['app'] = devices["app"]
+    desired_caps['app'] = devices["app"]
     remote = "http://127.0.0.1:" + str(devices["port"]) + "/wd/hub"
     # remote = "http://127.0.0.1:" + "4723" + "/wd/hub"
     driver = webdriver.Remote(remote, desired_caps)

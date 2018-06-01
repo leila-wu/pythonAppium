@@ -27,7 +27,7 @@ testcase:
     - element_info: com.thinkive.future.dev.standard:id/fragment_k_chart_radio_minutesk_ll
       find_type: id
       operate_type: click
-      info: 点击K线周期
+      info: 点击周期按钮
     - element_info: com.thinkive.future.dev.standard:id/fragment_hq_min_select_fifteen
       find_type: id
       operate_type: click
@@ -35,23 +35,33 @@ testcase:
     - element_info: com.thinkive.future.dev.standard:id/fragment_k_chart_radio_zhibiaok_ll
       find_type: id
       operate_type: click
-      info: 点击K线周期
-    - element_info: com.thinkive.future.dev.standard:id/fragment_hq_min_select_fifteen
+      info: 点击指标
+    - element_info: //android.widget.TextView[@text='BOLL']
+      find_type: xpath
+      operate_type: click
+      info: 选择趋势指标BOLL
+    - element_info: com.thinkive.future.dev.standard:id/fragment_k_chart_radio_zhibiaok_ll
       find_type: id
       operate_type: click
-      info: 选择15min参数
-    - element_info: com.thinkive.future.dev.standard:id/fragment_hq_min_select_fifteen
-      find_type: id
+      info: 点击指标
+    - element_info: //android.widget.TextView[@text='摆动指标']
+      find_type: xpath
       operate_type: click
-      info: 选择15min参数
+      info: 选择摆动指标
+    - element_info: //android.widget.TextView[@text='MACD']
+      find_type: xpath
+      operate_type: click
+      info: 选择MACD
+    - element_info: com.thinkive.future.dev.standard:id/fragment_dayK_chartview
+      find_type: id
+      operate_type: long_tap
+      info: 长按K线图
 check:
-    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_panKou
+    - element_info: com.thinkive.future.dev.standard:id/fragment_k_chart_layout_pankou
       find_type: id
-      operate_type: is_checked
       checking: default_check
-      info: 验证默认展示分时信息
-
-    - element_info: com.thinkive.future.dev.standard:id/detail_news_wrap_back
+      info: 验证长按后出现盘口信息
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
       find_type: id
       operate_type: click
       info: 返回行情

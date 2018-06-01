@@ -1,7 +1,7 @@
 testinfo:
-    - id: test047
-      title: 合同详情查看上一条合同记录
-      info: 产品合同详情切换产品
+    - id: test051
+      title: 产品详情刷新
+      info: 产品详情刷新操作
 testcase:
     - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
       find_type: xpath
@@ -14,32 +14,33 @@ testcase:
       info: 获取行情第一条记录的产品合同名称
     - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
       find_type: ids
-      index: 1
+      index: 0
       operate_type: click
-      info: 点击行情第二条记录的产品合同名称
+      info: 点击行情第一条记录的产品合同名称
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_more
+      find_type: id
+      operate_type: click
+      info: 点击more按钮
+    - element_info: //android.widget.TextView[@text='刷新']
+      find_type: xpath
+      operate_type: click
+      info: 点击刷新按钮
 check:
-    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_ziRb
-      find_type: id
-      operate_type: click
-      info: 切换到资讯页面
-    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_lastOneIcon
-      find_type: id
-      operate_type: click
-      info: 切换上一个合同详情
     - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_title
       find_type: id
       operate_type: get_value
       checking: compare
-      info: 查看产品详情展示的合同名称与记录的第二条合同名称一致
-    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_ziRb
+      info: 查看产品详情展示的合同名称与点击的合同名称一致
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_fenRb
       find_type: id
       operate_type: is_checked
       checking: default_check
-      info: 验证依然停留在资讯页面
-    - element_info: com.thinkive.future.dev.standard:id/detail_zixun_list
+      info: 验证默认展示分时信息
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_panKou
       find_type: id
-      checking: default_check
-      info: 验证资讯信息加载成功
+      operate_type: is_checked
+      checking: contrary
+      info: 验证默认盘口存在但是未选中展示
     - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
       find_type: id
       operate_type: click

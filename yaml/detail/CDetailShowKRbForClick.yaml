@@ -42,7 +42,7 @@ check:
       operate_type: is_checked
       checking: contrary
       info: 验证默认月K数据未展示
-    - element_info: com.thinkive.future.dev.standard:id/detail_news_wrap_back
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
       find_type: id
       operate_type: click
       info: 返回行情

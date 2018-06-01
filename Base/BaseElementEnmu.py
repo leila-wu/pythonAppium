@@ -9,6 +9,7 @@ class Element(object):
     find_element_by_css_selector = "css"
     find_element_by_class_name = "class_name"
     CLICK = "click"
+    CLEAR = "clear"
     TAP = "tap"
     ACCESSIBILITY = "accessibility"
     ADB_TAP = "adb_tap"
@@ -23,6 +24,7 @@ class Element(object):
     WAIT_TIME = 20
     PRESS_KEY_CODE = "press_keycode"
     IS_CHECKED = "is_checked"
+    IS_CLICKABLE = "is_clickable"
     IS_DISPLAYED = "is_displayed"
     IS_SELECTED = "is_selected"
     IS_ENABLED = "is_enabled"

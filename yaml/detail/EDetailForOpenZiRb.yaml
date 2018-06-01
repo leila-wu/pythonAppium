@@ -39,8 +39,9 @@ check:
       info: 点击实现字体大小切换
     - element_info: com.thinkive.future.dev.standard:id/detail_news_wrap_back
       find_type: id
-      checking: click
+      operate_type: click
       info: 返回资讯列表
+      is_time: 2
     - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
       find_type: id
       operate_type: click

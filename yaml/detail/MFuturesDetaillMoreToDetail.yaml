@@ -1,0 +1,62 @@
+testinfo:
+    - id: test052
+      title: 查看合同交易明细
+      info: 查看合同交易明细
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
+      find_type: ids
+      index: 0
+      operate_type: get_value
+      info: 获取行情第一条记录的产品合同名称
+    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
+      find_type: ids
+      index: 0
+      operate_type: click
+      info: 点击行情第一条记录的产品合同名称
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_more
+      find_type: id
+      operate_type: click
+      info: 点击more按钮
+    - element_info: //android.widget.TextView[@text='明细']
+      find_type: xpath
+      operate_type: click
+      info: 点击刷新按钮
+check:
+    - element_info: com.thinkive.future.dev.standard:id/activity_mingxi_titleName_TV
+      find_type: id
+      operate_type: get_value
+      checking: compare
+      info: 查看产品详情展示的合同名称与点击的合同名称一致
+    - element_info: //android.widget.TextView[@text='时间']
+      find_type: xpath
+      checking: default_check
+      info: 验证明细的时间存在
+    - element_info: //android.widget.TextView[@text='价格']
+      find_type: xpath
+      checking: default_check
+      info: 验证明细的价格存在
+    - element_info: //android.widget.TextView[@text='现手']
+      find_type: xpath
+      checking: default_check
+      info: 验证明细的现手存在
+    - element_info: //android.widget.TextView[@text='仓差']
+      find_type: xpath
+      checking: default_check
+      info: 验证明细的仓差存在
+    - element_info: com.thinkive.future.dev.standard:id/module_five_col_1_subtitle5
+      find_type: id
+      checking: default_check
+      info: 验证明细的性质存在
+    - element_info: com.thinkive.future.dev.standard:id/activity_mingxi_back_img
+      find_type: id
+      operate_type: click
+      info: 返回合同详情
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
+      find_type: id
+      operate_type: click
+      info: 返回行情
+

@@ -1,0 +1,62 @@
+testinfo:
+    - id: test053
+      title: 查看合同交易的F10
+      info: 查看合同交易的F10
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
+      find_type: ids
+      index: 0
+      operate_type: get_value
+      info: 获取行情第一条记录的产品合同名称
+    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
+      find_type: ids
+      index: 0
+      operate_type: click
+      info: 点击行情第一条记录的产品合同名称
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_more
+      find_type: id
+      operate_type: click
+      info: 点击more按钮
+    - element_info: //android.widget.TextView[@text='F10']
+      find_type: xpath
+      operate_type: click
+      info: 点击F10按钮
+check:
+    - element_info: com.thinkive.future.dev.standard:id/activity_f10_titleName_TV
+      find_type: id
+      operate_type: get_value
+      checking: contain
+      info: 验证F10查看的合同名称正确
+    - element_info: com.thinkive.future.dev.standard:id/trade_name
+      find_type: id
+      checking: default_check
+      info: 验证F10展示合同名称
+    - element_info: com.thinkive.future.dev.standard:id/trade_sort
+      find_type: id
+      checking: default_check
+      info: 验证F10展示交易品种
+    - element_info: com.thinkive.future.dev.standard:id/trade_unit
+      find_type: id
+      checking: default_check
+      info: 验证F10展示交易单位
+    - element_info: com.thinkive.future.dev.standard:id/day_price_change_limit
+      find_type: id
+      checking: default_check
+      info: 验证F10展示每日价格最大波动限制
+    - element_info: com.thinkive.future.dev.standard:id/qute_delivery_month
+      find_type: id
+      checking: default_check
+      info: 验证F10展示合同交割月份
+    - element_info: com.thinkive.future.dev.standard:id/activity_f10_back_img
+      find_type: id
+      operate_type: click
+      info: 返回合同详情
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
+      find_type: id
+      operate_type: click
+      info: 返回行情
+

@@ -87,7 +87,7 @@ check:
       find_type: xpath
       checking: default_check
       info: 验证盘口关键字跌停
-    - element_info: com.thinkive.future.dev.standard:id/detail_news_wrap_back
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
       find_type: id
       operate_type: click
       info: 返回行情

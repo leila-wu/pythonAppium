@@ -17,7 +17,15 @@ testcase:
       index: 0
       operate_type: click
       info: 点击行情第一条记录的产品合同名称
+    - element_info: com.thinkive.future.dev.standard:id/fragment_fenshi_chartview
+      find_type: id
+      operate_type: long_tap
+      info: 长按K线图
 check:
+    - element_info: com.thinkive.future.dev.standard:id/fragment_fenshi_chart_layout_pankou
+      find_type: id
+      checking: default_check
+      info: 验证出现盘口信息
     - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_title
       find_type: id
       operate_type: get_value
@@ -33,7 +41,7 @@ check:
       operate_type: is_checked
       checking: contrary
       info: 验证默认盘口存在但是未选中展示
-    - element_info: com.thinkive.future.dev.standard:id/detail_news_wrap_back
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
       find_type: id
       operate_type: click
       info: 返回行情

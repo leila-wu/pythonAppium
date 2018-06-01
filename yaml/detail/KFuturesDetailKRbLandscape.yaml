@@ -1,0 +1,72 @@
+testinfo:
+    - id: test050
+      title: K线横屏
+      info: 合同详情K线页面的横屏功能
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
+      find_type: ids
+      index: 0
+      operate_type: get_value
+      info: 获取行情第一条记录的产品合同名称
+    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
+      find_type: ids
+      index: 0
+      operate_type: click
+      info: 点击行情第一条记录的产品合同名称
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_KRb
+      find_type: id
+      operate_type: click
+      info: 切换展示K线
+    - element_info: com.thinkive.future.dev.standard:id/fragment_k_chart_radio_monthk
+      find_type: id
+      operate_type: click
+      info: 切换展示成月K展示
+    - element_info: com.thinkive.future.dev.standard:id/activity_chart_root_linear_jump
+      find_type: id
+      operate_type: click
+      info: 点击切换横屏
+    - element_info: com.thinkive.future.dev.standard:id/fragment_chart_horizontal_chartview
+      find_type: id
+      operate_type: long_tap
+      info: 长按点击K线图
+check:
+    - element_info: com.thinkive.future.dev.standard:id/futures_detail_horizontal_futures_name
+      find_type: id
+      operate_type: get_value
+      checking: default_check
+      info: 验证切换横屏，展示合同名称正确
+    - element_info: com.thinkive.future.dev.standard:id/futures_detail_horizontal_futures_rizeng_name
+      find_type: id
+      checking: default_check
+      info: 验证长按后出现收盘信息
+    - element_info: com.thinkive.future.dev.standard:id/futures_detail_horizontal_futures_bt9
+      find_type: id
+      operate_type: is_checked
+      checking: default_check
+      info: 验证分时进入横屏，默认展示月K记录
+    - element_info: com.thinkive.future.dev.standard:id/futures_detail_horizontal_futures_quota
+      find_type: id
+      operate_type: is_clickable
+      checking: default_check
+      info: 验证分时进入横屏，指标可以点击
+    - element_info: com.thinkive.future.dev.standard:id/futures_detail_horizontal_futures_bt7
+      find_type: id
+      operate_type: click
+      info: 切换日K
+    - element_info: com.thinkive.future.dev.standard:id/futures_detail_horizontal_futures_nowprice
+      find_type: id
+      checking: default_check
+      info: 验证切换后长按效果消失，显示点数信息
+    - element_info: com.thinkive.future.dev.standard:id/futures_detail_horizontal_futures_cancle
+      find_type: id
+      operate_type: click
+      info: 返回合同详情竖屏
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
+      find_type: id
+      operate_type: click
+      info: 返回行情
+

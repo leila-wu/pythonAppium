@@ -32,7 +32,7 @@ check:
       operate_type: is_checked
       checking: default_check
       info: 验证默认展示分时信息
-    - element_info: com.thinkive.future.dev.standard:id/detail_news_wrap_back
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
       find_type: id
       operate_type: click
       info: 返回行情

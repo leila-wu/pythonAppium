@@ -1,7 +1,7 @@
 testinfo:
     - id: test045
-      title: 从产品合同详情展示资讯信息
-      info: 查看产品合同详情的资讯信息
+      title: 验证产品合同详情的滑动功能
+      info: 验证产品合同详情的滑动功能
 testcase:
     - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
       find_type: xpath
@@ -41,7 +41,7 @@ check:
       operate_type: is_checked
       checking: default_check
       info: 合同详情K线左滑，资讯被选中
-    - element_info: com.thinkive.future.dev.standard:id/detail_news_wrap_back
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
       find_type: id
       operate_type: click
       info: 返回行情
