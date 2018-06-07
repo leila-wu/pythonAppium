@@ -36,7 +36,7 @@ if __name__ == '__main__':
     PATH = lambda p: os.path.abspath(
         os.path.join(os.path.dirname(__file__), p)
     )
-    t = getYam(PATH("../yaml/detail/RDetaillMoreSettingZTCSXG.yaml"))
+    t = getYam(PATH("../yaml/detail/RDetaillMoreSettingZTCSXGFirst.yaml"))
     print(t)
 
     # port = str(random.randint(4700, 4900))

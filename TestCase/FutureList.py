@@ -24,16 +24,16 @@ class FutureList(ParametrizedTestCase):
         page.checkPoint()
 
     # 查看夜盘行情
-    def testBYePan(self):
-        app = {}
-        app["logTest"] = self.logTest
-        app["driver"] = self.driver
-        app["path"] = PATH("../yaml/futures_quotes/YepanFuture.yaml")
-        app["device"] = self.devicesName
-        app["caseName"] = sys._getframe().f_code.co_name
-        page = BasePage(app)
-        page.operate()
-        page.checkPoint()
+    # def testBYePan(self):
+    #     app = {}
+    #     app["logTest"] = self.logTest
+    #     app["driver"] = self.driver
+    #     app["path"] = PATH("../yaml/futures_quotes/YepanFuture.yaml")
+    #     app["device"] = self.devicesName
+    #     app["caseName"] = sys._getframe().f_code.co_name
+    #     page = BasePage(app)
+    #     page.operate()
+    #     page.checkPoint()
 
     @classmethod
     def setUpClass(cls):

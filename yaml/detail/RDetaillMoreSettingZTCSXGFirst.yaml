@@ -1,7 +1,7 @@
 testinfo:
-    - id: test057
-      title: 修改抬头设置
-      info: 修改抬头设置
+    - id: test058
+      title: 查看指标参数修改
+      info: 查看指标参数修改
 testcase:
     - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
       find_type: xpath
@@ -50,6 +50,10 @@ check:
       checking: contrary
       info: WR默认未被选中
     - element_info: com.thinkive.future.dev.standard:id/activity_parameter_back_img
+      find_type: id
+      operate_type: click
+      info: 返回合同详情
+    - element_info: com.thinkive.future.dev.standard:id/activity_setting_back_img
       find_type: id
       operate_type: click
       info: 返回合同详情

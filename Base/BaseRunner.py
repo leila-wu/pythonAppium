@@ -71,6 +71,7 @@ class ParametrizedTestCase(unittest.TestCase):
         cls.driver.close_app()
         cls.driver.quit()
         pass
+
     def tearDown(self):
         pass
 

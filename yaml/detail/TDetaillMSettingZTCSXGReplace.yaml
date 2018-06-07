@@ -1,5 +1,5 @@
 testinfo:
-    - id: test057
+    - id: test060
       title: 修改抬头设置
       info: 修改抬头设置
 testcase:
@@ -30,39 +30,17 @@ testcase:
       info: 点击设置指标参数
     - element_info: com.thinkive.future.dev.standard:id/et_paramater_three_value
       find_type: id
-      operate_type: click
-      info: 点击设置指标参数
-    - element_info: com.thinkive.future.dev.standard:id/et_paramater_three_value
-      find_type: id
       operate_type: get_value
       info: 记录参数值
-    - element_info: com.thinkive.future.dev.standard:id/et_paramater_three_value
-      find_type: id
-      operate_type: adb_tap
-      msg: 600,1850
-      info: 删除值
-    - element_info: com.thinkive.future.dev.standard:id/et_paramater_three_value
-      find_type: id
-      operate_type: click
-      info: 记录参数值
-    - element_info: com.thinkive.future.dev.standard:id/et_paramater_three_value
-      find_type: id
-      operate_type: adb_tap
-      msg: 600,1450
-      info: 设置新值
-    - element_info: com.thinkive.future.dev.standard:id/et_paramater_three_value
-      find_type: id
-      operate_type: click
-      info: 保存参数
     - element_info: com.thinkive.future.dev.standard:id/tv_recover_default
       find_type: id
       operate_type: click
       info: 恢复默认
-check:
+check:ß
     - element_info: com.thinkive.future.dev.standard:id/et_paramater_three_value
       find_type: id
       operate_type: get_value
-      checking: default_check
+      checking: contrary_getval
       info: 恢复默认成功
     - element_info: com.thinkive.future.dev.standard:id/activity_parameter_back_img
       find_type: id

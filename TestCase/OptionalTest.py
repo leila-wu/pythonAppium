@@ -26,7 +26,7 @@ class OptionalTest(ParametrizedTestCase):
         app = {}
         app["logTest"] = self.logTest
         app["driver"] = self.driver
-        app["path"] = PATH("../yaml/optional/AddOptionalFirst.yaml")
+        app["path"] = PATH("../yaml/optional/BAddOptionalFirst.yaml")
         app["device"] = self.devicesName
         app["caseName"] = sys._getframe().f_code.co_name
         page = BasePage(app)
@@ -130,16 +130,16 @@ class OptionalTest(ParametrizedTestCase):
         page.checkPoint()
 
     # 未选择记录删除
-    def testKDelOptionalForListNone(self):
-        app = {}
-        app["logTest"] = self.logTest
-        app["driver"] = self.driver
-        app["path"] = PATH("../yaml/optional/KDelOptionalForListNone.yaml")
-        app["device"] = self.devicesName
-        app["caseName"] = sys._getframe().f_code.co_name
-        page = BasePage(app)
-        page.operate()
-        page.checkPoint()
+    # def testKDelOptionalForListNone(self):
+    #     app = {}
+    #     app["logTest"] = self.logTest
+    #     app["driver"] = self.driver
+    #     app["path"] = PATH("../yaml/optional/KDelOptionalForListNone.yaml")
+    #     app["device"] = self.devicesName
+    #     app["caseName"] = sys._getframe().f_code.co_name
+    #     page = BasePage(app)
+    #     page.operate()
+    #     page.checkPoint()
 
     # 通过编辑删除一条自选记录
     def testLDelOptionalForListOne(self):

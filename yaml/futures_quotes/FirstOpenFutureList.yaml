@@ -37,6 +37,7 @@ check:
       operate_type: is_selected
       checking: default_check
       info: 检查切换到上期所
+      is_time: 5
     - element_info: com.thinkive.future.dev.standard:id/rb_list
       find_type: id
       operate_type: is_checked

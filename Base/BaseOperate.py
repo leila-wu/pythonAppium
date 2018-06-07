@@ -139,10 +139,12 @@ class OperateElement:
     #     return {"result": True}
 
     def adb_tap(self, mOperate):
+        height = self.driver.get_window_size()["height"]
+        width = self.driver.get_window_size()["width"]
         li = mOperate.get("msg").split(',')
-        x = li[0]
-        y = li[1]
-        self.driver.tap(x , y)
+        x = float(li[0])
+        y = float(li[1])
+        self.driver.tap([(x * width, y * height)])
         return {"result": True}
 
     def my_tap(self,mOperate):
@@ -247,25 +249,14 @@ class OperateElement:
 
     # swipe start_x: 200, start_y: 200, end_x: 200, end_y: 400, duration: 2000 从200滑动到400
     def swipeDown(self):
-        height = self.driver.get_window_size()["height"]
-        x1 = int(self.driver.get_window_size()["width"] * 0.5)
-        y1 = int(height * 0.25)
-        y2 = int(height * 0.75)
-
-        self.driver.swipe(x1, y1, x1, y2, 1000)
-        # self.driver.swipe(0, 1327, 500, 900, 1000)
-        print("--swipeToDown--")
+        self.mySwipe(0.5, 0.25, 0.5, 0.8)
+        print("--swipeUp--")
         return {"result": True}
 
     def swipeUp(self):
-        height = self.driver.get_window_size()["height"]
-        width = self.driver.get_window_size()["width"]
-        self.driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4)
-        print("执行上拉")
+        self.mySwipe(0.5, 0.9, 0.5, 0.25)
+        print("--swipeUp--")
         return {"result": True}
-        # for i in range(n):
-        #     self.driver.swipe(540, 800, 540, 560, 0)
-        #     time.sleep(2)
 
     def swipeRight(self):
         self.mySwipe(0.05, 0.5, 0.75, 0.5)
@@ -276,13 +267,6 @@ class OperateElement:
         self.mySwipe(0.9,0.5,0.1,0.5)
         print("--swipeToLeft--")
         return {"result": True}
-        # height = self.driver.get_window_size()["height"]
-        # width = self.driver.get_window_size()["width"]
-        # x1 = int(width * 0.05)
-        # y1 = int(height * 0.5)
-        # x2 = int(width * 0.75)
-        # self.driver.swipe(x1, y1, x1, x2, 1000)
-        # # self.driver.swipe(0, 1327, 500, 900, 1000)
 
     def mySwipe(self,x,y,x1,y1):
         height = self.driver.get_window_size()["height"]

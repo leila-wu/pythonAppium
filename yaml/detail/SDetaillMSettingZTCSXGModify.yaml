@@ -1,0 +1,75 @@
+testinfo:
+    - id: test059
+      title: 修改抬头设置
+      info: 修改抬头设置
+testcase:
+    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv
+      find_type: ids
+      index: 0
+      operate_type: click
+      info: 点击行情第一条记录的产品合同名称
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_more
+      find_type: id
+      operate_type: click
+      info: 点击more按钮
+    - element_info: //android.widget.TextView[@text='设置']
+      find_type: xpath
+      operate_type: click
+      info: 点击设置按钮
+    - element_info: com.thinkive.future.dev.standard:id/system_setting_parameter
+      find_type: id
+      operate_type: click
+      info: 点击设置指标参数
+    - element_info: //android.widget.TextView[@text='BOLL']
+      find_type: xpath
+      operate_type: click
+      info: 点击设置指标参数
+      is_time: 3
+    - element_info: com.thinkive.future.dev.standard:id/et_paramater_three_value
+      find_type: id
+      operate_type: click
+      info: 点击设置指标参数
+    - element_info: com.thinkive.future.dev.standard:id/et_paramater_three_value
+      find_type: id
+      operate_type: get_value
+      info: 记录参数值
+    - element_info: com.thinkive.future.dev.standard:id/et_paramater_three_value
+      find_type: id
+      operate_type: adb_tap
+      msg: 0.6, 0.95
+      info: 删除值
+    - element_info: com.thinkive.future.dev.standard:id/et_paramater_three_value
+      find_type: id
+      operate_type: click
+      info: 记录参数值
+    - element_info: com.thinkive.future.dev.standard:id/et_paramater_three_value
+      find_type: id
+      operate_type: adb_tap
+      msg: 0.6,0.75
+      info: 设置新值
+    - element_info: com.thinkive.future.dev.standard:id/tv_save_parameter
+      find_type: id
+      operate_type: click
+      info: 保存参数
+check:
+    - element_info: com.thinkive.future.dev.standard:id/et_paramater_three_value
+      find_type: id
+      operate_type: get_value
+      checking: contrary_getval
+      info: 修改成功
+    - element_info: com.thinkive.future.dev.standard:id/activity_parameter_back_img
+      find_type: id
+      operate_type: click
+      info: 返回合同详情
+    - element_info: com.thinkive.future.dev.standard:id/activity_setting_back_img
+      find_type: id
+      operate_type: click
+      info: 返回合同详情
+    - element_info: com.thinkive.future.dev.standard:id/quntation_future_detial_wrap_back
+      find_type: id
+      operate_type: click
+      info: 返回行情
