@@ -40,9 +40,9 @@ python runner.py
 
 **测试报告**
 
-![sum.png](Img/sum.png "sum.png")
+![sum.png](img/sum.png "sum.png")
 
-![detail.jpg](Img/detail.jpg "detail.jpg")
+![detail.jpg](img/detail.jpg "detail.jpg")
 
 # 其他 
 * [测试用例关键字驱动说明](mark.md)
