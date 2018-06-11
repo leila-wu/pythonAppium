@@ -36,7 +36,7 @@ testcase:
       find_type: id
       operate_type: click
       info: 恢复默认
-check:ß
+check:
     - element_info: com.thinkive.future.dev.standard:id/et_paramater_three_value
       find_type: id
       operate_type: get_value
