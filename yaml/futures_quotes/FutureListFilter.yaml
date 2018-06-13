@@ -1,7 +1,7 @@
 testinfo:
     - id: test002
       title: 从大商所过滤显示淀粉
-      info: 查看页面展示
+      info: 打开行情
 testcase:
     - element_info: //android.widget.TextView[@text='行情']
       find_type: xpath
