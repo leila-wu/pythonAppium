@@ -23,7 +23,7 @@ testcase:
       info: 选择底部合同上滑
 check:
     - element_info: //*[@resource-id='com.thinkive.future.dev.standard:id/parent_title' and @text='内盘']
-      find_type: id
+      find_type: xpath
       checking: contrary
       info: 检查历史查询记录正确
     - element_info: com.thinkive.future.dev.standard:id/hq_btn_cancel

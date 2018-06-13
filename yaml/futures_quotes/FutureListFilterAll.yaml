@@ -1,0 +1,26 @@
+testinfo:
+    - id: test003
+      title: 取消行情列表过滤显示
+      info: 查看页面展示
+testcase:
+    - element_info: //android.widget.TextView[@text='行情']
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: //android.widget.TextView[@text='大商所']
+      find_type: xpath
+      operate_type: click
+      info: 切换到大商所
+    - element_info: com.thinkive.future.dev.standard:id/z_ll_1
+      find_type: id
+      operate_type: click
+      info: 点击合约名称过滤
+    - element_info: //android.widget.TextView[@text='全部']
+      find_type: xpath
+      operate_type: click
+      info: 过滤显示淀粉条件
+check:
+    - element_info: //android.widget.TextView[@text='合约名称']
+      find_type: xpath
+      checking: default_check
+      info: 过滤显示淀粉条件

@@ -1,0 +1,43 @@
+2018-06-13 15:10:48,015  - INFO - ----  test001_进入行情轮流过_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-06-13 15:10:51,422  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='主力行情']_click          ----
+2018-06-13 15:10:54,933  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='大商所']_click          ----
+2018-06-13 15:10:58,539  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='中金所']_click          ----
+2018-06-13 15:11:01,967  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='能源中心']_click          ----
+2018-06-13 15:11:05,377  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='郑商所']_click          ----
+2018-06-13 15:11:08,571  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='上期所']_click          ----
+2018-06-13 15:11:12,091  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='上期所']_is_selected          ----
+2018-06-13 15:11:12,181  - INFO - ----  test001_进入行情轮流过_com.thinkive.future.dev.standard:id/rb_list_is_checked          ----
+2018-06-13 15:11:12,451  - INFO - ----  test001_进入行情轮流过_com.thinkive.future.dev.standard:id/rb_out_list_is_checked          ----
+2018-06-13 15:11:12,593  - INFO - ----  test001_进入行情轮流过_com.thinkive.future.dev.standard:id/rb_optional_is_checked          ----
+2018-06-13 15:11:12,775  - INFO - [CheckPoint_1]: testAFirstOpenFutureList_ : OK
+2018-06-13 15:11:19,994  - INFO - ----  test002_查看夜盘行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-06-13 15:11:24,184  - INFO - ----  test002_查看夜盘行情_//android.widget.TextView[@text='夜盘行情']_click          ----
+2018-06-13 15:11:26,567  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_zz_click          ----
+2018-06-13 15:11:27,693  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_dl_click          ----
+2018-06-13 15:11:28,556  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_ec_click          ----
+2018-06-13 15:11:29,419  - INFO - ----  test002_查看夜盘行情_android:id/content_           ----
+2018-06-13 15:11:29,482  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_sh_is_checked          ----
+2018-06-13 15:11:29,741  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_ec_is_checked          ----
+2018-06-13 15:11:29,921  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/cb_no_prompt_is_checked          ----
+2018-06-13 15:11:30,117  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/tv_cancel_click          ----
+2018-06-13 15:11:33,497  - INFO - [CheckPoint_2]: testBYePan_ : OK
+2018-06-13 15:11:40,727  - INFO - ----  test002_从大商所过滤显示淀粉_//android.widget.TextView[@text='行情']_click          ----
+2018-06-13 15:11:44,300  - INFO - ----  test002_从大商所过滤显示淀粉_//android.widget.TextView[@text='大商所']_click          ----
+2018-06-13 15:11:47,595  - INFO - ----  test002_从大商所过滤显示淀粉_com.thinkive.future.dev.standard:id/z_ll_1_click          ----
+2018-06-13 15:11:50,943  - INFO - ----  test002_从大商所过滤显示淀粉_//android.widget.TextView[@text='淀粉']_get_value          ----
+2018-06-13 15:11:51,092  - INFO - ----  test002_从大商所过滤显示淀粉_//android.widget.TextView[@text='淀粉']_click          ----
+2018-06-13 15:11:54,556  - INFO - ----  test002_从大商所过滤显示淀粉_com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv_get_value          ----
+2018-06-13 15:12:15,455  - INFO - [CheckPoint_3]: testCFutureListFilter_ : OK
+2018-06-13 15:12:22,683  - INFO - ----  test003_取消行情列表过滤显示_//android.widget.TextView[@text='行情']_click          ----
+2018-06-13 15:12:26,249  - INFO - ----  test003_取消行情列表过滤显示_//android.widget.TextView[@text='大商所']_click          ----
+2018-06-13 15:12:29,523  - INFO - ----  test003_取消行情列表过滤显示_com.thinkive.future.dev.standard:id/z_ll_1_click          ----
+2018-06-13 15:12:31,900  - INFO - ----  test003_取消行情列表过滤显示_//android.widget.TextView[@text='全部']_click          ----
+2018-06-13 15:12:33,933  - INFO - ----  test003_取消行情列表过滤显示_//android.widget.TextView[@text='合约名称']_           ----
+2018-06-13 15:12:34,133  - INFO - [CheckPoint_4]: testDFutureListFilterAll_ : OK
+2018-06-13 15:12:42,072  - INFO - ----  test004_显示交易所导航页面_//android.widget.TextView[@text='行情']_click          ----
+2018-06-13 15:12:45,414  - INFO - ----  test004_显示交易所导航页面_com.thinkive.future.dev.standard:id/quotation_futures_navigaterbar_down_click          ----
+2018-06-13 15:12:47,487  - INFO - ----  test004_显示交易所导航页面_//android.widget.TextView[@text='内盘行情']_           ----
+2018-06-13 15:12:47,734  - INFO - ----  test004_显示交易所导航页面_//android.widget.TextView[@text='外盘行情']_           ----
+2018-06-13 15:12:47,831  - INFO - ----  test004_显示交易所导航页面_//android.widget.TextView[@text='上期所']_click          ----
+2018-06-13 15:12:50,312  - INFO - ----  test004_显示交易所导航页面_//android.widget.TextView[@text='上期所']_is_selected          ----
+2018-06-13 15:12:51,198  - INFO - [CheckPoint_5]: testEFutureListNavigaterBar_ : OK

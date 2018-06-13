@@ -1,0 +1,32 @@
+testinfo:
+    - id: test004
+      title: 显示交易所导航页面
+      info: 查看页面展示
+testcase:
+    - element_info: //android.widget.TextView[@text='行情']
+      find_type: xpath
+      operate_type: click
+      info: 切换到行情界面
+    - element_info: com.thinkive.future.dev.standard:id/quotation_futures_navigaterbar_down
+      find_type: id
+      operate_type: click
+      info: 点击+号
+check:
+    - element_info: //android.widget.TextView[@text='内盘行情']
+      find_type: xpath
+      checking: default_check
+      info: 验证内盘行情存在
+    - element_info: //android.widget.TextView[@text='外盘行情']
+      find_type: xpath
+      checking: default_check
+      info: 验证外盘行情存在
+    - element_info: //android.widget.TextView[@text='上期所']
+      find_type: xpath
+      operate_type: click
+      info: 切换到上期所
+    - element_info: //android.widget.TextView[@text='上期所']
+      find_type: xpath
+      operate_type: is_selected
+      checking: default_check
+      info: 检查切换到上期所
+      is_time: 5

@@ -1,0 +1,48 @@
+2018-06-13 14:38:08,695  - INFO - ----  test001_进入行情轮流过_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-06-13 14:38:39,584  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='主力行情']_click          ----
+2018-06-13 14:39:10,312  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='大商所']_click          ----
+2018-06-13 14:39:32,282  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='中金所']_click          ----
+2018-06-13 14:39:34,705  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='能源中心']_click          ----
+2018-06-13 14:39:37,239  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='郑商所']_click          ----
+2018-06-13 14:39:39,793  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='上期所']_click          ----
+2018-06-13 14:39:43,461  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='上期所']_is_selected          ----
+2018-06-13 14:39:43,645  - INFO - ----  testAFirstOpenFutureList_失败重连        ----
+2018-06-13 14:39:49,685  - INFO - ----  test001_进入行情轮流过_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-06-13 14:39:53,088  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='主力行情']_click          ----
+2018-06-13 14:39:56,478  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='大商所']_click          ----
+2018-06-13 14:39:59,919  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='中金所']_click          ----
+2018-06-13 14:40:13,584  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='能源中心']_click          ----
+2018-06-13 14:40:35,156  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='郑商所']_click          ----
+2018-06-13 14:40:37,788  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='上期所']_click          ----
+2018-06-13 14:40:41,801  - INFO - ----  test001_进入行情轮流过_//android.widget.TextView[@text='上期所']_is_selected          ----
+2018-06-13 14:40:42,081  - INFO - [CheckPoint_1]: testAFirstOpenFutureList_用例失败重连过一次，失败原因:==检查点_检查切换到上期所失败，请检查_//android.widget.TextView[@text='上期所']==
+==检查点_检查切换到上期所失败，请检查_//android.widget.TextView[@text='上期所']==: NG
+2018-06-13 14:40:49,865  - INFO - ----  test002_查看夜盘行情_//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]_click          ----
+2018-06-13 14:41:10,842  - INFO - ----  test002_查看夜盘行情_//android.widget.TextView[@text='夜盘行情']_click          ----
+2018-06-13 14:41:33,286  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_zz_click          ----
+2018-06-13 14:41:34,372  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_dl_click          ----
+2018-06-13 14:41:35,225  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_ec_click          ----
+2018-06-13 14:41:36,193  - INFO - ----  test002_查看夜盘行情_android:id/content_           ----
+2018-06-13 14:41:36,215  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_sh_is_checked          ----
+2018-06-13 14:41:36,434  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/dialog_yepan_ec_is_checked          ----
+2018-06-13 14:41:36,530  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/cb_no_prompt_is_checked          ----
+2018-06-13 14:41:36,860  - INFO - ----  test002_查看夜盘行情_com.thinkive.future.dev.standard:id/tv_cancel_click          ----
+2018-06-13 14:41:38,060  - INFO - [CheckPoint_2]: testBYePan_ : OK
+2018-06-13 14:41:55,598  - INFO - ----  test002_从大商所过滤显示淀粉_//android.widget.TextView[@text='行情']_click          ----
+2018-06-13 14:42:27,011  - INFO - ----  test002_从大商所过滤显示淀粉_//android.widget.TextView[@text='大商所']_click          ----
+2018-06-13 14:42:41,023  - INFO - ----  test002_从大商所过滤显示淀粉_com.thinkive.future.dev.standard:id/z_ll_1_click          ----
+2018-06-13 14:42:42,317  - INFO - ----  test002_从大商所过滤显示淀粉_//android.widget.TextView[@text='淀粉']_get_value          ----
+2018-06-13 14:42:42,955  - INFO - ----  test002_从大商所过滤显示淀粉_//android.widget.TextView[@text='淀粉']_click          ----
+2018-06-13 14:42:47,269  - INFO - ----  test002_从大商所过滤显示淀粉_com.thinkive.future.dev.standard:id/item_alllistactivity_nameTv_get_value          ----
+2018-06-13 14:43:07,640  - INFO - [CheckPoint_3]: testCFutureListFilter_ : OK
+2018-06-13 14:43:22,906  - INFO - ----  test003_取消行情列表过滤显示_//android.widget.TextView[@text='行情']_click          ----
+2018-06-13 14:43:53,695  - INFO - ----  test003_取消行情列表过滤显示_//android.widget.TextView[@text='大商所']_click          ----
+2018-06-13 14:44:15,056  - INFO - ----  test003_取消行情列表过滤显示_com.thinkive.future.dev.standard:id/z_ll_1_click          ----
+2018-06-13 14:44:16,764  - INFO - ----  test003_取消行情列表过滤显示_//android.widget.TextView[@text='全部']_click          ----
+2018-06-13 14:44:38,122  - INFO - ----  testDFutureListFilterAll_失败重连        ----
+2018-06-13 14:44:53,638  - INFO - ----  test003_取消行情列表过滤显示_//android.widget.TextView[@text='行情']_click          ----
+2018-06-13 14:45:24,592  - INFO - ----  test003_取消行情列表过滤显示_//android.widget.TextView[@text='大商所']_click          ----
+2018-06-13 14:45:42,453  - INFO - ----  test003_取消行情列表过滤显示_com.thinkive.future.dev.standard:id/z_ll_1_click          ----
+2018-06-13 14:45:44,146  - INFO - ----  test003_取消行情列表过滤显示_//android.widget.TextView[@text='全部']_click          ----
+2018-06-13 14:46:05,772  - INFO - [CheckPoint_4]: testDFutureListFilterAll_用例失败重连过一次，失败原因:==检查点_过滤显示淀粉条件失败，请检查_//android.widget.TextView[@text='全部']==
+==检查点_过滤显示淀粉条件失败，请检查_//android.widget.TextView[@text='全部']==: NG

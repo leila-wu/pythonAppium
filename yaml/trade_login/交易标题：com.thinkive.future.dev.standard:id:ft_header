@@ -1,0 +1,30 @@
+交易标题：com.thinkive.future.dev.standard:id/ft_header_title
+下单： com.thinkive.future.dev.standard:id/tradeHome_header01
+持仓： com.thinkive.future.dev.standard:id/tradeHome_header02
+撤单： com.thinkive.future.dev.standard:id/tradeHome_header03
+委托： com.thinkive.future.dev.standard:id/tradeHome_header04
+成交： com.thinkive.future.dev.standard:id/tradeHome_header05
+资金： 
+银期转账： 
+更多： 
+
+行情： 
+	合约名称： com.thinkive.future.dev.standard:id/z_ll_1
+	@text='品种筛选'
+	@text=‘沪银’
+
+	com.thinkive.future.dev.standard:id/tv_variety_name
+	com.thinkive.future.dev.standard:id/tv_variety_name
+
+
++号： com.thinkive.future.dev.standard:id/quotation_futures_navigaterbar_down
+
+
+交易登录： 
+站点： com.thinkive.future.dev.standard:id/ft_header_site_select
+	首次登录8080: com.thinkive.future.dev.standard:id/counterSiteSelect_name
+	返回： com.thinkive.future.dev.standard:id/header_back_img
+交易账号： com.thinkive.future.dev.standard:id/trade_login_account
+交易密码： com.thinkive.future.dev.standard:id/trade_login_pd
+登录： com.thinkive.future.dev.standard:id/trade_login_btn
+

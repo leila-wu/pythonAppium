@@ -24,16 +24,53 @@ class FutureList(ParametrizedTestCase):
         page.checkPoint()
 
     # 查看夜盘行情
-    # def testBYePan(self):
-    #     app = {}
-    #     app["logTest"] = self.logTest
-    #     app["driver"] = self.driver
-    #     app["path"] = PATH("../yaml/futures_quotes/YepanFuture.yaml")
-    #     app["device"] = self.devicesName
-    #     app["caseName"] = sys._getframe().f_code.co_name
-    #     page = BasePage(app)
-    #     page.operate()
-    #     page.checkPoint()
+    def testBYePan(self):
+        app = {}
+        app["logTest"] = self.logTest
+        app["driver"] = self.driver
+        app["path"] = PATH("../yaml/futures_quotes/YepanFuture.yaml")
+        app["device"] = self.devicesName
+        app["caseName"] = sys._getframe().f_code.co_name
+        page = BasePage(app)
+        page.operate()
+        page.checkPoint()
+    # FutureListFilter
+
+    # 过滤操作
+    def testCFutureListFilter(self):
+        app = {}
+        app["logTest"] = self.logTest
+        app["driver"] = self.driver
+        app["path"] = PATH("../yaml/futures_quotes/FutureListFilter.yaml")
+        app["device"] = self.devicesName
+        app["caseName"] = sys._getframe().f_code.co_name
+        page = BasePage(app)
+        page.operate()
+        page.checkPoint()
+
+    # 取消过滤操作
+    def testDFutureListFilterAll(self):
+        app = {}
+        app["logTest"] = self.logTest
+        app["driver"] = self.driver
+        app["path"] = PATH("../yaml/futures_quotes/FutureListFilterAll.yaml")
+        app["device"] = self.devicesName
+        app["caseName"] = sys._getframe().f_code.co_name
+        page = BasePage(app)
+        page.operate()
+        page.checkPoint()
+
+    # 验证+号通过导航栏切换
+    def testEFutureListNavigaterBar(self):
+        app = {}
+        app["logTest"] = self.logTest
+        app["driver"] = self.driver
+        app["path"] = PATH("../yaml/futures_quotes/EFutureListNavigaterBar.yaml")
+        app["device"] = self.devicesName
+        app["caseName"] = sys._getframe().f_code.co_name
+        page = BasePage(app)
+        page.operate()
+        page.checkPoint()
 
     @classmethod
     def setUpClass(cls):

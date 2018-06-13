@@ -3,7 +3,7 @@ testinfo:
       title: 从产品合同详情展示K线信息
       info: 查看产品合同详情的K线信息
 testcase:
-    - element_info: //android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]
+    - element_info: //android.widget.TextView[@text='行情']
       find_type: xpath
       operate_type: click
       info: 切换到行情界面
